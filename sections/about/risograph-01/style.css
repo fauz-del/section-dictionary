@@ -1,0 +1,308 @@
+:root {
+    --paper: #F5F1E8;
+    --ink: #181818;
+    --blue: #2C61B8;
+    --red: #E94B43;
+    --cream: #EFE8DA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+}
+
+/* --- OVERLAY GRAIN (TACTILE NOISE) --- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* --- SECTION & LAYOUT --- */
+.about {
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1.5rem; 
+    position: relative;
+}
+
+/* Page Registration Marks */
+.about::before {
+    content: "+";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.about::after {
+    content: "+";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: var(--red);
+    font-weight: bold;
+}
+
+.print-note {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: .65rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    opacity: .55;
+}
+
+.about-inner {
+    width: min(1150px, 100%);
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked layout by default for mobile */
+    gap: 4rem; /* Tighter gap on small screens */
+    align-items: center;
+    margin-top: 2rem; /* Give breathing room under the print note */
+}
+
+/* --- PHOTO COLUMN: LAYER-STACK --- */
+.photo-col {
+    position: relative;
+    width: 100%;
+    max-width: 450px; /* Prevents image from stretching huge on mobile tablets */
+    margin: 0 auto; /* Centers the graphic column on mobile screens */
+}
+
+/* Misaligned Base Shapes - Fluid Sizing */
+.photo-col::before {
+    content: "";
+    position: absolute;
+    width: min(220px, 45vw);
+    height: min(220px, 45vw);
+    border-radius: 50%;
+    background: var(--red);
+    top: -25px;
+    left: -25px;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+}
+
+.photo-col::after {
+    content: "";
+    position: absolute;
+    width: min(160px, 35vw);
+    height: min(160px, 35vw);
+    border-radius: 50%;
+    background: var(--blue);
+    bottom: -15px;
+    right: -15px;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+}
+
+/* Faux Halftone Background Pattern Block */
+.photo-col .halftone-bg {
+    content: "";
+    position: absolute;
+    width: min(260px, 50vw);
+    height: min(260px, 50vw);
+    right: -40px;
+    top: 30px;
+    background-image: radial-gradient(var(--ink) 1.2px, transparent 1.2px);
+    background-size: 12px 12px;
+    opacity: .15;
+    z-index: -2;
+}
+
+/* Wrapper Fixed to Hold Multiplying Children Layout */
+.portrait-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: var(--paper);
+}
+
+.portrait {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+
+/* Red Screen Layer */
+.layer-red {
+    filter: grayscale(100%) brightness(1.1) contrast(140%) sepia(1) saturate(10) hue-rotate(330deg);
+    transform: translate(-3px, 2px); /* Slightly lighter offset on mobile */
+    z-index: 3;
+}
+
+/* Blue Screen Layer */
+.layer-blue {
+    filter: grayscale(100%) brightness(1.1) contrast(140%) sepia(1) saturate(10) hue-rotate(185deg);
+    transform: translate(3px, -2px);
+    z-index: 2;
+}
+
+/* Main/Key Print Overlap Layer */
+.layer-main {
+    filter: grayscale(100%) contrast(150%) brightness(0.9);
+    z-index: 1;
+    clip-path: polygon(0 2%, 100% 0, 98% 98%, 2% 100%);
+}
+
+.caption-tag {
+    margin-top: 1rem;
+    font-size: .75rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: .65;
+}
+
+/* --- TYPOGRAPHY --- */
+.text-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kicker {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    font-size: .8rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 5.5rem); /* Scaled down slightly for tight mobile viewports */
+    line-height: .95;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+}
+
+.lede {
+    font-size: 1.15rem;
+    max-width: 38ch;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.body {
+    max-width: 45ch;
+    line-height: 1.7;
+    opacity: .8;
+    margin-bottom: 2.5rem;
+}
+
+/* --- STYLED DATA GRID --- */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Clean side-by-side split on small screens */
+    gap: 1rem;
+    margin-top: 1rem;
+    border-top: 2px dashed var(--ink);
+    padding-top: 1.5rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat b {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    line-height: 1;
+    color: var(--blue);
+    margin-bottom: 0.25rem;
+}
+
+.stat span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    line-height: 1.2;
+}
+
+/* --- DESKTOP VIEWPORT MEDIA QUERY --- */
+@media (min-width: 868px) {
+    .about {
+        padding: 6rem 8%;
+    }
+
+    .about::before { top: 30px; left: 30px; font-size: 22px; }
+    .about::after { bottom: 30px; right: 30px; font-size: 22px; }
+    .print-note { top: 24px; right: 32px; font-size: .75rem; }
+
+    .about-inner {
+        grid-template-columns: 0.9fr 1.1fr; /* Two-column grid setup */
+        gap: 5rem;
+        margin-top: 0;
+    }
+
+    .photo-col {
+        max-width: none;
+        margin: 0;
+    }
+
+    .photo-col::before {
+        width: 220px;
+        height: 220px;
+        top: -40px;
+        left: -40px;
+    }
+
+    .photo-col::after {
+        width: 160px;
+        height: 160px;
+        bottom: -30px;
+        right: -20px;
+    }
+
+    .photo-col .halftone-bg {
+        width: 260px;
+        height: 260px;
+        right: -80px;
+        top: 50px;
+    }
+
+    .layer-red { transform: translate(-6px, 4px); }
+    .layer-blue { transform: translate(6px, -4px); }
+
+    .stats-row {
+        gap: 2rem;
+    }
+    
+    .stat span {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+}
