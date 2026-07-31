@@ -35,8 +35,9 @@ body::before {
 
 /* --- SECTION & LAYOUT --- */
 .about {
-    height: 100vh;
-    max-height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
     display: flex;
     align-items: center;
     justify-content: center;
