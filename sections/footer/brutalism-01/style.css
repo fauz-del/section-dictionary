@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+:root {
+  --ink: #0A0A0A;
+  --paper: #F2F2F0;
+  --accent: #FF3B1F;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: #fff;
+  color: var(--ink);
+}
+
+.brut {
+  background: var(--paper);
+  border-top: 5px solid var(--ink); /* Heavier anchor line */
+  padding: 40px 5% 0;
+}
+
+/* --- TOP BAR ROW --- */
+.brut__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 4px solid var(--ink);
+  margin-bottom: 40px;
+}
+
+.brut__mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.mark__box {
+  width: 20px; height: 20px;
+  background: var(--accent);
+  border: 3px solid var(--ink);
+  display: inline-block;
+  transform: rotate(45deg); /* Added a sharp tilt to break alignment */
+}
+
+.brut__style-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  border: 3px solid var(--ink);
+  background: #FFF;
+  padding: 6px 16px;
+  box-shadow: 3px 3px 0px var(--ink); /* Added characteristic solid shadow */
+}
+
+/* --- BOLD STRUCTURAL MATRIX GRID --- */
+.brut__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 0;
+  /* Wraps the whole matrix structure cleanly */
+  border-top: 4px solid var(--ink); 
+  border-bottom: 4px solid var(--ink);
+}
+
+.brut__col {
+  padding: 30px 24px 40px;
+  border-right: 4px solid var(--ink); /* Flipped to right borders for matrix calculation */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #FFF; /* Makes cells feel like real physical blocks */
+}
+
+/* Removes trailing right border to snap cleanly to container edges */
+.brut__col:last-child {
+  border-right: none;
+}
+
+/* --- COLUMN CORE CONTENT --- */
+.brut__statement {
+  font-size: clamp(1.4rem, 4vw, 2.2rem); /* Drastically bumped for heavy typographic weight */
+  font-weight: 700;
+  line-height: 1.05; /* Slammed together line height */
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.brut__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+/* --- AGGRESSIVE INTERACTIVE LINKS --- */
+.brut__col a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  width: 100%; /* Spans full cell width for hover targeting */
+  padding: 4px 8px;
+  margin-left: -8px; /* Offsets padding so text lines up natively */
+  border: 2px solid transparent;
+  text-transform: uppercase;
+}
+
+/* High-contrast inverted block fill on hover */
+.brut__col a:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border: 2px solid var(--ink);
+}
+
+.brut__plain {
+  font-size: 0.9rem;
+  color: var(--ink);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* --- MASSIVE HERO WORDMARK --- */
+.brut__wordmark-wrap {
+  width: 100%;
+  overflow: hidden;
+  /* Thick black baseline separator grid line */
+  border-bottom: 4px solid var(--ink); 
+  margin-top: 20px;
+  background: #FFF; /* Keeps the block feeling like solid concrete sheet padding */
+}
+
+.brut__wordmark {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(4rem, 15vw, 16rem); 
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 0.78; 
+  letter-spacing: -0.06em; 
+  margin-bottom: -0.05em; 
+  image-rendering: pixelated;
+}
+
+
+/* --- LOWER FOOTER TICKER --- */
+.brut__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* --- PERFECTLY LINKED RESPONSIVE LAYOUT --- */
+@media (max-width: 900px) {
+  .brut__grid {
+    grid-template-columns: 1fr 1fr; /* 2 Column Split Matrix */
+  }
+  
+  .brut__col {
+    border-right: 4px solid var(--ink);
+    border-bottom: 4px solid var(--ink);
+  }
+  
+  /* Select second column entries to clear right margin wall */
+  .brut__col:nth-child(2n) {
+    border-right: none;
+  }
+  
+  /* Select bottom rows to clear bottom grid wall */
+  .brut__col:nth-child(3),
+  .brut__col:nth-child(4) {
+    border-bottom: none;
+  }
+  
+  .brut__col--wide {
+    grid-column: span 2;
+    border-right: none !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .brut__grid {
+    grid-template-columns: 1fr; /* Single column stack box matrix */
+  }
+  
+  .brut__col {
+    border-right: none;
+    border-bottom: 4px solid var(--ink);
+  }
+  
+  .brut__col:last-child {
+    border-bottom: none;
+  }
+  
+  .brut__col--wide {
+    grid-column: span 1;
+  }
+  
+  .brut__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
