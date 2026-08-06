@@ -47,7 +47,6 @@ body{
   color:var(--ink);
 }
 
-/* Hamburger — hidden on desktop */
 .nav-toggle{display:none;}
 
 .nav-burger{
@@ -274,7 +273,6 @@ h1 .line3{
   }
 }
 
-/* Two-column text layout */
 .hero-inner{max-width:1080px;}
 .text-columns{
   display:grid;

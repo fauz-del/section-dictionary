@@ -16,11 +16,10 @@ body {
 
 .brut {
   background: var(--paper);
-  border-top: 5px solid var(--ink); /* Heavier anchor line */
+  border-top: 5px solid var(--ink); 
   padding: 40px 5% 0;
 }
 
-/* --- TOP BAR ROW --- */
 .brut__top {
   display: flex;
   justify-content: space-between;
@@ -55,38 +54,34 @@ body {
   border: 3px solid var(--ink);
   background: #FFF;
   padding: 6px 16px;
-  box-shadow: 3px 3px 0px var(--ink); /* Added characteristic solid shadow */
+  box-shadow: 3px 3px 0px var(--ink);
 }
 
-/* --- BOLD STRUCTURAL MATRIX GRID --- */
 .brut__grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 0;
-  /* Wraps the whole matrix structure cleanly */
   border-top: 4px solid var(--ink); 
   border-bottom: 4px solid var(--ink);
 }
 
 .brut__col {
   padding: 30px 24px 40px;
-  border-right: 4px solid var(--ink); /* Flipped to right borders for matrix calculation */
+  border-right: 4px solid var(--ink); 
   display: flex;
   flex-direction: column;
   gap: 14px;
-  background: #FFF; /* Makes cells feel like real physical blocks */
+  background: #FFF;
 }
 
-/* Removes trailing right border to snap cleanly to container edges */
 .brut__col:last-child {
   border-right: none;
 }
 
-/* --- COLUMN CORE CONTENT --- */
 .brut__statement {
-  font-size: clamp(1.4rem, 4vw, 2.2rem); /* Drastically bumped for heavy typographic weight */
+  font-size: clamp(1.4rem, 4vw, 2.2rem); 
   font-weight: 700;
-  line-height: 1.05; /* Slammed together line height */
+  line-height: 1.05; 
   text-transform: uppercase;
   letter-spacing: -0.04em;
 }
@@ -101,20 +96,18 @@ body {
   margin-bottom: 4px;
 }
 
-/* --- AGGRESSIVE INTERACTIVE LINKS --- */
 .brut__col a {
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--ink);
   text-decoration: none;
-  width: 100%; /* Spans full cell width for hover targeting */
+  width: 100%; 
   padding: 4px 8px;
-  margin-left: -8px; /* Offsets padding so text lines up natively */
+  margin-left: -8px; 
   border: 2px solid transparent;
   text-transform: uppercase;
 }
 
-/* High-contrast inverted block fill on hover */
 .brut__col a:hover {
   background: var(--ink);
   color: var(--paper);
@@ -128,14 +121,12 @@ body {
   line-height: 1.5;
 }
 
-/* --- MASSIVE HERO WORDMARK --- */
 .brut__wordmark-wrap {
   width: 100%;
   overflow: hidden;
-  /* Thick black baseline separator grid line */
   border-bottom: 4px solid var(--ink); 
   margin-top: 20px;
-  background: #FFF; /* Keeps the block feeling like solid concrete sheet padding */
+  background: #FFF; 
 }
 
 .brut__wordmark {
@@ -151,8 +142,6 @@ body {
   image-rendering: pixelated;
 }
 
-
-/* --- LOWER FOOTER TICKER --- */
 .brut__bottom {
   display: flex;
   justify-content: space-between;
@@ -167,23 +156,20 @@ body {
   gap: 16px;
 }
 
-/* --- PERFECTLY LINKED RESPONSIVE LAYOUT --- */
 @media (max-width: 900px) {
   .brut__grid {
-    grid-template-columns: 1fr 1fr; /* 2 Column Split Matrix */
+    grid-template-columns: 1fr 1fr;
   }
   
   .brut__col {
     border-right: 4px solid var(--ink);
     border-bottom: 4px solid var(--ink);
   }
-  
-  /* Select second column entries to clear right margin wall */
+
   .brut__col:nth-child(2n) {
     border-right: none;
   }
   
-  /* Select bottom rows to clear bottom grid wall */
   .brut__col:nth-child(3),
   .brut__col:nth-child(4) {
     border-bottom: none;
@@ -197,7 +183,7 @@ body {
 
 @media (max-width: 550px) {
   .brut__grid {
-    grid-template-columns: 1fr; /* Single column stack box matrix */
+    grid-template-columns: 1fr; 
   }
   
   .brut__col {

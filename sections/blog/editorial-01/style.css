@@ -1,0 +1,414 @@
+/* ============ BASE & RESET ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #FAF8F5; /* Airier, archival paper tone */
+  color: #1C1A19; /* Crisp high-contrast graphite */
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ============ TACTILE GRAIN EFFECT ============ */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999; /* Covers the page to give the background and images texturing */
+  pointer-events: none; /* Allows users to scroll or click through the overlay */
+  opacity: 0.04; /* Keeps the grain subtle and non-intrusive */
+  
+  /* Modern CSS generation technique that mimics fine print paper noise without downloading bulky images */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ============ FLOATING EDITORIAL PAGE NUMBERS ============ */
+.page-number {
+  position: absolute;
+  bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: #A3978E;
+  font-weight: 500;
+}
+
+/* Alternate placements based on row orientation to simulate left/right book pages */
+@media (min-width: 900px) {
+  .location-block .page-number {
+    left: 5rem;
+  }
+  
+  .location-block.flipped .page-number {
+    left: auto;
+    right: 5rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .page-number {
+    position: static;
+    margin-top: 1.5rem;
+    text-align: right;
+  }
+}
+
+.journal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+/* ============ EDITORIAL HEADER ============ */
+.journal-header {
+  text-align: left;
+  margin-bottom: 6rem;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #A3978E;
+  margin-bottom: 1rem;
+}
+
+.journal-header h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  color: #1C1A19;
+}
+
+.intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #615B57;
+  max-width: 50ch;
+}
+
+.header-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(28, 26, 25, 0.08);
+  margin-top: 3rem;
+}
+
+/* ============ STREAM OF LOCATIONS ============ */
+.locations-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.location-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+  border-bottom: 1px solid rgba(28, 26, 25, 0.05);
+  padding-bottom: 6rem;
+}
+
+.location-block .entry-text {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.location-block [class^="grid-gallery"] {
+  opacity: 0;
+  transform: scale(0.98) translateY(15px);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.location-block .vertical-rail {
+  opacity: 0;
+  transition: opacity 1s linear 0.4s; /* Slight delay to let structure reveal after text */
+}
+
+/* 2. Active Animation States (Revealed on Scroll) */
+.location-block.visible .entry-text,
+.location-block.visible [class^="grid-gallery"],
+.location-block.visible .vertical-rail {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (min-width: 900px) {
+  .location-block {
+    position: relative;
+    padding-left: 4.5rem;
+  }
+  .layout-two-col {
+    grid-template-columns: 300px 1fr;
+  }
+  .layout-two-col.flipped {
+    grid-template-columns: 1fr 300px;
+    padding-left: 0;
+    padding-right: 4.5rem;
+  }
+  .layout-two-col.flipped .vertical-rail {
+    left: auto;
+    right: 0;
+    border-left: 1px solid rgba(28, 26, 25, 0.08);
+    border-right: none;
+  }
+  .layout-two-col.flipped .entry-text {
+    order: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .location-block .entry-text,
+  .location-block [class^="grid-gallery"],
+  .location-block .vertical-rail {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .img-wrapper img {
+    transition: none !important;
+  }
+}
+
+.vertical-rail {
+  display: none;
+}
+@media (min-width: 900px) {
+  .vertical-rail {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 6rem;
+    width: 2.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid rgba(28, 26, 25, 0.08);
+    padding: 1rem 0;
+  }
+
+  .rail-index {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: #1C1A19;
+  }
+
+  .rail-title-vertical {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #A3978E;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+
+/* ============ EDITORIAL TYPOGRAPHY & CROSSHAIRS ============ */
+.entry-text {
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .entry-text::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid rgba(28, 26, 25, 0.25);
+    border-left: 1px solid rgba(28, 26, 25, 0.25);
+  }
+}
+
+.entry-tag {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: #A3978E;
+  margin-bottom: 1.5rem;
+}
+
+.entry-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.fragment {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #4E4945;
+  margin-bottom: 1.5rem;
+}
+
+.context {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #7A726C;
+  margin-bottom: 2rem;
+}
+
+.entry-meta {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #A3978E;
+}
+
+.swatches {
+  display: flex;
+  gap: 4px;
+  margin-top: 1.5rem;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(28, 26, 25, 0.1);
+}
+
+/* ============ ASYMMETRIC IMAGE GALLERIES ============ */
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #EFEFEF;
+  border: 1px solid rgba(28, 26, 25, 0.08);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(0.12) contrast(1.04) brightness(0.98);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.8s ease;
+}
+
+.img-wrapper:hover img {
+  transform: scale(1.04);
+  filter: sepia(0) contrast(1.05) brightness(1);
+}
+
+.micro-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  background: rgba(28, 26, 25, 0.7);
+  padding: 2px 6px;
+  backdrop-filter: blur(4px);
+  font-family: 'Inter', sans-serif;
+  z-index: 5;
+}
+
+@media (min-width: 900px) {
+  .grid-gallery-three-london, .grid-gallery-three-japan {
+    position: relative;
+  }
+  .grid-gallery-three-london::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 30%;
+    height: 40%;
+    background: #BAC2C5;
+    z-index: -1;
+    opacity: 0.4;
+  }
+  .grid-gallery-three-japan::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 30%;
+    height: 40%;
+    background: #EAD7C3;
+    z-index: -1;
+    opacity: 0.4;
+  }
+}
+
+.grid-gallery-two {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.5rem;
+}
+.wide-rect { aspect-ratio: 4 / 3; }
+.tall-rect { aspect-ratio: 3 / 4; }
+
+.grid-gallery-three-london {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+}
+.main-tall {
+  grid-row: span 2;
+  aspect-ratio: 3 / 4;
+}
+.sub-square-1, .sub-square-2 { aspect-ratio: 1 / 1; }
+
+.grid-gallery-three-japan {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+}
+.main-tall-japan {
+  grid-row: span 2;
+  aspect-ratio: 3 / 4;
+}
+.sub-square-a, .sub-square-b { aspect-ratio: 1 / 1; }
+
+/* ============ MOBILE RESPONSIVE ============ */
+@media (max-width: 899px) {
+  .journal { padding: 4rem 1.25rem; }
+  .locations-stream { gap: 5rem; }
+  .location-block { padding-bottom: 4rem; }
+  
+  .grid-gallery-two, 
+  .grid-gallery-three-london, 
+  .grid-gallery-three-japan {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  
+  .main-tall, .main-tall-japan, .wide-rect, .tall-rect, 
+  .sub-square-1, .sub-square-2, .sub-square-a, .sub-square-b {
+    grid-row: auto;
+    aspect-ratio: 4 / 3; /* Flattens cleanly into responsive slots on mobile screens */
+  }
+}

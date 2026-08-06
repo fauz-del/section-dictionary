@@ -9,7 +9,6 @@ body {
   background: #000;
 }
 
-/* ---------- NAVBAR ---------- */
 .navbar {
   position: fixed;
   top: 0;
@@ -171,10 +170,6 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ---------- CAPTION BAR ---------- */
-/* Lives in normal document flow, below the hero visual — never
-   overlaps the date block no matter the screen size. */
-
 .caption {
   background: #0a0a0a;
   padding: 2rem 3rem;
@@ -189,8 +184,6 @@ body {
   font-weight: 700;
   color: #fff;
 }
-
-/* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 600px) {
   .glass-panel {
