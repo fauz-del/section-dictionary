@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Field Notes — A place to slow down</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero" id="hero">
+        <header class="nav" id="nav">
+          <div class="nav__inner">
+            <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+              <span></span>
+            </button>
+
+            <a href="index.html" class="nav__logo">FIELD NOTES</a>
+
+            <nav class="nav__links" id="navLinks">
+              <a href="#place" class="nav__link">THE PLACE</a>
+              <a href="#stays" class="nav__link">STAYS</a>
+              <a href="#experiences" class="nav__link">EXPERIENCES</a>
+              <a href="journal.html" class="nav__link">JOURNAL</a>
+              <a href="#booking" class="nav__link nav__link--cta">BOOK</a>
+            </nav>
+          </div>
+        </header>
+
+        <div class="hero__layout">
+          <!-- MAIN HERO PANEL -->
+          <div class="hero__card">
+            <div class="hero__badge">
+              <span class="hero__badge-arrow">↑</span>
+              <span class="hero__badge-label">N</span>
+            </div>
+
+            <div class="hero__content">
+              <span class="hero__eyebrow"> 01 / 07 — FIELD NOTES </span>
+
+              <div class="hero__headline">
+                <h1>Go where<br />the map ends.</h1>
+              </div>
+
+              <div class="hero__search">
+                <div class="hero__search-field">
+                  <span class="hero__search-label">DESTINATION</span>
+                  <span class="hero__search-value"> Where to disappear? </span>
+                </div>
+
+                <div class="hero__search-divider"></div>
+
+                <div class="hero__search-field">
+                  <span class="hero__search-label">CHECK IN</span>
+                  <span class="hero__search-value"> Add dates </span>
+                </div>
+
+                <div class="hero__search-divider"></div>
+
+                <div class="hero__search-field">
+                  <span class="hero__search-label">GUESTS</span>
+                  <span class="hero__search-value"> Add guests </span>
+                </div>
+
+                <button type="button" class="hero__search-btn">SEARCH</button>
+              </div>
+              <div class="hero__lower">
+                <div class="hero__copy">
+                  <p>
+                    Handpicked cabins and forest retreats, built to help you disconnect from the
+                    noise and remember what quiet feels like.
+                  </p>
+                  <div class="hero__cta-group">
+                    <a href="#stays" class="btn btn--primary"> FIND YOUR STAY </a>
+                    <a href="#experiences" class="btn btn--ghost"> EXPLORE EXPERIENCES </a>
+                  </div>
+                </div>
+                <div class="hero__stats">
+                  <div class="hero__stat hero__stat--lead">
+                    <span class="hero__stat-number">12+</span>
+                    <span class="hero__stat-label"> Cabins tucked into the wild </span>
+                  </div>
+                  <div class="hero__stat-row">
+                    <div class="hero__stat">
+                      <span class="hero__stat-number">98%</span>
+                      <span class="hero__stat-label"> Guests who return </span>
+                    </div>
+                    <div class="hero__stat">
+                      <span class="hero__stat-number">4</span>
+                      <span class="hero__stat-label"> Regions to explore </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- MIDDLE SLICE -->
+          <aside class="hero__side hero__side--one">
+            <div class="hero__side-content">
+              <span>01</span>
+              <span>THE<br />PLACE</span>
+            </div>
+          </aside>
+          <!-- RIGHT SLICE -->
+          <aside class="hero__side hero__side--two">
+            <div class="hero__side-content">
+              <span>02</span>
+              <span>BOOK<br />A STAY</span>
+            </div>
+          </aside>
+        </div>
+        <a href="#place" class="hero__scroll"> ↓ EXPLORE </a>
+      </section>
+
+      <section class="place" id="place">
+        <div class="place__header">
+          <div class="place__eyebrow">02 / 07 — THE PLACE</div>
+
+          <div class="place__intro">
+            <h2 class="place__heading">
+              Somewhere between<br />
+              the last road and<br />
+              the first tree.
+            </h2>
+            <div class="place__description">
+              <p>
+                Beyond the last turn, the road gives way to pine, stone and open sky. Field Notes
+                sits quietly inside it all — a place to slow down, wander farther and stay awhile.
+              </p>
+              <div class="place__meta">
+                <span>47° 18' N</span>
+                <span>12° 42' E</span>
+                <span>THE WILDERNESS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="place__reveal">
+          <div class="place__reveal-image place__reveal-image--base">
+            <img src="assets/img/place-forest-light.jpg" alt="Light filtering through the forest" />
+          </div>
+
+          <div class="place__reveal-image place__reveal-image--overlay" id="placeRevealOverlay">
+            <img
+              src="assets/img/place-mountain-peaks.jpg"
+              alt="Mountain peaks surrounding the retreat"
+            />
+          </div>
+
+          <div class="place__reveal-line" id="placeRevealLine">
+            <span class="place__reveal-handle"> ↔ </span>
+          </div>
+          <div class="place__reveal-label place__reveal-label--left">MOUNTAINS</div>
+          <div class="place__reveal-label place__reveal-label--right">FOREST</div>
+          <div class="place__reveal-instruction">
+            <span>DRAG TO DISCOVER</span>
+            <span class="place__reveal-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="place__footer">
+          <div class="place__footer-image">
+            <img src="assets/img/place-bridge-pond.jpg" alt="Bridge crossing a quiet pond" />
+          </div>
+          <div class="place__footer-copy">
+            <span class="place__footer-number"> 02.01 </span>
+            <h3>
+              The quiet<br />
+              is part of it.
+            </h3>
+            <p>
+              Water moves slowly through the valley. Trails disappear beneath the trees. Nothing
+              here asks you to hurry.
+            </p>
+            <span class="place__footer-caption"> THE WATER / FIELD NOTES </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stays" id="stays">
+        <div class="stays__inner">
+          <div class="stays__eyebrow">03 / 07 — STAYS</div>
+
+          <div class="stays__intro">
+            <h2 class="stays__heading">
+              Stay close<br />
+              to the wild.
+            </h2>
+
+            <p class="stays__description">
+              Three ways to disappear for a while. Choose a quiet cabin, a house among the trees, or
+              a patch of earth beneath the open sky.
+            </p>
+          </div>
+
+          <div class="stays__list">
+            <!-- CABIN -->
+            <article class="stay-row">
+              <button class="stay-row__trigger" type="button">
+                <span class="stay-row__number"> 01 </span>
+                <span class="stay-row__main">
+                  <span class="stay-row__title"> CABIN </span>
+                  <span class="stay-row__meta"> WOOD / 02 GUESTS </span>
+                </span>
+                <span class="stay-row__price">
+                  FROM
+                  <strong>$120</strong>
+                </span>
+                <span class="stay-row__arrow"> ↗ </span>
+              </button>
+              <div class="stay-row__reveal">
+                <div class="stay-row__image-wrap">
+                  <img
+                    class="stay-row__image"
+                    src="assets/img/stay-aframe-dusk.jpg"
+                    alt="Cabin surrounded by wilderness"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <!-- HOUSE -->
+            <article class="stay-row">
+              <button class="stay-row__trigger" type="button">
+                <span class="stay-row__number"> 02 </span>
+                <span class="stay-row__main">
+                  <span class="stay-row__title"> HOUSE </span>
+                  <span class="stay-row__meta"> STONE / 04 GUESTS </span>
+                </span>
+                <span class="stay-row__price">
+                  FROM
+                  <strong>$190</strong>
+                </span>
+                <span class="stay-row__arrow"> ↗ </span>
+              </button>
+
+              <div class="stay-row__reveal">
+                <div class="stay-row__image-wrap">
+                  <img
+                    class="stay-row__image"
+                    src="assets/img/stay-lodge-waterfall-steps.jpg"
+                    alt="Stone house in the wilderness"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <!-- FIELD -->
+            <article class="stay-row">
+              <button class="stay-row__trigger" type="button">
+                <span class="stay-row__number"> 03 </span>
+                <span class="stay-row__main">
+                  <span class="stay-row__title"> FIELD </span>
+                  <span class="stay-row__meta"> OUTDOOR / 02 GUESTS </span>
+                </span>
+                <span class="stay-row__price">
+                  FROM
+                  <strong>$70</strong>
+                </span>
+                <span class="stay-row__arrow"> ↗ </span>
+              </button>
+
+              <div class="stay-row__reveal">
+                <div class="stay-row__image-wrap">
+                  <img
+                    class="stay-row__image"
+                    src="assets/img/stay-aframe-yoga.jpg"
+                    alt="Open field retreat"
+                  />
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="stays__footer">
+            <span>03 STAYS</span>
+            <span>ALL WITHIN THE WILDERNESS</span>
+            <span>SELECT A STAY</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04 — EXPERIENCES ============ -->
+      <section class="section experiences" id="experiences">
+        <div class="experiences__sticky">
+          <div class="experiences__header">
+            <div class="section__eyebrow">04 / 07 — EXPERIENCES</div>
+            <span class="experiences__progress"> SWIPE OR TAP TO EXPLORE </span>
+            <div class="experiences__controls">
+              <button
+                class="experiences__control"
+                id="experiencePrev"
+                type="button"
+                aria-label="Previous experience"
+              >
+                ←
+              </button>
+              <span class="experiences__counter" id="experienceCounter"> 01 / 03 </span>
+              <button
+                class="experiences__control"
+                id="experienceNext"
+                type="button"
+                aria-label="Next experience"
+              >
+                →
+              </button>
+            </div>
+          </div>
+          <div class="experiences__viewport" id="experiencesViewport">
+            <div class="experiences__track" id="experiencesTrack">
+              <!-- HIKING -->
+              <article class="experiences__item">
+                <div class="experiences__content">
+                  <span class="experiences__number"> 01 </span>
+                  <h3>HIKING</h3>
+                  <p>Follow the trail beyond the cabins.</p>
+                </div>
+                <div class="experiences__image">
+                  <img
+                    src="assets/img/experience-hiker-descent.jpg"
+                    alt="Hiker descending a forest trail"
+                  />
+                </div>
+              </article>
+
+              <!-- CAMPFIRE -->
+              <article class="experiences__item">
+                <div class="experiences__content">
+                  <span class="experiences__number"> 02 </span>
+                  <h3>CAMPFIRE</h3>
+                  <p>Slow evenings under wide skies.</p>
+                </div>
+                <div class="experiences__image">
+                  <img
+                    src="assets/img/experience-ridge-hiker.jpg"
+                    alt="Ridge landscape at sunset"
+                  />
+                </div>
+              </article>
+              <!-- PHOTOGRAPHY -->
+              <article class="experiences__item">
+                <div class="experiences__content">
+                  <span class="experiences__number"> 03 </span>
+                  <h3>PHOTOGRAPHY</h3>
+                  <p>Light through the trees, every morning.</p>
+                </div>
+                <div class="experiences__image">
+                  <img
+                    src="assets/img/hero-overlook-forest.jpg"
+                    alt="Forest landscape viewed from above"
+                  />
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section journal" id="journal-preview">
+        <div class="journal__texture"></div>
+        <div class="journal__inner">
+          <header class="journal__header">
+            <div class="section__eyebrow">05 / 07 — FIELD JOURNAL</div>
+            <div class="journal__intro">
+              <div>
+                <span class="journal__label"> NOTES FROM THE WILDERNESS </span>
+                <h2 class="journal__heading">
+                  Field<br />
+                  Journal.
+                </h2>
+              </div>
+              <p class="journal__description">
+                Observations, photographs and quiet thoughts gathered between the trees.
+              </p>
+            </div>
+          </header>
+
+          <div class="journal__list">
+            <!-- ENTRY 01 -->
+            <a class="journal__entry" href="journal.html">
+              <div class="journal__number">01</div>
+              <div class="journal__main">
+                <h3 class="journal__title">What the forest looks like at 6am</h3>
+                <div class="journal__meta">
+                  <span>12 AUG 2026</span>
+                  <span>OBSERVATION</span>
+                </div>
+              </div>
+              <div class="journal__arrow">↗</div>
+              <div class="journal__image">
+                <img
+                  src="assets/img/journal-wood-tunnel.jpg"
+                  alt="Wooden path surrounded by forest"
+                />
+              </div>
+            </a>
+
+            <!-- ENTRY 02 -->
+            <a class="journal__entry" href="journal.html">
+              <div class="journal__number">02</div>
+              <div class="journal__main">
+                <h3 class="journal__title">A weekend without internet</h3>
+                <div class="journal__meta">
+                  <span>28 JUL 2026</span>
+                  <span>FIELD NOTE</span>
+                </div>
+              </div>
+              <div class="journal__arrow">↗</div>
+              <div class="journal__image">
+                <img src="assets/img/place-deck-hammock.jpg" alt="Hammock overlooking the forest" />
+              </div>
+            </a>
+
+            <!-- ENTRY 03 -->
+            <a class="journal__entry" href="journal.html">
+              <div class="journal__number">03</div>
+              <div class="journal__main">
+                <h3 class="journal__title">Photographing the rain</h3>
+                <div class="journal__meta">
+                  <span>11 JUL 2026</span>
+                  <span>PHOTOGRAPHY</span>
+                </div>
+              </div>
+              <div class="journal__arrow">↗</div>
+              <div class="journal__image">
+                <img src="assets/img/place-bridge-pond.jpg" alt="Bridge crossing a forest pond" />
+              </div>
+            </a>
+          </div>
+
+          <footer class="journal__footer">
+            <span> 03 ENTRIES </span>
+
+            <span> WRITTEN FROM THE WILDERNESS </span>
+
+            <span> 2026 </span>
+          </footer>
+        </div>
+      </section>
+      <!-- ============ 06 — LOCATION ============ -->
+
+      <section class="section location" id="location">
+        <div class="location__inner">
+          <div class="location__top">
+            <div class="section__eyebrow">06 / 07 — LOCATION</div>
+            <div class="location__coordinates">06° 31′ N &nbsp; / &nbsp; 03° 22′ E</div>
+          </div>
+
+          <div class="location__intro">
+            <div>
+              <span class="location__label"> A QUIET DISTANCE </span>
+              <h2 class="location__heading">
+                2.5 hours<br />
+                from the city.
+              </h2>
+            </div>
+            <p class="location__description">
+              Far enough to lose the noise. Close enough to leave after breakfast and arrive before
+              the light changes.
+            </p>
+          </div>
+
+          <!-- FIELD MAP -->
+          <div class="location__map">
+            <!-- NORTH -->
+            <div class="location__north">
+              <span>N</span>
+              <i></i>
+            </div>
+            <!-- ROAD -->
+            <svg
+              class="location__road"
+              viewBox="0 0 1000 500"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M40 430
+             C180 390 210 310 340 330
+             C470 350 460 250 570 245
+             C700 240 690 150 820 120
+             C880 105 930 80 970 40"
+              />
+            </svg>
+            <!-- RIVER -->
+            <svg
+              class="location__river"
+              viewBox="0 0 1000 500"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M760 -30
+             C690 70 820 120 735 205
+             C650 290 770 350 690 540"
+              />
+            </svg>
+            <!-- FOREST -->
+            <div class="location__forest">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <!-- CITY -->
+            <div class="location__city">
+              <span class="location__dot"></span>
+              <span class="location__city-name"> CITY </span>
+            </div>
+
+            <!-- RETREAT -->
+            <div class="location__retreat">
+              <span class="location__retreat-ring"></span>
+              <span class="location__retreat-dot"></span>
+              <div class="location__retreat-card">
+                <span>YOU ARE HERE</span>
+                <strong>
+                  FIELD<br />
+                  NOTES
+                </strong>
+                <small> WILDERNESS RETREAT </small>
+              </div>
+            </div>
+
+            <!-- RIVER LABEL -->
+            <div class="location__river-label">RIVER</div>
+
+            <!-- FOREST LABEL -->
+            <div class="location__forest-label">FOREST</div>
+
+            <!-- DISTANCE -->
+            <div class="location__distance">
+              <strong>2.5</strong>
+              <span>
+                HOURS<br />
+                FROM CITY
+              </span>
+            </div>
+
+            <!-- MAP SCALE -->
+            <div class="location__scale">
+              <span>0</span>
+              <i></i>
+              <span>20 KM</span>
+            </div>
+          </div>
+
+          <div class="location__footer">
+            <span> ACCESSIBLE BY ROAD </span>
+            <span> NO SIGNAL / NO NOISE </span>
+            <span> ARRIVAL BEFORE SUNSET </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 07 — BOOKING ============ -->
+
+      <section class="section booking" id="booking">
+        <div class="booking__grain"></div>
+
+        <div class="booking__inner">
+          <div class="booking__top">
+            <div class="section__eyebrow">07 / 07 — BOOKING</div>
+
+            <span class="booking__edition"> FIELD NOTES / 2026 </span>
+          </div>
+
+          <div class="booking__intro">
+            <div>
+              <span class="booking__label"> YOUR ESCAPE BEGINS HERE </span>
+
+              <h2 class="booking__heading">
+                Book<br />
+                your stay.
+              </h2>
+            </div>
+
+            <p class="booking__description">
+              Choose your dates, your shelter, and the number of people joining you. We'll take care
+              of the rest.
+            </p>
+          </div>
+
+          <!-- BOOKING CARD -->
+          <div class="booking__card">
+            <div class="booking__card-top">
+              <span> RESERVATION REQUEST </span>
+
+              <span> NO. 07 </span>
+            </div>
+
+            <form class="booking__form" id="bookingForm">
+              <!-- DATES -->
+
+              <div class="booking__dates">
+                <div class="booking__field">
+                  <label for="checkIn"> CHECK IN </label>
+
+                  <div class="booking__input-wrap">
+                    <input type="date" id="checkIn" name="checkIn" required />
+
+                    <span class="booking__field-icon"> </span>
+                  </div>
+                </div>
+
+                <div class="booking__field">
+                  <label for="checkOut"> CHECK OUT </label>
+
+                  <div class="booking__input-wrap">
+                    <input type="date" id="checkOut" name="checkOut" required />
+
+                    <span class="booking__field-icon"> </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- GUESTS -->
+
+              <div class="booking__row">
+                <div class="booking__field">
+                  <label> GUESTS </label>
+                  <div class="booking__guests">
+                    <button type="button" data-guest-decrease aria-label="Decrease guests">
+                      −
+                    </button>
+
+                    <strong data-guest-count> 2 </strong>
+
+                    <button type="button" data-guest-increase aria-label="Increase guests">
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ACCOMMODATION -->
+                <div class="booking__field booking__accommodation">
+                  <label> ACCOMMODATION </label>
+                  <div class="booking__options">
+                    <button
+                      type="button"
+                      class="booking__option is-selected"
+                      data-accommodation="CABIN"
+                    >
+                      CABIN
+                    </button>
+
+                    <button type="button" class="booking__option" data-accommodation="HOUSE">
+                      HOUSE
+                    </button>
+
+                    <button type="button" class="booking__option" data-accommodation="FIELD">
+                      FIELD
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SUBMIT -->
+
+              <div class="booking__submit-area">
+                <button type="submit" class="booking__submit">
+                  <span> CHECK AVAILABILITY </span>
+
+                  <span class="booking__submit-arrow"> ↗ </span>
+                </button>
+              </div>
+
+              <p class="booking__error" id="bookingError" aria-live="polite"></p>
+            </form>
+            <!-- CONFIRMATION -->
+            <div class="booking__success" id="bookingSuccess" aria-live="polite">
+              <div class="booking__stamp">✓</div>
+
+              <span class="booking__success-label"> REQUEST RECEIVED </span>
+
+              <h3>
+                Your stay<br />
+                is on the way.
+              </h3>
+
+              <div class="booking__summary">
+                <div>
+                  <span>ACCOMMODATION</span>
+                  <strong data-confirm-stay> CABIN </strong>
+                </div>
+                <div>
+                  <span>DATES</span>
+                  <strong data-confirm-dates> — </strong>
+                </div>
+                <div>
+                  <span>GUESTS</span>
+                  <strong data-confirm-guests> 02 </strong>
+                </div>
+              </div>
+              <p>We'll be in touch shortly.</p>
+              <button type="button" class="booking__reset" id="bookingReset">
+                MAKE ANOTHER REQUEST
+              </button>
+            </div>
+          </div>
+
+          <footer class="booking__footer">
+            <span> ARRIVE QUIETLY </span>
+            <span> STAY A WHILE </span>
+            <span> LEAVE WITH STORIES </span>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ 08 — FOOTER ============ -->
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <!-- TOP -->
+        <div class="footer__top">
+          <div class="footer__eyebrow">08 / 08 — FIELD NOTES</div>
+
+          <div class="footer__mark">FN / 26</div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="footer__main">
+          <div class="footer__wordmark">
+            FIELD<br />
+            NOTES
+          </div>
+
+          <div class="footer__side">
+            <div class="footer__seal">
+              <span>FIELD</span>
+              <span>NOTES</span>
+              <b>↗</b>
+            </div>
+
+            <div class="footer__statement">
+              <span class="footer__label"> A PLACE TO DISAPPEAR </span>
+
+              <p>
+                A quiet place<br />
+                somewhere beyond<br />
+                the city.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFORMATION STRIP -->
+        <div class="footer__info">
+          <div class="footer__info-block">
+            <span>LOCATION</span>
+
+            <strong> DEEP IN THE WILDERNESS </strong>
+          </div>
+
+          <div class="footer__info-block">
+            <span>OPEN SEASON</span>
+
+            <strong> ALL YEAR / BY RESERVATION </strong>
+          </div>
+
+          <div class="footer__info-block">
+            <span>CONTACT</span>
+
+            <strong> HELLO@FIELDNOTES.COM </strong>
+          </div>
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer__bottom">
+          <div class="footer__socials">
+            <span class="footer__social-label"> FOLLOW THE TRAIL </span>
+
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="mailto:hello@fieldnotes.com" aria-label="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
+
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="#journal-preview"> JOURNAL </a>
+
+            <a href="#location"> LOCATION </a>
+
+            <a href="#booking"> BOOK </a>
+          </nav>
+
+          <p class="footer__copy">© 2026 FIELD NOTES</p>
+        </div>
+
+        <!-- HORIZON -->
+        <div class="footer__horizon">
+          <span class="footer__horizon-line"></span>
+
+          <span class="footer__horizon-sun"></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
