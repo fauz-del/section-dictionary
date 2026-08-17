@@ -3078,7 +3078,7 @@ MOBILE ========================================================= */
 08 — FOOTER ========================================================= */
 .footer {
   position: relative;
-  min-height: 100vh;
+  
   overflow: hidden;
   background: var(--color-paper);
   color: var(--color-ink);
@@ -3090,7 +3090,7 @@ INNER ========================================================= */
   position: relative;
   z-index: 2;
   width: min(1400px, 100%);
-  min-height: 100vh;
+
   margin: 0 auto;
   padding: 2.5rem var(--gutter) 2rem;
   display: flex;
