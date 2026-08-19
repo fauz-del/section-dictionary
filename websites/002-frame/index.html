@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRAME / 24 — Independent Film Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <span class="mark">FRAME<span class="accent">/24</span></span>
+  <nav class="site-nav">
+    <a href="#programme">Programme</a>
+    <a href="#festival">Festival</a>
+    <a href="#tickets">Tickets</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+
+  <div class="hero-content">
+    <p class="eyebrow">AN INDEPENDENT FILM FESTIVAL</p>
+    <h1 class="hero-title">
+      <span class="line">FOUR</span>
+      <span class="line">DAYS.</span>
+      <span class="line accent-line">TWENTY-FOUR</span>
+      <span class="line">FILMS.</span>
+    </h1>
+    <div class="hero-meta">
+      <span class="dates">14—17 OCT 2026</span>
+      <a href="#programme" class="cta">VIEW PROGRAM <span class="arrow">→</span></a>
+    </div>
+  </div>
+
+  <div class="filmstrip-wrap" aria-hidden="true">
+    <div class="filmstrip" id="filmstrip">
+
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="assets/hero/hero-film-01.jpg" alt="">
+          <div class="tag"><span class="fr-num">FR.01</span><span class="fr-tc">00:00:04:12</span></div>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="assets/hero/hero-film-02.jpg" alt="">
+          <div class="tag"><span class="fr-num">FR.02</span><span class="fr-tc">00:00:09:03</span></div>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="assets/hero/hero-film-03.jpg" alt="">
+          <div class="tag"><span class="fr-num">FR.03</span><span class="fr-tc">00:00:14:20</span></div>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="assets/hero/hero-film-04.jpg" alt="">
+          <div class="tag"><span class="fr-num">FR.04</span><span class="fr-tc">00:00:18:07</span></div>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="assets/hero/hero-film-05.jpg" alt="">
+          <div class="tag"><span class="fr-num">FR.05</span><span class="fr-tc">00:00:23:15</span></div>
+        </div>
+      </div>
+
+      <!-- duplicate set so the strip never runs out of frames while drifting on scroll -->
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="assets/hero/hero-film-01.jpg" alt="">
+          <div class="tag"><span class="fr-num">FR.06</span><span class="fr-tc">00:00:28:02</span></div>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="assets/hero/hero-film-02.jpg" alt="">
+          <div class="tag"><span class="fr-num">FR.07</span><span class="fr-tc">00:00:33:19</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>SCROLL</span>
+    <span class="scroll-line"></span>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

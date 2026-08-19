@@ -1,0 +1,780 @@
+/* =========================================================
+   FRAME / 24
+   Independent Film Festival
+   Hero — Cinematic Editorial / Swiss Modernist
+   Filmstrip hero
+   ========================================================= */
+
+
+/* =========================================================
+   01. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: #f1f0ec;
+  color: #111111;
+  font-family: "Archivo", sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   02. ROOT / DESIGN TOKENS
+   ========================================================= */
+
+:root {
+  --paper: #f1f0ec;
+  --paper-dark: #e5e3dd;
+
+  --ink: #111111;
+  --muted: #686762;
+
+  --accent: #ff4b22;
+  --line: rgba(17, 17, 17, 0.18);
+
+  --header-height: 76px;
+  --strip-height: clamp(190px, 26vw, 320px);
+
+  --display: "Archivo", sans-serif;
+  --mono: "Space Mono", monospace;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   03. BODY GRAIN
+   ========================================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+
+  opacity: 0.045;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+
+  mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   04. HEADER
+   ========================================================= */
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: var(--header-height);
+
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4vw;
+
+  color: var(--ink);
+}
+
+.mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.08em;
+
+  font-family: var(--display);
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+
+  line-height: 1;
+}
+
+.mark .accent {
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.site-nav a {
+  position: relative;
+  padding: 0.5rem 0;
+
+  transition:
+    color 300ms ease,
+    opacity 300ms ease;
+}
+
+.site-nav a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--accent);
+
+  transition: width 400ms var(--ease);
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.site-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   05. HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100svh;
+  height: 100svh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: var(--paper);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   06. HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+
+  width: min(60vw, 900px);
+
+  padding:
+    calc(var(--header-height) + 9vh)
+    4vw
+    0;
+}
+
+
+/* =========================================================
+   07. EYEBROW
+   ========================================================= */
+
+.eyebrow {
+  margin-bottom: clamp(1.2rem, 2vw, 2rem);
+
+  font-family: var(--mono);
+  font-size: clamp(0.55rem, 0.7vw, 0.72rem);
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--muted);
+}
+
+.eyebrow::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  margin-right: 0.65rem;
+
+  background: var(--accent);
+
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   08. HERO TITLE
+   ========================================================= */
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+
+  width: max-content;
+
+  font-family: var(--display);
+  font-size: clamp(4rem, 8.5vw, 9rem);
+  font-weight: 900;
+
+  line-height: 0.79;
+
+  letter-spacing: -0.085em;
+
+  text-transform: uppercase;
+}
+
+.hero-title .line {
+  display: block;
+
+  transform-origin: left center;
+}
+
+.hero-title .line:nth-child(2) {
+  margin-left: 0.04em;
+}
+
+.hero-title .accent-line {
+  color: var(--accent);
+
+  margin-left: 0.32em;
+
+  font-size: 0.72em;
+
+  line-height: 0.95;
+}
+
+.hero-title .line:nth-child(4) {
+  margin-left: 0.08em;
+}
+
+
+/* =========================================================
+   09. HERO META
+   ========================================================= */
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+
+  font-family: var(--mono);
+}
+
+.dates {
+  font-size: clamp(0.65rem, 0.8vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.cta {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding-bottom: 0.45rem;
+
+  font-family: var(--mono);
+  font-size: clamp(0.62rem, 0.75vw, 0.75rem);
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  transition:
+    color 300ms ease,
+    gap 400ms var(--ease);
+}
+
+.cta::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background: var(--ink);
+
+  transform-origin: left;
+
+  transition: transform 500ms var(--ease);
+}
+
+.cta:hover {
+  color: var(--accent);
+  gap: 1.4rem;
+}
+
+.cta:hover::after {
+  background: var(--accent);
+  transform: scaleX(0.7);
+}
+
+.arrow {
+  font-size: 1.1rem;
+  line-height: 0.5;
+
+  transition: transform 400ms var(--ease);
+}
+
+.cta:hover .arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   10. FILMSTRIP
+   ========================================================= */
+
+.filmstrip-wrap {
+  position: relative;
+
+  margin-top: auto;
+
+  width: 100%;
+  height: var(--strip-height);
+
+  overflow: hidden;
+
+  z-index: 5;
+}
+
+/* Sprocket rail — top */
+.filmstrip-wrap::before,
+.filmstrip-wrap::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 10px;
+
+  z-index: 6;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(17, 17, 17, 0.4) 2px,
+    transparent 2.5px
+  );
+  background-size: 22px 100%;
+  background-repeat: repeat-x;
+  background-position: 4vw center;
+
+  pointer-events: none;
+}
+
+.filmstrip-wrap::before {
+  top: 0;
+}
+
+.filmstrip-wrap::after {
+  bottom: 0;
+}
+
+.filmstrip {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 18px);
+
+  width: max-content;
+  height: 100%;
+
+  padding: 14px 4vw;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   11. FRAME
+   ========================================================= */
+
+.frame {
+  flex: 0 0 auto;
+
+  width: clamp(190px, 19vw, 320px);
+  aspect-ratio: 1.5 / 1;
+}
+
+.frame-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #1b1b1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 1px 0 rgba(17, 17, 17, 0.15),
+    0 20px 50px rgba(17, 17, 17, 0.1);
+
+  transition:
+    transform 500ms var(--ease),
+    box-shadow 400ms ease;
+}
+
+.frame-inner img {
+  filter: saturate(0.82) contrast(1.03);
+  transform: scale(1.015);
+
+  transition:
+    transform 900ms var(--ease),
+    filter 600ms ease;
+}
+
+.frame-inner::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.tag {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.6rem 0.7rem;
+
+  color: #ffffff;
+
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  line-height: 1;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.fr-num {
+  font-weight: 700;
+}
+
+.fr-tc {
+  opacity: 0.7;
+}
+
+.frame:hover .frame-inner {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(17, 17, 17, 0.18);
+}
+
+.frame:hover .frame-inner img {
+  transform: scale(1.06);
+  filter: saturate(1) contrast(1.05);
+}
+
+
+/* =========================================================
+   12. HERO SCROLL INDICATOR + REGISTRATION MARK
+   ========================================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 4vw;
+  bottom: calc(var(--strip-height) + 1.4vh);
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+
+  color: var(--muted);
+}
+
+.scroll-line {
+  position: relative;
+
+  display: block;
+
+  width: 45px;
+  height: 1px;
+
+  background: var(--line);
+
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 35%;
+  height: 100%;
+
+  background: var(--ink);
+
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.hero::after {
+  content: "01 / 06";
+
+  position: absolute;
+
+  right: 4vw;
+  bottom: calc(var(--strip-height) + 1.4vh);
+
+  z-index: 20;
+
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   13. LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1500px) {
+
+  .hero-content {
+    width: min(52vw, 950px);
+  }
+
+  .hero-title {
+    font-size: clamp(6rem, 8.2vw, 10rem);
+  }
+}
+
+
+/* =========================================================
+   14. TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .site-header {
+    padding-inline: 5vw;
+  }
+
+  .site-nav {
+    gap: 1.5rem;
+  }
+
+  .hero-content {
+    width: 82vw;
+    padding-top: calc(var(--header-height) + 6vh);
+  }
+
+  .hero-title {
+    font-size: clamp(4.2rem, 9vw, 7rem);
+  }
+
+  :root {
+    --strip-height: clamp(170px, 30vw, 260px);
+  }
+}
+
+
+/* =========================================================
+   15. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  :root {
+    --header-height: 64px;
+    --strip-height: clamp(150px, 42vw, 220px);
+  }
+
+  .site-header {
+    height: var(--header-height);
+    padding-inline: 6vw;
+  }
+
+  .site-nav {
+    gap: 1rem;
+    font-size: 0.53rem;
+  }
+
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding:
+      calc(var(--header-height) + 6vh)
+      6vw
+      0;
+  }
+
+  .eyebrow {
+    margin-bottom: 1.5rem;
+    font-size: 0.55rem;
+  }
+
+  .hero-title {
+    width: 100%;
+    font-size: clamp(3.2rem, 15vw, 5.5rem);
+    line-height: 0.8;
+    letter-spacing: -0.09em;
+  }
+
+  .hero-title .accent-line {
+    margin-left: 0.12em;
+    font-size: 0.7em;
+  }
+
+  .hero-title .line:nth-child(4) {
+    margin-left: 0.04em;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .dates {
+    font-size: 0.62rem;
+  }
+
+  .cta {
+    font-size: 0.6rem;
+  }
+
+  .filmstrip-wrap {
+    margin-top: 2.2rem;
+  }
+
+  .frame {
+    width: clamp(150px, 46vw, 220px);
+  }
+
+  .tag {
+    padding: 0.5rem;
+    font-size: 0.45rem;
+  }
+
+  .hero-scroll,
+  .hero::after {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   16. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
