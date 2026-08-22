@@ -60,12 +60,7 @@ body::before {
     url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
 }
-/* =========================================================
-   04. HEADER
-   ========================================================= */
-/* =========================================================
-   26. GLOBAL FILM-STRIP NAVIGATION BAR
-   ========================================================= */
+
 .filmstrip-nav {
   position: fixed;
   top: auto;
@@ -115,10 +110,9 @@ body::before {
   text-transform: uppercase;
 }
 
-/* Horizontal Indicator Line tracking scroll position */
 .nav-indicator {
   position: absolute;
-  top: -15px; /* Aligns with border-top line gap */
+  top: -15px;
   left: 0;
   width: 0%;
   height: 2px;
@@ -130,23 +124,17 @@ body::before {
   color: var(--accent);
 }
 
-
 .site-header {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: var(--header-height);
-
   z-index: 100;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 4vw;
-
   color: var(--ink);
 }
 
@@ -154,12 +142,10 @@ body::before {
   display: inline-flex;
   align-items: baseline;
   gap: 0.08em;
-
   font-family: var(--display);
   font-size: clamp(1rem, 1.5vw, 1.35rem);
   font-weight: 900;
   letter-spacing: -0.06em;
-
   line-height: 1;
 }
 
@@ -171,7 +157,6 @@ body::before {
   display: flex;
   align-items: center;
   gap: clamp(1.5rem, 3vw, 3.5rem);
-
   font-family: var(--mono);
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -181,7 +166,6 @@ body::before {
 .site-nav a {
   position: relative;
   padding: 0.5rem 0;
-
   transition:
     color 300ms ease,
     opacity 300ms ease;
@@ -189,16 +173,12 @@ body::before {
 
 .site-nav a::after {
   content: "";
-
   position: absolute;
   left: 0;
   bottom: 0;
-
   width: 0;
   height: 1px;
-
   background: var(--accent);
-
   transition: width 400ms var(--ease);
 }
 
@@ -210,46 +190,31 @@ body::before {
   width: 100%;
 }
 
-
 /* =========================================================
    05. HERO
    ========================================================= */
 
 .hero {
   position: relative;
-
-  min-height: 100svh;
-  height: 100svh;
-
+  min-height: 60svh;
+  height: 60svh;
   overflow: hidden;
-
   isolation: isolate;
-
   background: var(--paper);
-
   display: flex;
   flex-direction: column;
 }
 
-
-/* =========================================================
-   06. HERO CONTENT
-   ========================================================= */
-
-/* =========================================================
-   HERO GRID LAYOUT & TECHNICAL METADATA TAGS
-   ========================================================= */
-
 .hero-content {
   position: relative;
   z-index: 10;
-  width: 100%; /* Expand to full width to let the grid breathe */
+  width: 100%; 
   padding: calc(var(--header-height) + 7vh) 4vw 0;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr minmax(220px, 240px); /* Asymmetrical column split */
+  grid-template-columns: 1fr minmax(220px, 240px);
   gap: 4vw;
   align-items: start;
 }
@@ -259,15 +224,14 @@ body::before {
   flex-direction: column;
 }
 
-/* Technical Meta Tag Sidebar Column */
 .hero-tag-column {
   display: flex;
   flex-direction: column;
-  gap: 1px; /* Creates sharp grid-line dividers using background colors */
+  gap: 1px; 
   background: var(--line);
   border: 1px solid var(--line);
   padding: 1px;
-  margin-top: calc(clamp(1.2rem, 2vw, 2rem) + 4px); /* Line up exactly with the title baseline */
+  margin-top: calc(clamp(1.2rem, 2vw, 2rem) + 4px); 
 }
 
 .tech-tag {
@@ -292,7 +256,6 @@ body::before {
   text-transform: uppercase;
 }
 
-/* Accent Highlight Tag to break monochrome rhythm */
 .tech-tag.is-accent {
   background: var(--ink);
 }
@@ -305,19 +268,14 @@ body::before {
   color: var(--paper);
 }
 
-
-/* =========================================================
-   RESPONSIVE LAYOUT ADJUSTMENTS FOR TAG GRID
-   ========================================================= */
-
 @media (max-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1fr; /* Drop side column down to keep text clean */
+    grid-template-columns: 1fr; 
     gap: 3rem;
   }
-  
+
   .hero-tag-column {
-    flex-direction: row; /* Turn into a horizontal metadata row on tablets */
+    flex-direction: row; 
     flex-wrap: wrap;
     background: transparent;
     border: none;
@@ -335,74 +293,48 @@ body::before {
 
 @media (max-width: 700px) {
   .tech-tag {
-    flex: 1 1 calc(50% - 0.75rem); /* Splitting grid layout down to 2 columns on mobile screens */
+    flex: 1 1 calc(50% - 0.75rem);
   }
-  
-  /* Hide lowest priority tag element to keep mobile presentation short */
+
   .tech-tag.spec-tag {
     display: none;
   }
 }
 
-
-
-/* =========================================================
-   07. EYEBROW
-   ========================================================= */
-
 .eyebrow {
   margin-bottom: clamp(1.2rem, 2vw, 2rem);
-
   font-family: var(--mono);
   font-size: clamp(0.55rem, 0.7vw, 0.72rem);
   font-weight: 700;
-
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   color: var(--muted);
 }
 
 .eyebrow::before {
   content: "";
-
   display: inline-block;
-
   width: 8px;
   height: 8px;
-
   margin-right: 0.65rem;
-
   background: var(--accent);
-
   vertical-align: middle;
 }
-
-
-/* =========================================================
-   08. HERO TITLE
-   ========================================================= */
 
 .hero-title {
   display: flex;
   flex-direction: column;
-
   width: max-content;
-
   font-family: var(--display);
   font-size: clamp(4rem, 8.5vw, 9rem);
   font-weight: 900;
-
   line-height: 0.79;
-
   letter-spacing: -0.085em;
-
   text-transform: uppercase;
 }
 
 .hero-title .line {
   display: block;
-
   transform-origin: left center;
 }
 
@@ -412,22 +344,14 @@ body::before {
 
 .hero-title .accent-line {
   color: var(--accent);
-
   margin-left: 0.32em;
-
   font-size: 0.72em;
-
   line-height: 0.95;
 }
 
 .hero-title .line:nth-child(4) {
   margin-left: 0.08em;
 }
-
-
-/* =========================================================
-   09. HERO META
-   ========================================================= */
 
 .hero-meta {
   display: flex;
@@ -504,11 +428,6 @@ body::before {
   transform: translateX(4px);
 }
 
-
-/* =========================================================
-   10. FILMSTRIP
-   ========================================================= */
-
 .filmstrip-wrap {
   position: relative;
 
@@ -568,7 +487,6 @@ body::before {
   will-change: transform;
 }
 
-
 /* =========================================================
    11. FRAME
    ========================================================= */
@@ -582,20 +500,14 @@ body::before {
 
 .frame-inner {
   position: relative;
-
   width: 100%;
   height: 100%;
-
   overflow: hidden;
-
   background: #1b1b1b;
-
   border: 1px solid rgba(255, 255, 255, 0.75);
-
   box-shadow:
     0 1px 0 rgba(17, 17, 17, 0.15),
     0 20px 50px rgba(17, 17, 17, 0.1);
-
   transition:
     transform 500ms var(--ease),
     box-shadow 400ms ease;
@@ -673,7 +585,6 @@ body::before {
   filter: saturate(1) contrast(1.05);
 }
 
-
 /* =========================================================
    12. HERO SCROLL INDICATOR + REGISTRATION MARK
    ========================================================= */
@@ -739,7 +650,7 @@ body::before {
 }
 
 .hero::after {
-  content: "01 / 06";
+  content: "01 / 05";
 
   position: absolute;
 
@@ -755,7 +666,6 @@ body::before {
   color: var(--muted);
 }
 
-
 /* =========================================================
    13. LARGE DESKTOP
    ========================================================= */
@@ -770,7 +680,6 @@ body::before {
     font-size: clamp(6rem, 8.2vw, 10rem);
   }
 }
-
 
 /* =========================================================
    14. TABLET
@@ -799,7 +708,6 @@ body::before {
     --strip-height: clamp(170px, 30vw, 260px);
   }
 }
-
 
 /* =========================================================
    15. MOBILE
@@ -891,7 +799,6 @@ body::before {
   }
 }
 
-
 /* =========================================================
    16. REDUCED MOTION
    ========================================================= */
@@ -910,7 +817,6 @@ body::before {
     transition-duration: 0.01ms !important;
   }
 }
-
 
 /* =========================================================
    17. FEATURED FILM
@@ -943,7 +849,6 @@ body::before {
   color: var(--muted);
 }
 
-
 /* Grid */
 
 .featured-grid {
@@ -955,7 +860,6 @@ body::before {
 
   align-items: start;
 }
-
 
 /* =========================================================
    18. POSTER
@@ -1032,7 +936,6 @@ body::before {
 
   color: #ffffff;
 }
-
 
 /* Info block layered on the poster (mobile-first: static; desktop hover-reveal) */
 
@@ -1111,7 +1014,6 @@ body::before {
   width: max-content;
 }
 
-
 /* =========================================================
    19. DETAIL IMAGE (accent, non-interactive)
    ========================================================= */
@@ -1136,7 +1038,6 @@ body::before {
 .featured-detail img {
   filter: saturate(0.75) contrast(1.05);
 }
-
 
 /* =========================================================
    20. HOVER-REVEAL BEHAVIOUR (desktop only)
@@ -1207,7 +1108,6 @@ body::before {
   }
 }
 
-
 /* =========================================================
    21. TABLET / MOBILE
    ========================================================= */
@@ -1268,7 +1168,6 @@ body::before {
 .programme-head .eyebrow {
   margin-bottom: 0;
 }
-
 
 /* Day tabs */
 
@@ -1331,7 +1230,6 @@ body::before {
   transform: scaleX(1);
 }
 
-
 /* Body layout */
 
 .programme-body {
@@ -1341,7 +1239,6 @@ body::before {
 
   align-items: start;
 }
-
 
 /* =========================================================
    23. PROGRAMME LIST / ROWS
@@ -1440,7 +1337,6 @@ body::before {
   min-width: 3.5rem;
 }
 
-
 /* =========================================================
    24. PROGRAMME IMAGE PANEL
    ========================================================= */
@@ -1498,7 +1394,6 @@ body::before {
   opacity: 1;
   transform: scale(1);
 }
-
 
 /* =========================================================
    25. TABLET / MOBILE
@@ -1641,7 +1536,6 @@ body::before {
   margin-right: 4px;
 }
 
-
 /* =========================================================
    28. TICKETS STRUCTURAL GRID
    ========================================================= */
@@ -1713,7 +1607,6 @@ body::before {
   margin-top: auto;
   width: max-content;
 }
-
 
 /* =========================================================
    29. MEDIA QUERIES (RESPONSIVE ALIGNMENTS)
@@ -1846,7 +1739,6 @@ body::before {
   letter-spacing: 0.04em;
   color: rgba(241, 240, 236, 0.35);
 }
-
 
 /* =========================================================
    31. FOOTER RESPONSIVE ADJUSTMENTS
