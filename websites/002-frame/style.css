@@ -1,15 +1,3 @@
-/* =========================================================
-   FRAME / 24
-   Independent Film Festival
-   Hero — Cinematic Editorial / Swiss Modernist
-   Filmstrip hero
-   ========================================================= */
-
-
-/* =========================================================
-   01. RESET
-   ========================================================= */
-
 *,
 *::before,
 *::after {
@@ -47,34 +35,19 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
-/* =========================================================
-   02. ROOT / DESIGN TOKENS
-   ========================================================= */
-
 :root {
   --paper: #f1f0ec;
   --paper-dark: #e5e3dd;
-
   --ink: #111111;
   --muted: #686762;
-
   --accent: #ff4b22;
   --line: rgba(17, 17, 17, 0.18);
-
   --header-height: 76px;
   --strip-height: clamp(190px, 26vw, 320px);
-
   --display: "Archivo", sans-serif;
   --mono: "Space Mono", monospace;
-
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-
-/* =========================================================
-   03. BODY GRAIN
-   ========================================================= */
 
 body::before {
   content: "";
@@ -82,19 +55,81 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-
   opacity: 0.045;
-
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
-
   mix-blend-mode: multiply;
 }
-
-
 /* =========================================================
    04. HEADER
    ========================================================= */
+/* =========================================================
+   26. GLOBAL FILM-STRIP NAVIGATION BAR
+   ========================================================= */
+.filmstrip-nav {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  padding: 0 4vw;
+}
+
+.nav-track {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-nodes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav-node a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--mono);
+  color: var(--muted);
+  transition: color 300ms ease;
+}
+
+.node-idx {
+  font-size: 0.55rem;
+  font-weight: 700;
+}
+
+.node-lbl {
+  font-size: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Horizontal Indicator Line tracking scroll position */
+.nav-indicator {
+  position: absolute;
+  top: -15px; /* Aligns with border-top line gap */
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 150ms linear;
+}
+
+.nav-node.is-active a {
+  color: var(--accent);
+}
+
 
 .site-header {
   position: absolute;
@@ -201,17 +236,114 @@ body::before {
    06. HERO CONTENT
    ========================================================= */
 
+/* =========================================================
+   HERO GRID LAYOUT & TECHNICAL METADATA TAGS
+   ========================================================= */
+
 .hero-content {
   position: relative;
   z-index: 10;
-
-  width: min(60vw, 900px);
-
-  padding:
-    calc(var(--header-height) + 9vh)
-    4vw
-    0;
+  width: 100%; /* Expand to full width to let the grid breathe */
+  padding: calc(var(--header-height) + 7vh) 4vw 0;
 }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 240px); /* Asymmetrical column split */
+  gap: 4vw;
+  align-items: start;
+}
+
+.hero-main-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Technical Meta Tag Sidebar Column */
+.hero-tag-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1px; /* Creates sharp grid-line dividers using background colors */
+  background: var(--line);
+  border: 1px solid var(--line);
+  padding: 1px;
+  margin-top: calc(clamp(1.2rem, 2vw, 2rem) + 4px); /* Line up exactly with the title baseline */
+}
+
+.tech-tag {
+  background: var(--paper);
+  padding: 0.85rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}
+
+.tech-tag .tag-lbl {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.tech-tag .tag-val {
+  color: var(--ink);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Accent Highlight Tag to break monochrome rhythm */
+.tech-tag.is-accent {
+  background: var(--ink);
+}
+
+.tech-tag.is-accent .tag-lbl {
+  color: var(--accent);
+}
+
+.tech-tag.is-accent .tag-val {
+  color: var(--paper);
+}
+
+
+/* =========================================================
+   RESPONSIVE LAYOUT ADJUSTMENTS FOR TAG GRID
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr; /* Drop side column down to keep text clean */
+    gap: 3rem;
+  }
+  
+  .hero-tag-column {
+    flex-direction: row; /* Turn into a horizontal metadata row on tablets */
+    flex-wrap: wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .tech-tag {
+    flex: 1 1 calc(33.33% - 0.75rem);
+    border: 1px solid var(--line);
+    padding: 0.65rem 0.85rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .tech-tag {
+    flex: 1 1 calc(50% - 0.75rem); /* Splitting grid layout down to 2 columns on mobile screens */
+  }
+  
+  /* Hide lowest priority tag element to keep mobile presentation short */
+  .tech-tag.spec-tag {
+    display: none;
+  }
+}
+
 
 
 /* =========================================================
@@ -776,5 +908,976 @@ body::before {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================================
+   17. FEATURED FILM
+   ========================================================= */
+
+.featured {
+  position: relative;
+
+  padding: clamp(4rem, 9vw, 8rem) 4vw;
+
+  background: var(--paper);
+}
+
+.featured-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.featured-head .eyebrow {
+  margin-bottom: 0;
+}
+
+.section-count {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+
+/* Grid */
+
+.featured-grid {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 34%);
+  gap: clamp(2rem, 4vw, 4rem);
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   18. POSTER
+   ========================================================= */
+
+.featured-poster {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  border-radius: 2px;
+}
+
+.featured-poster-inner {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 0.78 / 1;
+
+  overflow: hidden;
+
+  background: #1b1b1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 1px 0 rgba(17, 17, 17, 0.15),
+    0 30px 60px rgba(17, 17, 17, 0.1);
+}
+
+.featured-poster-inner img {
+  filter: saturate(0.82) contrast(1.03);
+  transform: scale(1.02);
+
+  transition:
+    transform 1100ms var(--ease),
+    filter 700ms ease;
+}
+
+.featured-poster-inner::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+
+  opacity: 0.55;
+
+  transition: opacity 500ms ease;
+}
+
+.featured-index {
+  position: absolute;
+
+  left: 1.25rem;
+  top: 1.25rem;
+
+  z-index: 3;
+
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+}
+
+
+/* Info block layered on the poster (mobile-first: static; desktop hover-reveal) */
+
+.featured-info {
+  position: relative;
+  z-index: 4;
+
+  margin-top: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.featured-title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 4.4vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+
+  text-transform: uppercase;
+}
+
+.featured-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+
+  font-family: var(--mono);
+}
+
+.meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-row dt {
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.meta-row dd {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.featured-screening {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+
+  font-family: var(--mono);
+}
+
+.screening-day {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.screening-time {
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+
+.featured-cta {
+  margin-top: 0.25rem;
+  width: max-content;
+}
+
+
+/* =========================================================
+   19. DETAIL IMAGE (accent, non-interactive)
+   ========================================================= */
+
+.featured-detail {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+
+  align-self: end;
+
+  overflow: hidden;
+
+  background: #1b1b1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  box-shadow: 0 20px 40px rgba(17, 17, 17, 0.1);
+}
+
+.featured-detail img {
+  filter: saturate(0.75) contrast(1.05);
+}
+
+
+/* =========================================================
+   20. HOVER-REVEAL BEHAVIOUR (desktop only)
+   ========================================================= */
+
+@media (hover: hover) and (min-width: 900px) {
+
+  .featured-info {
+    position: absolute;
+    inset: 0;
+
+    margin-top: 0;
+
+    justify-content: flex-end;
+
+    padding: 2.25rem;
+
+    color: #ffffff;
+
+    opacity: 0;
+    transform: translateY(14px);
+
+    transition:
+      opacity 500ms var(--ease),
+      transform 500ms var(--ease);
+  }
+
+  .meta-row dt {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .featured-screening {
+    border-top-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .screening-time {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .featured-cta {
+    color: #ffffff;
+  }
+
+  .featured-cta::after {
+    background: #ffffff;
+  }
+
+  .featured-poster:hover .featured-info,
+  .featured-poster:focus-visible .featured-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .featured-poster:hover .featured-poster-inner::after,
+  .featured-poster:focus-visible .featured-poster-inner::after {
+    opacity: 1;
+  }
+
+  .featured-poster:hover .featured-poster-inner img,
+  .featured-poster:focus-visible .featured-poster-inner img {
+    transform: scale(1.06);
+    filter: saturate(1) contrast(1.05);
+  }
+
+  /* keep index number always visible above the reveal */
+  .featured-index {
+    z-index: 5;
+  }
+}
+
+
+/* =========================================================
+   21. TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-detail {
+    max-width: 260px;
+    margin-left: auto;
+    margin-top: -3rem;
+    margin-right: 4vw;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .featured {
+    padding: 3.5rem 6vw;
+  }
+
+  .featured-poster-inner {
+    aspect-ratio: 0.9 / 1;
+  }
+
+  .featured-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-detail {
+    max-width: 180px;
+    margin-top: -2.5rem;
+    margin-right: 0;
+  }
+}
+
+/* =========================================================
+   22. PROGRAMME
+   ========================================================= */
+
+.programme {
+  padding: clamp(4rem, 9vw, 8rem) 4vw;
+
+  background: var(--paper-dark);
+}
+
+.programme-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.programme-head .eyebrow {
+  margin-bottom: 0;
+}
+
+
+/* Day tabs */
+
+.day-tabs {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 3rem);
+
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.day-tab {
+  position: relative;
+
+  background: none;
+  border: none;
+
+  padding: 0.4rem 0;
+
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+
+  color: var(--muted);
+  cursor: pointer;
+
+  transition: color 300ms ease;
+}
+
+.day-tab::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--accent);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 400ms var(--ease);
+}
+
+.day-tab:hover {
+  color: var(--ink);
+}
+
+.day-tab.is-active {
+  color: var(--ink);
+}
+
+.day-tab.is-active::after {
+  transform: scaleX(1);
+}
+
+
+/* Body layout */
+
+.programme-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 32%);
+  gap: clamp(2rem, 4vw, 4rem);
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   23. PROGRAMME LIST / ROWS
+   ========================================================= */
+
+.programme-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.prog-row {
+  display: none;
+
+  width: 100%;
+
+  align-items: baseline;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+
+  padding: 1.1rem 0.5rem;
+
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background 300ms ease,
+    padding-left 300ms var(--ease),
+    border-color 300ms ease;
+}
+
+.prog-row.is-visible {
+  display: flex;
+}
+
+.prog-row:hover {
+  background: rgba(17, 17, 17, 0.03);
+  padding-left: 1rem;
+}
+
+.prog-row.is-active {
+  background: rgba(255, 75, 34, 0.05);
+  border-color: var(--accent);
+  padding-left: 1rem;
+}
+
+.prog-index {
+  flex: 0 0 auto;
+
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+
+  transition: color 300ms ease;
+}
+
+.prog-row.is-active .prog-index {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.prog-time {
+  flex: 0 0 auto;
+
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  min-width: 3.2rem;
+}
+
+.prog-title {
+  flex: 1 1 auto;
+
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  line-height: 1.05;
+}
+
+.prog-runtime {
+  flex: 0 0 auto;
+
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+
+  text-align: right;
+  min-width: 3.5rem;
+}
+
+
+/* =========================================================
+   24. PROGRAMME IMAGE PANEL
+   ========================================================= */
+
+.programme-panel {
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+}
+
+.programme-panel-inner {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 0.82 / 1;
+
+  overflow: hidden;
+
+  background: #1b1b1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 1px 0 rgba(17, 17, 17, 0.15),
+    0 30px 60px rgba(17, 17, 17, 0.12);
+}
+
+.programme-panel-inner::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+}
+
+.programme-panel-inner img {
+  filter: saturate(0.85) contrast(1.03);
+
+  opacity: 0;
+  transform: scale(1.04);
+
+  transition:
+    opacity 450ms var(--ease),
+    transform 700ms var(--ease);
+}
+
+.programme-panel-inner img.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* =========================================================
+   25. TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .programme-body {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-panel {
+    position: relative;
+    top: auto;
+
+    order: -1;
+
+    max-width: 340px;
+    margin: 0 auto 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .programme {
+    padding: 3.5rem 6vw;
+  }
+
+  .day-tabs {
+    gap: 1.2rem;
+    overflow-x: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .day-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .day-tab {
+    font-size: 0.62rem;
+    white-space: nowrap;
+  }
+
+  .prog-row {
+    gap: 0.75rem;
+    padding: 0.9rem 0.25rem;
+  }
+
+  .prog-title {
+    font-size: 1rem;
+  }
+
+  .prog-time,
+  .prog-runtime {
+    font-size: 0.55rem;
+  }
+
+  .programme-panel {
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   27. ASYMMETRIC FESTIVAL STATEMENT
+   ========================================================= */
+
+.statement {
+  padding: clamp(4rem, 9vw, 8rem) 4vw;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.statement-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.statement-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.statement-title {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.statement-title .line {
+  display: block;
+}
+
+.statement-poster .poster-frame {
+  width: 100%;
+  aspect-ratio: 0.8 / 1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 20px 40px rgba(17, 17, 17, 0.08);
+}
+
+.statement-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.statement-copy p {
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.statement-manifesto-metrics {
+  display: flex;
+  gap: 2rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+.metric-item::before {
+  content: "■ ";
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+
+/* =========================================================
+   28. TICKETS STRUCTURAL GRID
+   ========================================================= */
+
+.tickets {
+  padding: clamp(4rem, 9vw, 8rem) 4vw calc(clamp(4rem, 9vw, 8rem) + 48px) 4vw;
+  background: var(--paper);
+}
+
+.tickets-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-left: 1px solid var(--line);
+}
+
+.ticket-card {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2.5rem;
+  border-right: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  transition: background 300ms ease;
+}
+
+.ticket-card.is-featured {
+  background: var(--paper-dark);
+  border-top: 2px solid var(--accent);
+}
+
+.ticket-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.ticket-type {
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.ticket-price {
+  font-family: var(--mono);
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.ticket-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 3.5rem;
+  flex-grow: 1;
+}
+
+.ticket-btn {
+  margin-top: auto;
+  width: max-content;
+}
+
+
+/* =========================================================
+   29. MEDIA QUERIES (RESPONSIVE ALIGNMENTS)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .statement-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .statement-poster {
+    max-width: 400px;
+  }
+  .tickets-grid {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+  .ticket-card {
+    border-left: 1px solid var(--line);
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .statement, .tickets {
+    padding-inline: 6vw;
+  }
+  .node-lbl {
+    display: none; /* Only index shows on tight mobile */
+  }
+}
+
+/* =========================================================
+   30. SITE FOOTER (CLOSING CREDITS GRID)
+   ========================================================= */
+
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(4rem, 7vw, 6rem) 4vw calc(clamp(4rem, 7vw, 6rem) + 48px) 4vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(2, minmax(0, 1fr)) 1.2fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.branding-col .mark {
+  color: var(--paper);
+  font-size: 1.5rem;
+}
+
+.footer-tagline {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: rgba(241, 240, 236, 0.6);
+}
+
+.footer-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: rgba(241, 240, 236, 0.4);
+  text-transform: uppercase;
+}
+
+.footer-links,
+.footer-meta-list {
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: rgba(241, 240, 236, 0.7);
+  transition: color 300ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-meta-list li {
+  color: rgba(241, 240, 236, 0.8);
+}
+
+.footer-meta-list span {
+  color: rgba(241, 240, 236, 0.35);
+  margin-right: 4px;
+}
+
+/* Atmospheric Image Block inside footer */
+.footer-image-frame {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  filter: grayscale(1) contrast(1.1) brightness(0.8);
+  opacity: 0.7;
+  transition: opacity 400ms ease, filter 400ms ease;
+}
+
+.footer-image-frame:hover {
+  opacity: 1;
+  filter: grayscale(0.5) contrast(1.05) brightness(0.9);
+}
+
+/* Bottom Closing Credits strip */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.04em;
+  color: rgba(241, 240, 236, 0.35);
+}
+
+
+/* =========================================================
+   31. FOOTER RESPONSIVE ADJUSTMENTS
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 2rem;
+  }
+  .image-col {
+    grid-column: span 2;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding-inline: 6vw;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .image-col {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 }

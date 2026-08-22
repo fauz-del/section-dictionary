@@ -10,6 +10,30 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- GLOBAL FILM-STRIP NAVIGATION PROGRESS BAR -->
+<nav class="filmstrip-nav" aria-label="Festival progress">
+  <div class="nav-track">
+    <div class="nav-indicator"></div>
+    <ul class="nav-nodes">
+      <li class="nav-node is-active" data-section="hero">
+        <a href="#hero"><span class="node-idx">01</span><span class="node-lbl">HERO</span></a>
+      </li>
+      <li class="nav-node" data-section="featured">
+        <a href="#featured"><span class="node-idx">02</span><span class="node-lbl">FEATURED</span></a>
+      </li>
+      <li class="nav-node" data-section="programme">
+        <a href="#programme"><span class="node-idx">03</span><span class="node-lbl">PROGRAMME</span></a>
+      </li>
+      <li class="nav-node" data-section="statement">
+        <a href="#statement"><span class="node-idx">04</span><span class="node-lbl">ABOUT</span></a>
+      </li>
+      <li class="nav-node" data-section="tickets">
+        <a href="#tickets"><span class="node-idx">05</span><span class="node-lbl">TICKETS</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
 <header class="site-header">
   <span class="mark">FRAME<span class="accent">/24</span></span>
@@ -23,18 +47,50 @@
 <section class="hero" id="hero">
 
   <div class="hero-content">
-    <p class="eyebrow">AN INDEPENDENT FILM FESTIVAL</p>
-    <h1 class="hero-title">
-      <span class="line">FOUR</span>
-      <span class="line">DAYS.</span>
-      <span class="line accent-line">TWENTY-FOUR</span>
-      <span class="line">FILMS.</span>
-    </h1>
-    <div class="hero-meta">
-      <span class="dates">14—17 OCT 2026</span>
-      <a href="#programme" class="cta">VIEW PROGRAM <span class="arrow">→</span></a>
+  <div class="hero-grid">
+    
+    <!-- LEFT COLUMN: AGGRESSIVE TYPOGRAPHY -->
+    <div class="hero-main-column">
+      <p class="eyebrow">AN INDEPENDENT FILM FESTIVAL</p>
+      <h1 class="hero-title">
+        <span class="line">FOUR</span>
+        <span class="line">DAYS.</span>
+        <span class="line accent-line">TWENTY-FOUR</span>
+        <span class="line">FILMS.</span>
+      </h1>
+      <div class="hero-meta">
+        <span class="dates">14—17 OCT 2026</span>
+        <a href="#programme" class="cta">VIEW PROGRAM <span class="arrow">→</span></a>
+      </div>
     </div>
+
+    <!-- RIGHT COLUMN: SWISS TECHNICAL META TAG GRID (Fills empty space) -->
+    <div class="hero-tag-column" aria-hidden="true">
+      <div class="tech-tag">
+        <span class="tag-lbl">LOC //</span>
+        <span class="tag-val">ONE CITY ARC</span>
+      </div>
+      <div class="tech-tag">
+        <span class="tag-lbl">FPS //</span>
+        <span class="tag-val">24.000 TRUE</span>
+      </div>
+      <div class="tech-tag">
+        <span class="tag-lbl">ASP //</span>
+        <span class="tag-val">1.5:1 STRIP</span>
+      </div>
+      <div class="tech-tag is-accent">
+        <span class="tag-lbl">CAT //</span>
+        <span class="tag-val">EXP • DOC • IND</span>
+      </div>
+      <div class="tech-tag spec-tag">
+        <span class="tag-lbl">SYS //</span>
+        <span class="tag-val">FRAME / 24 ED.</span>
+      </div>
+    </div>
+
   </div>
+</div>
+
 
   <div class="filmstrip-wrap" aria-hidden="true">
     <div class="filmstrip" id="filmstrip">
@@ -93,6 +149,282 @@
   </div>
 
 </section>
+<section class="featured" id="featured">
+
+  <div class="featured-head">
+    <p class="eyebrow">FEATURED</p>
+    <span class="section-count">02 / 06</span>
+  </div>
+
+  <div class="featured-grid">
+
+    <a href="#" class="featured-poster" tabindex="0">
+      <div class="featured-poster-inner">
+        <img src="assets/featured/after-the-rain.jpg" alt="After the Rain — film still">
+        <span class="featured-index">01</span>
+      </div>
+
+      <div class="featured-info">
+        <h2 class="featured-title">After the Rain</h2>
+
+        <dl class="featured-meta">
+          <div class="meta-row">
+            <dt>Director</dt>
+            <dd>Maya Okafor</dd>
+          </div>
+          <div class="meta-row">
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+          <div class="meta-row">
+            <dt>Genre</dt>
+            <dd>Documentary</dd>
+          </div>
+          <div class="meta-row">
+            <dt>Runtime</dt>
+            <dd>94 min</dd>
+          </div>
+        </dl>
+
+        <div class="featured-screening">
+          <span class="screening-day">FRI 14 OCT</span>
+          <span class="screening-time">20:15</span>
+        </div>
+
+        <span class="cta featured-cta">VIEW FILM <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <div class="featured-detail" aria-hidden="true">
+      <img src="assets/featured/featured-detail.jpg" alt="">
+    </div>
+
+  </div>
+
+</section>
+
+<section class="programme" id="programme">
+
+  <div class="programme-head">
+    <p class="eyebrow">PROGRAMME</p>
+    <span class="section-count">03 / 06</span>
+  </div>
+
+  <div class="day-tabs" role="tablist" aria-label="Festival days">
+    <button class="day-tab is-active" role="tab" aria-selected="true" data-day="fri">FRI 14</button>
+    <button class="day-tab" role="tab" aria-selected="false" data-day="sat">SAT 15</button>
+    <button class="day-tab" role="tab" aria-selected="false" data-day="sun">SUN 16</button>
+    <button class="day-tab" role="tab" aria-selected="false" data-day="mon">MON 17</button>
+  </div>
+
+  <div class="programme-body">
+
+    <div class="programme-list" id="programmeList">
+
+      <!-- FRI -->
+      <button class="prog-row is-active" data-day="fri" data-image="assets/programme/last-frame.jpg" aria-pressed="true">
+        <span class="prog-index">01</span>
+        <span class="prog-time">18:30</span>
+        <span class="prog-title">Last Frame</span>
+        <span class="prog-runtime">78 MIN</span>
+      </button>
+      <button class="prog-row" data-day="fri" data-image="assets/featured/after-the-rain.jpg" aria-pressed="false">
+        <span class="prog-index">02</span>
+        <span class="prog-time">20:15</span>
+        <span class="prog-title">After the Rain</span>
+        <span class="prog-runtime">94 MIN</span>
+      </button>
+      <button class="prog-row" data-day="fri" data-image="assets/programme/static.jpg" aria-pressed="false">
+        <span class="prog-index">03</span>
+        <span class="prog-time">22:30</span>
+        <span class="prog-title">Static</span>
+        <span class="prog-runtime">61 MIN</span>
+      </button>
+
+      <!-- SAT -->
+      <button class="prog-row" data-day="sat" data-image="assets/programme/between-stations.jpg" aria-pressed="false">
+        <span class="prog-index">01</span>
+        <span class="prog-time">17:00</span>
+        <span class="prog-title">Between Stations</span>
+        <span class="prog-runtime">82 MIN</span>
+      </button>
+      <button class="prog-row" data-day="sat" data-image="assets/programme/untitled-city.jpg" aria-pressed="false">
+        <span class="prog-index">02</span>
+        <span class="prog-time">19:30</span>
+        <span class="prog-title">Untitled City</span>
+        <span class="prog-runtime">105 MIN</span>
+      </button>
+      <button class="prog-row" data-day="sat" data-image="assets/programme/static.jpg" aria-pressed="false">
+        <span class="prog-index">03</span>
+        <span class="prog-time">21:45</span>
+        <span class="prog-title">Ghost Frequency</span>
+        <span class="prog-runtime">73 MIN</span>
+      </button>
+
+      <!-- SUN -->
+      <button class="prog-row" data-day="sun" data-image="assets/programme/last-frame.jpg" aria-pressed="false">
+        <span class="prog-index">01</span>
+        <span class="prog-time">16:00</span>
+        <span class="prog-title">Shorts Programme 01</span>
+        <span class="prog-runtime">70 MIN</span>
+      </button>
+      <button class="prog-row" data-day="sun" data-image="assets/programme/between-stations.jpg" aria-pressed="false">
+        <span class="prog-index">02</span>
+        <span class="prog-time">18:30</span>
+        <span class="prog-title">The Blue Room</span>
+        <span class="prog-runtime">88 MIN</span>
+      </button>
+      <button class="prog-row" data-day="sun" data-image="assets/programme/untitled-city.jpg" aria-pressed="false">
+        <span class="prog-index">03</span>
+        <span class="prog-time">21:00</span>
+        <span class="prog-title">After the Flood</span>
+        <span class="prog-runtime">91 MIN</span>
+      </button>
+
+      <!-- MON -->
+      <button class="prog-row" data-day="mon" data-image="assets/programme/static.jpg" aria-pressed="false">
+        <span class="prog-index">01</span>
+        <span class="prog-time">19:00</span>
+        <span class="prog-title">Ghost Frequency</span>
+        <span class="prog-runtime">73 MIN</span>
+      </button>
+      <button class="prog-row" data-day="mon" data-image="assets/featured/after-the-rain.jpg" aria-pressed="false">
+        <span class="prog-index">02</span>
+        <span class="prog-time">21:30</span>
+        <span class="prog-title">Closing Screening</span>
+        <span class="prog-runtime">94 MIN</span>
+      </button>
+
+    </div>
+
+    <div class="programme-panel">
+      <div class="programme-panel-inner">
+        <img id="programmeImage" src="assets/programme/last-frame.jpg" alt="Currently selected film still">
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- FESTIVAL STATEMENT SECTION -->
+<section id="statement" class="statement">
+  <div class="statement-head">
+    <span class="eyebrow">Festival Statement</span>
+    <span class="section-count">04 / 05</span>
+  </div>
+  
+  <div class="statement-grid">
+    <h2 class="statement-title">
+      <span class="line">CINEMA</span>
+      <span class="line">OUTSIDE</span>
+      <span class="line">THE FRAME.</span>
+    </h2>
+    
+    <div class="statement-poster">
+      <div class="poster-frame">
+        <img src="assets/festival/festival-projector.jpg" alt="Abstract projection frame shadow">
+      </div>
+    </div>
+    
+    <div class="statement-copy">
+      <p>FRAME / 24 brings together filmmakers working outside conventional cinema — stories that experiment with form, documentary, sound, and image.</p>
+      <div class="statement-manifesto-metrics">
+        <span class="metric-item">4 DAYS</span>
+        <span class="metric-item">24 FILMS</span>
+        <span class="metric-item">1 CITY</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKETS SECTION -->
+<section id="tickets" class="tickets">
+  <div class="tickets-head">
+    <span class="eyebrow">Passes & Access</span>
+    <span class="section-count">05 / 05</span>
+  </div>
+  
+  <div class="tickets-grid">
+    <!-- Tier 01 -->
+    <div class="ticket-card">
+      <div class="ticket-meta">
+        <span class="ticket-type">DAY PASS</span>
+        <span class="ticket-price">$25</span>
+      </div>
+      <p class="ticket-desc">Access to all screenings, panel discussions, and events for any single calendar festival day.</p>
+      <a href="#" class="cta ticket-btn">GET TICKETS <span class="arrow">→</span></a>
+    </div>
+
+    <!-- Tier 02 (Featured/Aggressive Accent) -->
+    <div class="ticket-card is-featured">
+      <div class="ticket-meta">
+        <span class="ticket-type">FULL FESTIVAL</span>
+        <span class="ticket-price">$70</span>
+      </div>
+      <p class="ticket-desc">Complete unhindered entry pass to all 24 film programs across the entire 4-day cycle.</p>
+      <a href="#" class="cta ticket-btn">GET TICKETS <span class="arrow">→</span></a>
+    </div>
+
+    <!-- Tier 03 -->
+    <div class="ticket-card">
+      <div class="ticket-meta">
+        <span class="ticket-type">STUDENT PASS</span>
+        <span class="ticket-price">$15</span>
+      </div>
+      <p class="ticket-desc">Valid academic student identification card required at box-office registration check counters.</p>
+      <a href="#" class="cta ticket-btn">GET TICKETS <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SITE FOOTER (CLOSING CREDITS) -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    
+    
+    <div class="footer-col branding-col">
+      <div class="mark">FRAME<span class="accent">/24</span></div>
+      <p class="footer-tagline">Independent Film Festival<br>Four Days. Twenty-Four Films. One City.</p>
+    </div>
+
+    <!-- Column 2: Quick Links Navigation -->
+    <div class="footer-col">
+      <h4 class="footer-label">INDEX</h4>
+      <ul class="footer-links">
+        <li><a href="#hero">01 // TOP</a></li>
+        <li><a href="#featured">02 // FEATURED</a></li>
+        <li><a href="#programme">03 // PROGRAMME</a></li>
+        <li><a href="#statement">04 // ABOUT</a></li>
+        <li><a href="#tickets">05 // TICKETS</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Technical Metadata / Credits -->
+    <div class="footer-col">
+      <h4 class="footer-label">SPECIFICATIONS</h4>
+      <ul class="footer-meta-list">
+        <li><span>RATE:</span> 24 FPS</li>
+        <li><span>FORMAT:</span> 35MM / DIGITAL ARCHIVE</li>
+        <li><span>LOCATION:</span> LAT. 40.7128° N</li>
+        <li><span>DESIGN SYSTEM:</span> SWISS MODERNIST V.2</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Atmospheric Asset Frame -->
+    <div class="footer-col image-col">
+      <div class="footer-image-frame">
+        <!-- Using your leftover festival asset here -->
+        <img src="assets/festival/festival-audience.jpg" alt="Cinematic festival venue atmosphere">
+      </div>
+    </div>
+
+  </div>
+  <!-- Bottom Closing Credits Bar -->
+  <div class="footer-bottom">
+    <p class="credits-left">© 2026 FRAME / 24. ALL RIGHTS RESERVED.</p>
+    <p class="credits-right">CINEMA OUTSIDE THE FRAME // DESIGN CHALLENGE 002</p>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
