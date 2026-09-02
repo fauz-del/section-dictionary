@@ -1,38 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap');
 
-
-/* =====================================================
-   DESIGN TOKENS
-===================================================== */
-
 :root {
   --coffee: #3F1D0E;
   --coffee-dark: #281108;
   --coffee-mid: #6B3820;
-
   --caramel: #A2663C;
   --caramel-light: #C58B5F;
-
   --cream: #E4CDB0;
   --milk: #E6E2D7;
   --foam: #F5F0E8;
   --paper: #FBF8F2;
-
   --matcha: #ABBF9B;
   --matcha-dark: #718463;
-
   --ink: #211712;
   --muted: #75685F;
-
   --white: #FFFFFF;
-
   --border: rgba(63, 29, 14, 0.14);
 }
-
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
   box-sizing: border-box;
@@ -51,40 +35,28 @@ body {
   line-height: 1.6;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
-
 .site-header {
   position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 50;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
+  width: calc(100% - 1rem);
+  max-width: 1700px;
   padding: 1rem 2rem;
-
+  background-color: var(--coffee-mid);
+  border: 1px solid rgba(44, 34, 30, 0.08);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: transparent;
 }
-
-
-/* Logo */
 
 .logo {
   display: inline-block;
-
   font-family: 'Lobster', cursive;
   font-size: 2rem;
-
   color: var(--foam);
-
   transform: skewX(-6deg);
 }
 
@@ -92,55 +64,39 @@ body {
   color: var(--caramel-light);
 }
 
-
-/* Navigation */
-
 .nav-list {
   display: flex;
   align-items: center;
-
   gap: 2rem;
-
   list-style: none;
 }
 
 .nav-item a {
   position: relative;
-
   color: var(--foam);
-
   text-decoration: none;
-
   font-size: 0.75rem;
   font-weight: 700;
-
   letter-spacing: 0.12em;
   text-transform: uppercase;
-
   transition: color 0.3s ease;
 }
 
 .nav-item a::after {
   content: '';
-
   position: absolute;
-
   left: 0;
   bottom: -5px;
-
   width: 100%;
   height: 1px;
-
   background: currentColor;
-
   transform: scaleX(0);
   transform-origin: right;
-
   transition: transform 0.3s ease;
 }
 
 .nav-item a:hover {
-  color: var(--caramel-light);
+  color: var(--coffee);
 }
 
 .nav-item a:hover::after {
@@ -148,175 +104,105 @@ body {
   transform-origin: left;
 }
 
-
-/* =====================================================
-   HERO SCROLL SYSTEM
-===================================================== */
-
 .hero-scroll {
   position: relative;
-
   height: 240vh;
-
-  background: var(--coffee-dark);
+  background: var(--caramel-light);
 }
 
 .hero-sticky {
   position: sticky;
-
   top: 0;
   width: 100%;
   height: 100vh;
-
   overflow: hidden;
-
   background: var(--coffee-dark);
 }
 
 .hero-media {
   position: absolute;
   inset: 0;
-
   overflow: hidden;
-
   background: var(--coffee-dark);
 }
 
-
-/* Dark cinematic layer */
 .hero-canvas {
   display: block;
-
   width: 100%;
   height: 100%;
-
   background: var(--coffee-dark);
 }
+
 .hero-overlay {
   position: absolute;
-
   inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(40, 17, 8, 0.35) 0%,
-      rgba(40, 17, 8, 0.08) 45%,
-      rgba(40, 17, 8, 0.65) 100%
-    );
+  background: linear-gradient(180deg, rgba(40, 17, 8, 0.35) 0%, rgba(40, 17, 8, 0.08) 45%, rgba(40, 17, 8, 0.65) 100%);
 }
-
-
-/* =====================================================
-   HERO CONTENT
-===================================================== */
 
 .hero-content {
   position: absolute;
-
   z-index: 5;
-
   left: clamp(1.5rem, 7vw, 7rem);
   bottom: clamp(5rem, 12vh, 9rem);
-
   max-width: 720px;
-
   color: var(--foam);
 }
 
-
-/* Eyebrow */
-
 .hero-eyebrow {
   margin-bottom: 1.5rem;
-
   font-size: 0.7rem;
   font-weight: 700;
-
   letter-spacing: 0.18em;
   text-transform: uppercase;
-
   color: var(--cream);
 }
 
-
-/* Main heading */
-
 .hero-content h1 {
   font-family: Georgia, serif;
-
   font-size: clamp(3.5rem, 7vw, 7rem);
-
   font-weight: 400;
-
   line-height: 0.92;
-
   letter-spacing: -0.045em;
 }
 
 .hero-content h1 span {
   display: block;
-
   font-style: italic;
-
   color: var(--cream);
 }
 
-
-/* Description */
-
 .hero-description {
   max-width: 420px;
-
   margin-top: 2rem;
-
   font-size: 1rem;
-
   line-height: 1.6;
-
   color: var(--foam);
 }
-
-
-/* CTA */
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
-
   gap: 1.25rem;
-
   margin-top: 2rem;
-
   padding: 0.9rem 1.25rem;
-
   background: var(--foam);
   color: var(--coffee);
-
   text-decoration: none;
-
   font-size: 0.75rem;
   font-weight: 700;
-
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .hero-cta span {
   font-size: 1.1rem;
-
   transition: transform 0.3s ease;
 }
 
 .hero-cta:hover {
   background: var(--caramel);
   color: var(--foam);
-
   transform: translateY(-2px);
 }
 
@@ -324,28 +210,16 @@ body {
   transform: translateX(4px);
 }
 
-
-/* =====================================================
-   SCROLL INDICATOR
-===================================================== */
-
 .hero-scroll-indicator {
   position: absolute;
-
   z-index: 6;
-
   right: clamp(1.5rem, 5vw, 5rem);
   bottom: 3rem;
-
   display: flex;
   align-items: center;
-
   gap: 0.75rem;
-
   color: var(--foam);
-
   font-size: 0.65rem;
-
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -353,95 +227,77 @@ body {
 .scroll-line {
   width: 45px;
   height: 1px;
-
   background: currentColor;
 }
-/* =====================================================
-   CAFÉ REVEAL
-===================================================== */
 
 .hero-reveal {
   position: absolute;
   z-index: 30;
-
   inset: 0;
-
   overflow: hidden;
-
   background: var(--coffee-dark);
-
   transform: translateY(100%);
-
   will-change: transform;
 }
 
 .hero-reveal img {
   position: absolute;
   inset: 0;
-
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center;
-
   transform: scale(1.08);
-
   will-change: transform;
 }
 
 .hero-reveal::after {
   content: '';
-
   position: absolute;
   z-index: 1;
-
   inset: 0;
-
   background: rgba(40, 17, 8, 0.28);
 }
 
 .hero-reveal-content {
   position: absolute;
   z-index: 2;
-
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
-
   color: var(--foam);
-
   text-align: center;
 }
 
-.hero-reveal-content p {
-  margin-bottom: 1rem;
+.hero-reveal-content .logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--coffee);
+  color: #f7f3ed;
+  font-family: 'Lobster', cursive;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
 
-  font-size: 0.7rem;
-  font-weight: 700;
-
-  letter-spacing: 0.2em;
+.hero-reveal-content .logo-badge i {
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
 .hero-reveal-content h2 {
   font-family: Georgia, serif;
-
   font-size: clamp(4rem, 9vw, 9rem);
-
   font-weight: 400;
   font-style: italic;
-
   line-height: 0.85;
 }
-/* =====================================================
-   RESPONSIVE
-===================================================== */
 
 @media (max-width: 768px) {
-
   .site-header {
     padding: 1rem 1.25rem;
   }
@@ -474,7 +330,6 @@ body {
 
   .hero-description {
     max-width: 330px;
-
     font-size: 0.9rem;
   }
 
@@ -484,174 +339,108 @@ body {
   }
 }
 
-/* =====================================================
-   PHILOSOPHY
-===================================================== */
 
 .philosophy {
   position: relative;
-
   min-height: 100vh;
-
-  padding: clamp(5rem, 10vw, 9rem)
-           clamp(1.25rem, 6vw, 6rem);
-
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem);
   background: var(--foam);
-
   overflow: hidden;
 }
-
-
-/* -------------------------------------
-   INNER
-------------------------------------- */
 
 .philosophy-inner {
   width: min(1400px, 100%);
   margin: 0 auto;
 }
 
-
-/* -------------------------------------
-   HEADER
-------------------------------------- */
-
 .philosophy-header {
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-bottom: clamp(3rem, 6vw, 6rem);
 }
 
 .section-label {
   display: inline-flex;
   align-items: center;
-
   font-size: 0.65rem;
   font-weight: 700;
-
   letter-spacing: 0.18em;
   text-transform: uppercase;
-
   color: var(--coffee);
 }
 
 .section-label::before {
   content: '';
-
   width: 28px;
   height: 1px;
-
   margin-right: 0.8rem;
-
   background: var(--caramel);
 }
 
-
-/* -------------------------------------
-   MAIN GRID
-------------------------------------- */
-
 .philosophy-main {
   display: grid;
-
-  grid-template-columns:
-    minmax(280px, 0.8fr)
-    minmax(350px, 1.2fr);
-
+  grid-template-columns: minmax(280px, 0.8fr) minmax(350px, 1.2fr);
   gap: clamp(3rem, 8vw, 9rem);
-
   align-items: center;
 }
 
-
-/* -------------------------------------
-   COPY
-------------------------------------- */
-
 .philosophy-copy {
   position: relative;
-
   padding-bottom: 2rem;
 }
 
 .philosophy-kicker {
   margin-bottom: 1.5rem;
-
   font-size: 0.7rem;
   font-weight: 700;
-
   letter-spacing: 0.15em;
   text-transform: uppercase;
-
   color: var(--caramel);
 }
 
 .philosophy-copy h2 {
   font-family: Georgia, serif;
-
   font-size: clamp(4rem, 8vw, 8rem);
-
   font-weight: 400;
-
   line-height: 0.82;
-
   letter-spacing: -0.055em;
-
   color: var(--coffee);
 }
 
 .philosophy-copy h2 span {
   display: block;
-
   padding-left: clamp(1rem, 4vw, 4rem);
-
   font-style: italic;
-
   color: var(--caramel);
 }
 
 .philosophy-text {
   max-width: 390px;
-
   margin-top: 2.5rem;
-
   font-size: 1rem;
-
   line-height: 1.75;
-
   color: var(--muted);
 }
 
 .philosophy-link {
   display: inline-flex;
   align-items: center;
-
   gap: 1rem;
-
   margin-top: 2rem;
-
   color: var(--coffee);
-
   text-decoration: none;
-
   font-size: 0.7rem;
   font-weight: 700;
-
   letter-spacing: 0.12em;
   text-transform: uppercase;
-
   border-bottom: 1px solid var(--coffee);
-
   padding-bottom: 0.5rem;
 }
 
 .philosophy-link span {
   font-size: 1rem;
-
   transition: transform 0.3s ease;
 }
 
@@ -659,60 +448,35 @@ body {
   transform: translate(4px, -4px);
 }
 
-
-/* -------------------------------------
-   IMAGE
-------------------------------------- */
-
 .philosophy-image-wrap {
   position: relative;
-
   padding-right: clamp(0rem, 4vw, 4rem);
 }
 
 .philosophy-image {
   position: relative;
-
   width: 100%;
-
   aspect-ratio: 4 / 5;
-
   overflow: hidden;
-
-  border-radius:
-    180px 180px 8px 8px;
-
+  border-radius: 180px 180px 8px 8px;
   background: var(--cream);
 }
 
 .philosophy-image::after {
   content: '';
-
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 55%,
-      rgba(40, 17, 8, 0.2)
-    );
-
+  background: linear-gradient(180deg, transparent 55%, rgba(40, 17, 8, 0.2));
   pointer-events: none;
 }
 
 .philosophy-image img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
   object-position: center;
-
   transform: scale(1.03);
-
   transition: transform 0.8s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -720,107 +484,65 @@ body {
   transform: scale(1.08);
 }
 
-
-/* Image caption */
-
 .image-note {
   display: block;
-
   margin-top: 0.8rem;
-
   font-size: 0.55rem;
   font-weight: 700;
-
   letter-spacing: 0.14em;
-
   color: var(--muted);
 }
 
-
-/* -------------------------------------
-   VALUES
-------------------------------------- */
-
 .philosophy-values {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 2rem;
-
   margin-top: clamp(5rem, 9vw, 9rem);
-
   padding-top: 2.5rem;
-
   border-top: 1px solid var(--border);
 }
 
 .value {
   display: grid;
-
   grid-template-columns: auto 1fr;
-
   gap: 1.25rem;
-
   align-items: start;
 }
 
 .value-stamp {
   position: relative;
-
   width: 58px;
   height: 58px;
-
   flex-shrink: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 1px solid var(--caramel);
-
   border-radius: 50%;
-
   color: var(--caramel);
-
   transform: rotate(-7deg);
-
-  transition:
-    transform 0.4s ease,
-    background-color 0.4s ease,
-    color 0.4s ease;
+  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
 }
 
 .value-stamp::before {
   content: '';
-
   position: absolute;
-
   inset: 4px;
-
   border: 1px dashed currentColor;
-
   border-radius: 50%;
 }
 
 .value-stamp i {
   position: relative;
-
   z-index: 1;
-
   font-size: 1rem;
 }
 
 .value:hover .value-stamp {
   transform: rotate(4deg) scale(1.08);
-
   background: var(--caramel);
-
   color: var(--foam);
 }
-
-
-/* Variations */
 
 .value-stamp--dark {
   border-color: var(--coffee);
@@ -840,168 +562,112 @@ body {
   background: var(--matcha-dark);
 }
 
-
-/* Value typography */
-
 .value-number {
   display: block;
-
   margin-bottom: 0.3rem;
-
   font-size: 0.55rem;
   font-weight: 700;
-
   letter-spacing: 0.15em;
-
   color: var(--caramel);
 }
 
 .value h3 {
   font-family: Georgia, serif;
-
   font-size: 1.5rem;
-
   font-weight: 400;
-
   text-transform: capitalize;
-
   color: var(--coffee);
 }
 
 .value p {
   max-width: 210px;
-
   margin-top: 0.4rem;
-
   font-size: 0.8rem;
-
   line-height: 1.5;
-
   color: var(--muted);
 }
 
-
-/* -------------------------------------
-   PHILOSOPHY STAMP
-------------------------------------- */
-
 .philosophy-stamp {
   position: absolute;
-
   right: 8%;
   top: -1rem;
-
   width: 72px;
   height: 72px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 1px solid var(--coffee);
-
   border-radius: 50%;
-
   color: var(--coffee);
-
   transform: rotate(12deg);
 }
 
 .philosophy-stamp::before {
   content: '';
-
   position: absolute;
-
   inset: 5px;
-
   border: 1px dashed var(--coffee);
-
   border-radius: 50%;
 }
 
 .philosophy-stamp i {
   position: relative;
-
   z-index: 1;
-
   font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
-  /* Philosophy */
+  .philosophy {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 
-.philosophy {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  .philosophy-main {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .philosophy-copy h2 {
+    font-size: clamp(4rem, 20vw, 7rem);
+  }
+
+  .philosophy-image-wrap {
+    padding-right: 0;
+  }
+
+  .philosophy-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .philosophy-values {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 5rem;
+  }
+
+  .philosophy-stamp {
+    right: 0;
+    top: -1rem;
+    width: 60px;
+    height: 60px;
+  }
 }
 
-.philosophy-main {
-  grid-template-columns: 1fr;
-
-  gap: 3.5rem;
-}
-
-.philosophy-copy h2 {
-  font-size: clamp(4rem, 20vw, 7rem);
-}
-
-.philosophy-image-wrap {
-  padding-right: 0;
-}
-
-.philosophy-image {
-  aspect-ratio: 4 / 5;
-}
-
-.philosophy-values {
-  grid-template-columns: 1fr;
-
-  gap: 2rem;
-
-  margin-top: 5rem;
-}
-
-.philosophy-stamp {
-  right: 0;
-  top: -1rem;
-
-  width: 60px;
-  height: 60px;
-}
-}
-
-
-/* =====================================================
-   COFFEE COLLECTION
-===================================================== */
 
 .menu {
   position: relative;
-
   min-height: 100vh;
-
-  padding: clamp(5rem, 9vw, 9rem)
-           clamp(1.25rem, 5vw, 5rem);
-
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.25rem, 5vw, 5rem);
   background: var(--paper);
-
   overflow: hidden;
 }
 
-
-/* =====================================================
-   MENU HEADING
-===================================================== */
-
 .menu-heading {
   max-width: 1400px;
-
   margin: 0 auto 3.5rem;
-
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   gap: 3rem;
 }
 
@@ -1011,90 +677,60 @@ body {
 
 .section-kicker {
   display: block;
-
   margin-bottom: 1.25rem;
-
   color: var(--matcha-dark);
-
   font-size: .68rem;
   font-weight: 700;
-
   letter-spacing: .2em;
   text-transform: uppercase;
 }
 
 .menu-heading h2 {
   color: var(--coffee-dark);
-
   font-family: Georgia, serif;
-
   font-size: clamp(2.8rem, 5vw, 5.5rem);
-
   font-weight: 400;
-
   line-height: .95;
-
   letter-spacing: -.045em;
 }
 
 .menu-heading h2 em {
   color: var(--caramel);
-
   font-style: italic;
 }
 
 .menu-heading-copy p {
   max-width: 500px;
-
   margin-top: 1.5rem;
-
   color: var(--muted);
-
   font-size: .95rem;
-
   line-height: 1.7;
 }
-
-
-/* Heading CTA */
 
 .menu-link {
   display: inline-flex;
   align-items: center;
-
   gap: .8rem;
-
   flex-shrink: 0;
-
   padding: .85rem 1.2rem;
-
   border-radius: 999px;
-
   background: var(--coffee-dark);
   color: var(--foam);
-
   text-decoration: none;
-
   font-size: .7rem;
   font-weight: 700;
-
   letter-spacing: .1em;
   text-transform: uppercase;
-
-  transition:
-    background .3s ease,
-    transform .3s ease;
+  transition: background .3s ease, transform .3s ease;
 }
 
 .menu-link span {
   font-size: 1rem;
-
   transition: transform .3s ease;
 }
 
 .menu-link:hover {
   background: var(--caramel);
-
   transform: translateY(-2px);
 }
 
@@ -1102,120 +738,64 @@ body {
   transform: translate(3px, -3px);
 }
 
-
-/* =====================================================
-   COLLECTION CONTAINER
-===================================================== */
-
 .coffee-collection {
   position: relative;
-
   display: grid;
-
   grid-template-columns: minmax(230px, 30%) 1fr;
-
   max-width: 1400px;
-
   min-height: 570px;
-
   margin: 0 auto;
-
   overflow: hidden;
-
   border-radius: 30px;
-
   background: var(--cream);
-
-  box-shadow:
-    0 25px 70px rgba(63, 29, 14, .12);
+  box-shadow: 0 25px 70px rgba(63, 29, 14, .12);
 }
-
-
-/* =====================================================
-   INTRO PANEL
-===================================================== */
 
 .collection-intro {
   position: relative;
-
   display: flex;
   flex-direction: column;
-
   padding: clamp(2rem, 4vw, 4rem);
-
   overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(171, 191, 155, .16),
-      transparent 35%
-    ),
-    var(--coffee-dark);
-
+  background: radial-gradient(circle at 100% 0%, rgba(171, 191, 155, .16), transparent 35%), var(--coffee-dark);
   color: var(--foam);
 }
 
-
-/* Decorative grain */
-
 .collection-intro::before {
   content: '';
-
   position: absolute;
-
   width: 300px;
   height: 300px;
-
   right: -130px;
   top: -130px;
-
   border: 1px solid rgba(197, 139, 95, .25);
-
   border-radius: 50%;
 }
 
 .collection-intro::after {
   content: '';
-
   position: absolute;
-
   width: 190px;
   height: 190px;
-
   right: -80px;
   top: -80px;
-
   border: 1px solid rgba(197, 139, 95, .18);
-
   border-radius: 50%;
 }
-
-
-/* Stamp */
 
 .collection-stamp {
   position: relative;
   z-index: 2;
-
   width: 58px;
   height: 58px;
-
   display: grid;
   place-items: center;
-
   margin-bottom: auto;
-
   border: 1px solid var(--caramel-light);
-
   border-radius: 50%;
-
   color: var(--caramel-light);
-
   font-size: 1.1rem;
-
   transform: rotate(-9deg);
-
   animation: stamp-float 4s ease-in-out infinite;
 }
 
@@ -1223,70 +803,50 @@ body {
   0%, 100% {
     transform: rotate(-9deg) translateY(0);
   }
-
   50% {
     transform: rotate(-5deg) translateY(-4px);
   }
 }
 
-
 .collection-label {
   position: relative;
   z-index: 2;
-
   margin-bottom: .75rem;
-
   color: var(--caramel-light);
-
   font-size: .65rem;
   font-weight: 700;
-
   letter-spacing: .2em;
 }
 
 .collection-intro h3 {
   position: relative;
   z-index: 2;
-
   font-family: Georgia, serif;
-
   font-size: clamp(3rem, 5vw, 5rem);
-
   font-weight: 400;
-
   line-height: .85;
 }
 
 .collection-intro h3 em {
   color: var(--cream);
-
   font-style: italic;
 }
 
 .collection-intro p {
   position: relative;
   z-index: 2;
-
   max-width: 240px;
-
   margin-top: 1.5rem;
-
   color: rgba(245, 240, 232, .7);
-
   font-size: .85rem;
 }
-
-
-/* Collection footer */
 
 .collection-footer {
   position: relative;
   z-index: 2;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-top: 2rem;
 }
 
@@ -1298,56 +858,40 @@ body {
 .collection-dots span {
   width: 6px;
   height: 6px;
-
   border-radius: 50%;
-
   background: rgba(245, 240, 232, .3);
 }
 
 .collection-dots span.active {
   background: var(--caramel-light);
-
   transform: scale(1.35);
 }
 
 .collection-count {
   color: rgba(245, 240, 232, .5);
-
   font-size: .6rem;
-
   letter-spacing: .15em;
 }
 
-
-/* =====================================================
-   PRODUCT RAIL
-===================================================== */
-
 .coffee-rail {
   position: relative;
-
   min-width: 0;
-
   padding: 2rem;
-
-  overflow: hidden;
-
   background: var(--foam);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .coffee-track {
   display: flex;
   align-items: stretch;
-
-  gap: 1rem;
-
-  height: calc(100% - 60px);
-
+  gap: 1.25rem;
   overflow-x: auto;
   overflow-y: hidden;
-
   scroll-behavior: smooth;
-
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
   scrollbar-width: none;
 }
 
@@ -1355,173 +899,120 @@ body {
   display: none;
 }
 
-
-/* =====================================================
-   PRODUCT CARD
-===================================================== */
-
 .coffee-card {
   position: relative;
-
   display: flex;
-  flex: 0 0 250px;
-
-  min-width: 250px;
-  height: 100%;
-
+  flex: 0 0 260px;
+  min-width: 260px;
+  min-height: 420px;
+  scroll-snap-align: start;
   overflow: hidden;
-
   border-radius: 22px;
-
   background: var(--paper);
-
-  transition:
-    flex-basis .65s cubic-bezier(.22, 1, .36, 1),
-    transform .4s ease,
-    box-shadow .4s ease;
+  transition: flex-basis 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .coffee-card:hover {
   transform: translateY(-5px);
-
-  box-shadow:
-    0 18px 40px rgba(63, 29, 14, .12);
+  box-shadow: 0 18px 40px rgba(63, 29, 14, .12);
 }
-
-
-/*
-  When opened the card physically
-  makes room for its reveal.
-*/
 
 .coffee-card.is-open {
-  flex-basis: 560px;
-
-  box-shadow:
-    0 20px 50px rgba(63, 29, 14, .18);
+  flex: 0 0 540px;
+  min-width: 540px;
+  box-shadow: 0 20px 50px rgba(63, 29, 14, .18);
 }
-
-
-/* =====================================================
-   CARD IMAGE
-===================================================== */
 
 .coffee-card-image {
   position: relative;
-
   flex: 0 0 250px;
-
   height: 100%;
-
   overflow: hidden;
-
   background: var(--cream);
 }
 
 .coffee-card-image img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
-  transition:
-    transform .8s cubic-bezier(.22, 1, .36, 1);
+  transition: transform .8s cubic-bezier(.22, 1, .36, 1);
 }
 
 .coffee-card:hover .coffee-card-image img {
   transform: scale(1.06);
 }
 
-
-/* Image shade */
-
 .coffee-card-image::after {
   content: '';
-
   position: absolute;
-
   inset: 0;
-
   pointer-events: none;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 60%,
-      rgba(40, 17, 8, .3)
-    );
+  background: linear-gradient(180deg, transparent 60%, rgba(40, 17, 8, .3));
 }
 
+.coffee-card-reveal {
+  position: relative;
+  flex: 0 0 280px;
+  min-width: 280px;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, var(--coffee), var(--coffee-dark));
+  color: var(--foam);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
 
-/* Category */
+.coffee-card.is-open .coffee-card-reveal {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
 
 .product-category {
   position: absolute;
-
   z-index: 2;
-
   top: 1rem;
   left: 1rem;
-
   padding: .4rem .6rem;
-
   border-radius: 999px;
-
   background: rgba(245, 240, 232, .88);
-
   color: var(--coffee);
-
   font-size: .55rem;
   font-weight: 700;
-
   letter-spacing: .12em;
 }
 
-
-/* =====================================================
-   PRODUCT INFO
-===================================================== */
-
 .coffee-card-info {
   position: absolute;
-
   z-index: 5;
-
   left: 0;
   bottom: 0;
-
   width: 250px;
-
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   padding: 1.25rem;
-
   color: var(--foam);
-
   pointer-events: none;
 }
 
 .coffee-card-info h3 {
   font-family: Georgia, serif;
-
   font-size: 1.5rem;
-
   font-weight: 400;
-
   line-height: 1;
 }
 
 .coffee-card-info p {
   margin-top: .35rem;
-
   color: rgba(245, 240, 232, .7);
-
   font-size: .62rem;
-
   letter-spacing: .05em;
 }
 
@@ -1530,98 +1021,31 @@ body {
   font-weight: 700;
 }
 
-
-/* =====================================================
-   PLUS BUTTON
-===================================================== */
-
 .product-trigger {
   position: absolute;
-
   z-index: 10;
-
   right: 1rem;
   bottom: 1rem;
-
   width: 43px;
   height: 43px;
-
   display: grid;
   place-items: center;
-
   border: none;
-
   border-radius: 50%;
-
   background: var(--caramel);
-
   color: var(--foam);
-
   cursor: pointer;
-
-  transition:
-    transform .45s cubic-bezier(.34, 1.56, .64, 1),
-    background .3s ease;
+  transition: transform .45s cubic-bezier(.34, 1.56, .64, 1), background .3s ease;
 }
 
 .product-trigger:hover {
   background: var(--coffee-dark);
-
   transform: rotate(90deg) scale(1.08);
 }
 
 .coffee-card.is-open .product-trigger {
   transform: rotate(45deg);
 }
-
-
-/* =====================================================
-   SIDE REVEAL
-===================================================== */
-
-.coffee-card-reveal {
-  position: relative;
-
-  flex: 0 0 310px;
-
-  min-width: 310px;
-
-  height: 100%;
-
-  padding: 1.75rem;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--coffee),
-      var(--coffee-dark)
-    );
-
-  color: var(--foam);
-
-  transform: translateX(-25px);
-
-  opacity: 0;
-
-  pointer-events: none;
-
-  transition:
-    transform .65s cubic-bezier(.22, 1, .36, 1),
-    opacity .4s ease;
-}
-
-.coffee-card.is-open .coffee-card-reveal {
-  transform: translateX(0);
-
-  opacity: 1;
-
-  pointer-events: auto;
-}
-
-
-/* Reveal top */
 
 .reveal-top {
   display: flex;
@@ -1631,61 +1055,39 @@ body {
 
 .reveal-category {
   color: var(--caramel-light);
-
   font-size: .58rem;
   font-weight: 700;
-
   letter-spacing: .15em;
 }
 
 .reveal-close {
   width: 30px;
   height: 30px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid rgba(245, 240, 232, .25);
-
   border-radius: 50%;
-
   background: transparent;
-
   color: var(--foam);
-
   cursor: pointer;
-
-  transition:
-    background .3s ease,
-    transform .3s ease;
+  transition: background .3s ease, transform .3s ease;
 }
 
 .reveal-close:hover {
   background: var(--caramel);
-
   transform: rotate(90deg);
 }
-
-
-/* Reveal stamp */
 
 .reveal-stamp {
   width: 52px;
   height: 52px;
-
   display: grid;
   place-items: center;
-
   margin-top: 2rem;
-
   border: 1px solid var(--matcha);
-
   border-radius: 50%;
-
   color: var(--matcha);
-
   transform: rotate(8deg);
-
   animation: reveal-stamp .5s cubic-bezier(.34, 1.56, .64, 1);
 }
 
@@ -1694,101 +1096,65 @@ body {
     opacity: 0;
     transform: scale(1.5) rotate(-20deg);
   }
-
   70% {
     transform: scale(.9) rotate(12deg);
   }
-
   100% {
     opacity: 1;
     transform: scale(1) rotate(8deg);
   }
 }
 
-
 .coffee-card-reveal h4 {
   margin-top: 1.5rem;
-
   font-family: Georgia, serif;
-
   font-size: clamp(2rem, 3vw, 3rem);
-
   font-weight: 400;
-
   line-height: .9;
 }
 
 .reveal-piece {
   display: block;
-
   margin-top: .5rem;
-
   color: var(--caramel-light);
-
   font-size: .55rem;
   font-weight: 700;
-
   letter-spacing: .16em;
 }
 
 .coffee-card-reveal > p {
   max-width: 240px;
-
   margin-top: 1.25rem;
-
   color: rgba(245, 240, 232, .7);
-
   font-size: .78rem;
-
   line-height: 1.65;
 }
-
-
-/* =====================================================
-   TASTING NOTES
-===================================================== */
 
 .tasting-notes {
   display: flex;
   flex-wrap: wrap;
-
   gap: .45rem;
-
   margin-top: 1.25rem;
 }
 
 .tasting-notes span {
   padding: .4rem .6rem;
-
   border: 1px solid rgba(245, 240, 232, .2);
-
   border-radius: 999px;
-
   color: var(--cream);
-
   font-size: .55rem;
-
   letter-spacing: .05em;
 }
 
-
-/* =====================================================
-   REVEAL FOOTER
-===================================================== */
-
 .reveal-bottom {
   position: absolute;
-
   left: 1.75rem;
   right: 1.75rem;
   bottom: 1.75rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding-top: 1rem;
-
   border-top: 1px solid rgba(245, 240, 232, .15);
 }
 
@@ -1800,18 +1166,12 @@ body {
 .reveal-bottom a {
   display: inline-flex;
   align-items: center;
-
   gap: .6rem;
-
   color: var(--foam);
-
   text-decoration: none;
-
   font-size: .6rem;
   font-weight: 700;
-
   letter-spacing: .08em;
-
   text-transform: uppercase;
 }
 
@@ -1823,94 +1183,64 @@ body {
   transform: translateX(4px);
 }
 
-
-/* =====================================================
-   SLIDER CONTROLS
-===================================================== */
-
 .coffee-controls {
   height: 60px;
-
   display: flex;
   align-items: center;
-
   gap: 1rem;
-
   padding-top: 1rem;
 }
 
 .coffee-control {
   width: 38px;
   height: 38px;
-
   flex-shrink: 0;
-
   display: grid;
   place-items: center;
-
   border: 1px solid var(--border);
-
   border-radius: 50%;
-
   background: transparent;
-
   color: var(--coffee);
-
   cursor: pointer;
-
-  transition:
-    background .3s ease,
-    color .3s ease,
-    transform .3s ease;
+  transition: background .3s ease, color .3s ease, transform .3s ease;
 }
 
 .coffee-control:hover {
   background: var(--coffee);
-
   color: var(--foam);
-
   transform: translateY(-2px);
 }
 
 .coffee-progress {
   flex: 1;
-
   height: 2px;
-
   overflow: hidden;
-
   background: rgba(63, 29, 14, .12);
 }
 
 .coffee-progress-bar {
   display: block;
-
   width: 25%;
   height: 100%;
-
   background: var(--caramel);
-
   transition: width .4s ease;
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
 @media (max-width: 900px) {
-
   .menu-heading {
     align-items: flex-start;
     flex-direction: column;
+    gap: 1.5rem;
   }
 
   .coffee-collection {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .collection-intro {
     min-height: 330px;
+    padding: 2.5rem 2rem;
   }
 
   .collection-stamp {
@@ -1920,15 +1250,11 @@ body {
   .coffee-rail {
     min-height: 570px;
   }
-
 }
 
-
 @media (max-width: 600px) {
-
   .menu {
-    padding:
-      4rem 1rem;
+    padding: 4rem 1rem;
   }
 
   .menu-heading {
@@ -1949,7 +1275,6 @@ body {
 
   .collection-intro {
     padding: 2rem;
-
     min-height: 300px;
   }
 
@@ -1978,39 +1303,23 @@ body {
     width: 245px;
   }
 
-  /*
-    On small screens the reveal comes
-    from below instead of sideways.
-  */
-
   .coffee-card.is-open {
     flex-basis: 245px;
-
     height: auto;
-
     overflow: visible;
   }
 
   .coffee-card.is-open .coffee-card-reveal {
     position: absolute;
-
     left: 0;
     top: 100%;
-
     width: 100%;
     min-width: 0;
-
     height: 360px;
-
     transform: translateY(-20px);
   }
-
 }
 
-
-/* =========================================================
-   BAKERY
-========================================================= */
 
 .bakery {
   position: relative;
@@ -2025,12 +1334,10 @@ body {
   position: absolute;
   top: 4rem;
   right: -2rem;
-
   font-family: Georgia, serif;
   font-size: clamp(8rem, 20vw, 20rem);
   font-weight: 700;
   line-height: .7;
-
   color: rgba(228, 205, 176, .055);
   pointer-events: none;
   user-select: none;
@@ -2043,11 +1350,6 @@ body {
   margin: 0 auto;
 }
 
-
-/* ---------------------------------------------------------
-   HEADING
---------------------------------------------------------- */
-
 .bakery-heading {
   max-width: 760px;
   margin-bottom: 4rem;
@@ -2057,9 +1359,7 @@ body {
   display: flex;
   align-items: center;
   gap: .75rem;
-
   margin-bottom: 1.5rem;
-
   color: var(--caramel-light);
   font-size: .65rem;
   font-weight: 700;
@@ -2074,7 +1374,6 @@ body {
 
 .bakery-heading h2 {
   max-width: 700px;
-
   font-family: Georgia, serif;
   font-size: clamp(3.5rem, 7vw, 7rem);
   font-weight: 400;
@@ -2091,59 +1390,42 @@ body {
 .bakery-heading p {
   max-width: 480px;
   margin-top: 1.75rem;
-
   color: rgba(245, 240, 232, .72);
   font-size: 1rem;
   line-height: 1.7;
 }
 
-
-/* ---------------------------------------------------------
-   FEATURE
---------------------------------------------------------- */
-
 .bakery-feature {
   display: grid;
   grid-template-columns: .85fr 1.15fr;
-
   min-height: 570px;
   overflow: hidden;
-
   border: 1px solid rgba(245, 240, 232, .15);
   border-radius: 32px;
-
   background: var(--coffee-dark);
 }
-
 
 .bakery-feature-copy {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
   padding: clamp(2rem, 4vw, 4rem);
 }
-
 
 .bakery-stamp {
   position: absolute;
   top: 2rem;
   right: 2rem;
-
   width: 82px;
   height: 82px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   border: 1px dashed var(--caramel-light);
   border-radius: 50%;
-
   color: var(--caramel-light);
-
   transform: rotate(9deg);
 }
 
@@ -2151,7 +1433,6 @@ body {
   content: "";
   position: absolute;
   inset: 5px;
-
   border: 1px solid rgba(197, 139, 95, .5);
   border-radius: 50%;
 }
@@ -2164,26 +1445,21 @@ body {
 
 .bakery-stamp span {
   position: relative;
-
   font-size: .45rem;
   font-weight: 700;
   letter-spacing: .12em;
 }
 
-
 .bakery-number {
   margin-bottom: auto;
-
   color: var(--caramel-light);
   font-size: .6rem;
   font-weight: 700;
   letter-spacing: .18em;
 }
 
-
 .bakery-feature-copy h3 {
   max-width: 500px;
-
   font-family: Georgia, serif;
   font-size: clamp(3rem, 5vw, 5.5rem);
   font-weight: 400;
@@ -2193,44 +1469,33 @@ body {
 
 .bakery-feature-copy h3 em {
   display: block;
-
   color: var(--cream);
   font-style: italic;
 }
 
-
 .bakery-feature-copy > p {
   max-width: 410px;
   margin-top: 1.75rem;
-
   color: rgba(245, 240, 232, .7);
   font-size: .9rem;
   line-height: 1.7;
 }
 
-
 .bakery-link {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-
   margin-top: 2rem;
   padding: .9rem 1.25rem;
-
   border-radius: 999px;
-
   background: var(--cream);
   color: var(--coffee-dark);
-
   font-size: .7rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-decoration: none;
   text-transform: uppercase;
-
-  transition:
-    transform .3s ease,
-    background-color .3s ease;
+  transition: transform .3s ease, background-color .3s ease;
 }
 
 .bakery-link i {
@@ -2246,17 +1511,13 @@ body {
   transform: translateX(4px);
 }
 
-
 .bakery-note {
   display: flex;
   align-items: center;
   gap: .65rem;
-
   margin-top: auto;
   padding-top: 2rem;
-
   color: rgba(245, 240, 232, .45);
-
   font-size: .55rem;
   font-weight: 700;
   letter-spacing: .15em;
@@ -2266,11 +1527,6 @@ body {
   color: var(--caramel-light);
 }
 
-
-/* ---------------------------------------------------------
-   FEATURE IMAGE
---------------------------------------------------------- */
-
 .bakery-feature-image {
   position: relative;
   min-height: 500px;
@@ -2279,26 +1535,16 @@ body {
 
 .bakery-feature-image::after {
   content: "";
-
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(40, 17, 8, .2),
-      transparent 40%
-    );
+  background: linear-gradient(90deg, rgba(40, 17, 8, .2), transparent 40%);
 }
 
 .bakery-feature-image img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
   transition: transform .8s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -2306,25 +1552,19 @@ body {
   transform: scale(1.045);
 }
 
-
 .bakery-image-label {
   position: absolute;
   z-index: 3;
   left: 1.5rem;
   bottom: 1.5rem;
-
   display: flex;
   align-items: center;
   gap: .75rem;
-
   padding: .65rem .8rem;
-
   border: 1px solid rgba(245, 240, 232, .35);
   border-radius: 999px;
-
   background: rgba(40, 17, 8, .55);
   backdrop-filter: blur(10px);
-
   font-size: .55rem;
   font-weight: 700;
   letter-spacing: .15em;
@@ -2334,23 +1574,16 @@ body {
   color: var(--caramel-light);
 }
 
-
-/* ---------------------------------------------------------
-   PRODUCTS HEADER
---------------------------------------------------------- */
-
 .bakery-products-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   margin-top: 5rem;
   margin-bottom: 1.75rem;
 }
 
 .bakery-small-label {
   color: var(--caramel-light);
-
   font-size: .6rem;
   font-weight: 700;
   letter-spacing: .18em;
@@ -2358,12 +1591,10 @@ body {
 
 .bakery-products-header h3 {
   margin-top: .4rem;
-
   font-family: Georgia, serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
 }
-
 
 .bakery-controls {
   display: flex;
@@ -2373,22 +1604,14 @@ body {
 .bakery-arrow {
   width: 46px;
   height: 46px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid rgba(245, 240, 232, .25);
   border-radius: 50%;
-
   background: transparent;
   color: var(--foam);
-
   cursor: pointer;
-
-  transition:
-    background-color .3s ease,
-    color .3s ease,
-    transform .3s ease;
+  transition: background-color .3s ease, color .3s ease, transform .3s ease;
 }
 
 .bakery-arrow:hover {
@@ -2397,19 +1620,11 @@ body {
   transform: translateY(-2px);
 }
 
-
-/* ---------------------------------------------------------
-   PASTRY TRACK
---------------------------------------------------------- */
-
 .bakery-track {
   display: flex;
   gap: 1rem;
-
   overflow-x: auto;
-
   padding: .5rem .15rem 1.5rem;
-
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
 }
@@ -2418,35 +1633,20 @@ body {
   display: none;
 }
 
-
-/* ---------------------------------------------------------
-   PASTRY CARD
---------------------------------------------------------- */
-
 .bakery-card {
   position: relative;
   flex: 0 0 280px;
-
   overflow: hidden;
-
   border-radius: 24px;
-
   scroll-snap-align: start;
-
   color: var(--ink);
-
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .bakery-card:hover {
   transform: translateY(-7px);
   box-shadow: 0 25px 50px rgba(40, 17, 8, .22);
 }
-
-
-/* card color variations */
 
 .bakery-card--cream {
   background: var(--cream);
@@ -2465,14 +1665,8 @@ body {
   color: var(--foam);
 }
 
-
-/* ---------------------------------------------------------
-   CARD IMAGE
---------------------------------------------------------- */
-
 .bakery-card-image {
   position: relative;
-
   height: 280px;
   overflow: hidden;
 }
@@ -2480,11 +1674,8 @@ body {
 .bakery-card-image img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
   transition: transform .5s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -2492,33 +1683,21 @@ body {
   transform: scale(1.06);
 }
 
-
 .bakery-card-stamp {
   position: absolute;
   top: 1rem;
   right: 1rem;
-
   width: 45px;
   height: 45px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid rgba(255,255,255,.6);
   border-radius: 50%;
-
   background: rgba(40,17,8,.55);
   color: var(--foam);
-
   backdrop-filter: blur(7px);
-
   transform: rotate(8deg);
 }
-
-
-/* ---------------------------------------------------------
-   CARD CONTENT
---------------------------------------------------------- */
 
 .bakery-card-content {
   padding: 1.35rem 1.35rem 1.5rem;
@@ -2533,19 +1712,16 @@ body {
 
 .bakery-card-content h4 {
   margin-top: .35rem;
-
   font-family: Georgia, serif;
   font-size: 1.7rem;
   font-weight: 400;
   line-height: 1;
 }
 
-
 .bakery-card-bottom {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   margin-top: 1.25rem;
 }
 
@@ -2559,13 +1735,7 @@ body {
   font-size: 1rem;
 }
 
-
-/* ---------------------------------------------------------
-   RESPONSIVE
---------------------------------------------------------- */
-
 @media (max-width: 850px) {
-
   .bakery-feature {
     grid-template-columns: 1fr;
   }
@@ -2577,12 +1747,9 @@ body {
   .bakery-feature-image {
     min-height: 420px;
   }
-
 }
 
-
 @media (max-width: 600px) {
-
   .bakery {
     padding: 5rem 0;
   }
@@ -2607,7 +1774,6 @@ body {
   .bakery-stamp {
     top: 1.25rem;
     right: 1.25rem;
-
     width: 68px;
     height: 68px;
   }
@@ -2627,47 +1793,14 @@ body {
   .bakery-card-image {
     height: 245px;
   }
-
 }
 
-/* =========================================
-   EXPERIENCE
-========================================= */
-
-.experience {
-  position: relative;
-  overflow: hidden;
-  background: var(--milk);
-  color: var(--ink);
-  padding: 150px 5vw 120px;
-}
-
-.experience::before {
-  content: "STAY";
-  position: absolute;
-  top: 30px;
-  right: -30px;
-
-  font-family: "Roboto", sans-serif;
-  font-size: clamp(8rem, 22vw, 20rem);
-  font-weight: 700;
-  line-height: .8;
-
-  color: rgba(63, 29, 14, .035);
-  pointer-events: none;
-}
-
- /* =========================================
-    SIGNATURE POUR
- ========================================= */
 
 .signature {
   position: relative;
   overflow: hidden;
-
   background: var(--matcha-dark);
   color: var(--foam);
-
   padding: 120px 5vw 0;
 }
 
@@ -2676,18 +1809,11 @@ body {
   margin: 0 auto;
 }
 
-
-/* -----------------------------------------
-   TOP BAR
- ----------------------------------------- */
-
 .signature-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding-bottom: 28px;
-
   border-bottom: 1px solid rgba(245, 240, 232, .2);
 }
 
@@ -2695,7 +1821,6 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-size: .65rem;
   font-weight: 700;
   letter-spacing: .18em;
@@ -2711,31 +1836,17 @@ body {
   opacity: .65;
 }
 
-
-/* -----------------------------------------
-   CONTENT
- ----------------------------------------- */
-
 .signature-content {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
   align-items: center;
-
   min-height: 720px;
-
   gap: 8vw;
 }
 
-
-/* -----------------------------------------
-   VISUAL
- ----------------------------------------- */
-
 .signature-visual {
   position: relative;
-
   height: 650px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2743,23 +1854,17 @@ body {
 
 .signature-image {
   position: relative;
-
   width: min(480px, 72%);
   aspect-ratio: .78;
-
   overflow: hidden;
-
   border-radius: 240px 240px 8px 8px;
-
   z-index: 2;
 }
 
 .signature-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   transition: transform 1s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -2767,29 +1872,20 @@ body {
   transform: scale(1.045);
 }
 
-
-/* Decorative ring */
-
 .signature-ring {
   position: absolute;
-
   width: 570px;
   height: 570px;
-
   border: 1px solid rgba(228, 205, 176, .28);
   border-radius: 50%;
-
   transform: rotate(-15deg);
 }
 
 .signature-ring::before,
 .signature-ring::after {
   content: "";
-
   position: absolute;
-
   border-radius: 50%;
-
   border: 1px dashed rgba(228, 205, 176, .18);
 }
 
@@ -2801,44 +1897,29 @@ body {
   inset: -12px;
 }
 
-
-/* -----------------------------------------
-   STAMP
- ----------------------------------------- */
-
 .signature-stamp {
   position: absolute;
-
   left: 7%;
   bottom: 85px;
-
   width: 125px;
   height: 125px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 2px;
-
   background: var(--caramel-light);
   color: var(--coffee);
-
   border: 2px solid var(--coffee);
   border-radius: 50%;
-
   transform: rotate(-12deg);
-
   z-index: 4;
 }
 
 .signature-stamp::before {
   content: "";
-
   position: absolute;
   inset: 7px;
-
   border: 1px dashed var(--coffee);
   border-radius: 50%;
 }
@@ -2858,30 +1939,16 @@ body {
   font-size: .72rem;
 }
 
-
-/* -----------------------------------------
-   SIDE NOTE
- ----------------------------------------- */
-
 .signature-side-note {
   position: absolute;
-
   right: -15px;
   bottom: 100px;
-
   writing-mode: vertical-rl;
-
   font-size: .5rem;
   font-weight: 700;
   letter-spacing: .2em;
-
   opacity: .55;
 }
-
-
-/* -----------------------------------------
-   COPY
- ----------------------------------------- */
 
 .signature-copy {
   max-width: 510px;
@@ -2889,19 +1956,15 @@ body {
 
 .signature-number {
   display: block;
-
   margin-bottom: 20px;
-
   font-family: "Lobster", cursive;
   font-size: 3rem;
   font-weight: 400;
-
   color: var(--caramel-light);
 }
 
 .signature-copy h2 {
   margin: 0 0 28px;
-
   font-size: clamp(3rem, 5.2vw, 6rem);
   line-height: .88;
   letter-spacing: -.065em;
@@ -2909,37 +1972,25 @@ body {
 
 .signature-copy h2 em {
   display: block;
-
   font-family: "Lobster", cursive;
   font-style: normal;
   font-weight: 400;
-
   color: var(--cream);
   letter-spacing: -.02em;
 }
 
 .signature-description {
   max-width: 430px;
-
   margin: 0 0 35px;
-
   color: rgba(245, 240, 232, .68);
-
   font-size: .95rem;
   line-height: 1.75;
 }
 
-
-/* -----------------------------------------
-   META
- ----------------------------------------- */
-
 .signature-meta {
   display: flex;
   gap: 45px;
-
   padding: 20px 0;
-
   border-top: 1px solid rgba(245, 240, 232, .2);
   border-bottom: 1px solid rgba(245, 240, 232, .2);
 }
@@ -2961,42 +2012,27 @@ body {
   letter-spacing: .08em;
 }
 
-
-/* -----------------------------------------
-   LINK
- ----------------------------------------- */
-
 .signature-link {
   display: inline-flex;
   align-items: center;
   gap: 18px;
-
   margin-top: 32px;
-
   color: var(--foam);
-
   font-size: .7rem;
   font-weight: 700;
   letter-spacing: .13em;
   text-transform: uppercase;
-
   text-decoration: none;
 }
 
 .signature-link i {
   width: 38px;
   height: 38px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid rgba(245, 240, 232, .45);
   border-radius: 50%;
-
-  transition:
-    transform .3s ease,
-    background .3s ease,
-    color .3s ease;
+  transition: transform .3s ease, background .3s ease, color .3s ease;
 }
 
 .signature-link:hover i {
@@ -3005,18 +2041,10 @@ body {
   color: var(--coffee);
 }
 
-
-/* -----------------------------------------
-   TICKER
- ----------------------------------------- */
-
 .signature-ticker {
   overflow: hidden;
-
   margin-top: 30px;
-
   padding: 22px 0;
-
   border-top: 1px solid rgba(245, 240, 232, .2);
 }
 
@@ -3024,16 +2052,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: max-content;
   min-width: 100%;
-
   gap: 45px;
-
   font-size: .58rem;
   font-weight: 700;
   letter-spacing: .2em;
-
   opacity: .55;
 }
 
@@ -3041,13 +2065,7 @@ body {
   color: var(--caramel-light);
 }
 
-
-/* -----------------------------------------
-   RESPONSIVE
- ----------------------------------------- */
-
 @media (max-width: 900px) {
-
   .signature {
     padding: 90px 6vw 0;
   }
@@ -3055,7 +2073,6 @@ body {
   .signature-content {
     grid-template-columns: 1fr;
     gap: 20px;
-
     padding: 60px 0 80px;
   }
 
@@ -3077,9 +2094,7 @@ body {
   }
 }
 
-
 @media (max-width: 600px) {
-
   .signature {
     padding: 75px 5vw 0;
   }
@@ -3104,7 +2119,6 @@ body {
   .signature-stamp {
     left: 2%;
     bottom: 40px;
-
     width: 100px;
     height: 100px;
   }
@@ -3128,9 +2142,28 @@ body {
 }
 
 
-/* -----------------------------------------
-   SHELL
------------------------------------------ */
+.experience {
+  position: relative;
+  overflow: hidden;
+  background: var(--milk);
+  color: var(--ink);
+  padding: 150px 5vw 120px;
+}
+
+.experience::before {
+  content: "STAY";
+  position: absolute;
+  top: 30px;
+  right: -30px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(8rem, 22vw, 20rem);
+  font-weight: 700;
+  line-height: .8;
+
+  color: rgba(63, 29, 14, .035);
+  pointer-events: none;
+}
 
 .experience-shell {
   width: min(1400px, 100%);
@@ -3139,21 +2172,15 @@ body {
   z-index: 2;
 }
 
-
-/* -----------------------------------------
-   HEADING
------------------------------------------ */
-
 .experience-heading {
   max-width: 760px;
-  margin-bottom: 90px;
+  margin-bottom: 70px;
 }
 
 .experience-kicker {
   display: flex;
   align-items: center;
   gap: 14px;
-
   font-size: .68rem;
   font-weight: 700;
   letter-spacing: .18em;
@@ -3168,7 +2195,6 @@ body {
 
 .experience-heading h2 {
   margin: 24px 0 20px;
-
   font-size: clamp(3rem, 6vw, 6.5rem);
   line-height: .9;
   letter-spacing: -.06em;
@@ -3177,7 +2203,6 @@ body {
 
 .experience-heading h2 em {
   display: block;
-
   font-family: "Lobster", cursive;
   font-weight: 400;
   font-style: normal;
@@ -3187,57 +2212,36 @@ body {
 
 .experience-heading p {
   max-width: 510px;
-
   font-size: 1rem;
   line-height: 1.7;
   color: var(--muted);
 }
 
-
-/* -----------------------------------------
-   COLLAGE
------------------------------------------ */
-
 .experience-collage {
   position: relative;
-
-  min-height: 760px;
-
   display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  grid-template-rows: 1fr 1fr;
-
+  grid-template-columns: 1.1fr 0.8fr 300px;
+  grid-template-rows: repeat(2, minmax(300px, 1fr));
   gap: 22px;
+  align-items: center;
 }
-
-
-/* -----------------------------------------
-   MAIN IMAGE
------------------------------------------ */
 
 .experience-main-image {
   position: relative;
-
   grid-column: 1;
   grid-row: 1 / 3;
-
   overflow: hidden;
-
-  min-height: 700px;
-
+  height: 100%;
+  min-height: 620px;
   border-radius: 2px 80px 2px 2px;
-
   background: var(--coffee);
 }
 
 .experience-main-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  transition:
-    transform .9s cubic-bezier(.2,.7,.2,1);
+  transition: transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
 .experience-main-image:hover img {
@@ -3248,45 +2252,34 @@ body {
   position: absolute;
   right: 24px;
   bottom: 24px;
-
   display: flex;
   align-items: center;
   gap: 14px;
-
   padding: 12px 15px;
-
   background: var(--foam);
   color: var(--coffee);
-
   font-size: .65rem;
   font-weight: 700;
   letter-spacing: .15em;
+  border-radius: 999px;
 }
 
 .experience-image-tag i {
   font-size: .75rem;
 }
 
-
-/* -----------------------------------------
-   SMALL IMAGES
------------------------------------------ */
-
 .experience-small-image {
   position: relative;
   overflow: hidden;
-
+  height: 100%;
   background: var(--coffee);
 }
 
 .experience-small-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  transition:
-    transform .8s cubic-bezier(.2,.7,.2,1);
+  transition: transform .8s cubic-bezier(.2,.7,.2,1);
 }
 
 .experience-small-image:hover img {
@@ -3296,22 +2289,12 @@ body {
 .experience-small-image--top {
   grid-column: 2;
   grid-row: 1;
-
-  margin-right: 80px;
-
-  min-height: 320px;
-
   border-radius: 2px 2px 2px 45px;
 }
 
 .experience-small-image--bottom {
   grid-column: 2;
   grid-row: 2;
-
-  margin-left: 80px;
-
-  min-height: 320px;
-
   border-radius: 45px 2px 2px 2px;
 }
 
@@ -3319,55 +2302,38 @@ body {
   position: absolute;
   top: 14px;
   right: 14px;
-
   width: 34px;
   height: 34px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid rgba(255,255,255,.7);
   border-radius: 50%;
-
   color: white;
-
   font-size: .65rem;
   font-weight: 700;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
 }
-
-
-/* -----------------------------------------
-   STAMP
------------------------------------------ */
 
 .experience-stamp {
   position: absolute;
-
-  left: calc(62% - 25px);
-  top: 47%;
-
-  width: 130px;
-  height: 130px;
-
+  left: 38%;
+  top: 48%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  width: 120px;
+  height: 120px;
   display: grid;
   place-items: center;
-
   border: 2px solid var(--coffee);
   border-radius: 50%;
-
   background: var(--caramel-light);
-
-  transform: rotate(-12deg);
-
   z-index: 5;
 }
 
 .experience-stamp::before {
   content: "";
-
   position: absolute;
-  inset: 7px;
-
+  inset: 6px;
   border: 1px dashed var(--coffee);
   border-radius: 50%;
 }
@@ -3377,58 +2343,40 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 3px;
-
   text-align: center;
-
-  font-size: .52rem;
+  font-size: .5rem;
   font-weight: 700;
   letter-spacing: .13em;
   color: var(--coffee);
 }
 
 .experience-stamp-inner i {
-  margin-bottom: 4px;
-  font-size: 1.2rem;
+  margin-bottom: 2px;
+  font-size: 1.1rem;
 }
-
-
-/* -----------------------------------------
-   SIDE COPY
------------------------------------------ */
-
 .experience-side-copy {
-  position: absolute;
-
-  right: 0;
-  bottom: 32px;
-
-  width: 285px;
-
+  grid-column: 3;
+  grid-row: 1 / 3;
   padding: 28px;
-
   background: var(--paper);
-
   border: 1px solid var(--border);
-
+  border-radius: 16px;
+  align-self: center;
   z-index: 4;
 }
 
 .experience-side-number {
   display: block;
-
   margin-bottom: 15px;
-
   font-size: .62rem;
   font-weight: 700;
   letter-spacing: .16em;
-
   color: var(--caramel);
 }
 
 .experience-side-copy h3 {
   margin: 0 0 16px;
-
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: .95;
   letter-spacing: -.05em;
 }
@@ -3437,23 +2385,19 @@ body {
   font-family: "Lobster", cursive;
   font-weight: 400;
   font-style: normal;
-
   color: var(--caramel);
 }
 
 .experience-side-copy p {
   margin: 0 0 25px;
-
   font-size: .82rem;
   line-height: 1.65;
-
   color: var(--muted);
 }
 
 .experience-details {
   display: flex;
   flex-direction: column;
-
   border-top: 1px solid var(--border);
 }
 
@@ -3461,11 +2405,8 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 11px 0;
-
   border-bottom: 1px solid var(--border);
-
   font-size: .6rem;
   font-weight: 700;
   letter-spacing: .13em;
@@ -3473,35 +2414,23 @@ body {
 
 .experience-detail i {
   width: 18px;
-
   color: var(--caramel);
-
   font-size: .75rem;
 }
-
-
-/* -----------------------------------------
-   BOTTOM STATEMENT
------------------------------------------ */
 
 .experience-statement {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-
-  margin-top: 120px;
-
+  margin-top: 100px;
   padding-top: 35px;
-
   border-top: 1px solid var(--border);
 }
 
 .experience-statement h3 {
   margin: 0;
-
   max-width: 900px;
-
   font-size: clamp(2rem, 4vw, 4.5rem);
   line-height: .9;
   letter-spacing: -.055em;
@@ -3509,27 +2438,20 @@ body {
 
 .experience-statement h3 em {
   display: block;
-
   font-family: "Lobster", cursive;
   font-style: normal;
   font-weight: 400;
-
   color: var(--caramel);
 }
 
 .experience-statement-mark {
   flex-shrink: 0;
-
   width: 45px;
   height: 45px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid var(--coffee);
-
   border-radius: 50%;
-
   color: var(--coffee);
 }
 
@@ -3537,90 +2459,46 @@ body {
   font-size: .8rem;
 }
 
-
-/* -----------------------------------------
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 900px) {
-
-  .experience {
-    padding: 110px 6vw 90px;
-  }
-
+@media (max-width: 1024px) {
   .experience-collage {
-    min-height: auto;
-
-    display: grid;
-
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 430px 260px;
-
-    gap: 14px;
+    grid-template-rows: auto;
   }
 
   .experience-main-image {
-    min-height: 430px;
-
     grid-column: 1 / 3;
     grid-row: 1;
-
-    border-radius: 2px 55px 2px 2px;
-  }
-
-  .experience-small-image--top,
-  .experience-small-image--bottom {
-    margin: 0;
-    min-height: 260px;
+    min-height: 420px;
   }
 
   .experience-small-image--top {
     grid-column: 1;
     grid-row: 2;
-
-    border-radius: 2px 2px 2px 30px;
+    min-height: 280px;
   }
 
   .experience-small-image--bottom {
     grid-column: 2;
     grid-row: 2;
-
-    border-radius: 30px 2px 2px 2px;
+    min-height: 280px;
   }
 
   .experience-side-copy {
-    position: relative;
-
-    right: auto;
-    bottom: auto;
-
-    width: auto;
-
     grid-column: 1 / 3;
-
-    margin-top: 14px;
+    grid-row: 3;
   }
 
   .experience-stamp {
     left: auto;
-    right: 30px;
+    right: 20px;
     top: 380px;
-  }
-
-  .experience-statement {
-    margin-top: 80px;
+    transform: rotate(-10deg);
   }
 }
 
-
 @media (max-width: 600px) {
-
-  .experience {
-    padding: 90px 5vw 70px;
-  }
-
   .experience-heading {
-    margin-bottom: 55px;
+    margin-bottom: 45px;
   }
 
   .experience-heading h2 {
@@ -3630,67 +2508,47 @@ body {
   .experience-collage {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
 
   .experience-main-image {
-    min-height: 480px;
-
+    min-height: 380px;
     border-radius: 2px 45px 2px 2px;
   }
 
   .experience-small-image--top,
   .experience-small-image--bottom {
-    min-height: 230px;
+    min-height: 220px;
   }
 
   .experience-stamp {
-    width: 105px;
-    height: 105px;
-
+    width: 100px;
+    height: 100px;
     right: 15px;
-    top: 440px;
-  }
-
-  .experience-stamp-inner {
-    font-size: .43rem;
-  }
-
-  .experience-stamp-inner i {
-    font-size: 1rem;
+    top: 340px;
   }
 
   .experience-side-copy {
-    padding: 23px;
+    padding: 20px;
   }
 
   .experience-statement {
-    margin-top: 65px;
-
+    margin-top: 55px;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
   }
 
   .experience-statement h3 {
-    font-size: 2.4rem;
-  }
-
-  .experience-statement-mark {
-    width: 32px;
-    height: 32px;
+    font-size: 2.2rem;
   }
 }
-
- /* =========================================
-    TESTIMONIALS
- ========================================= */
 
 .testimonials {
   position: relative;
   overflow: hidden;
-
   background: var(--paper);
   color: var(--ink);
-
   padding: 130px 5vw 110px;
 }
 
@@ -3699,18 +2557,11 @@ body {
   margin: 0 auto;
 }
 
-
-/* -----------------------------------------
-   TOP
- ----------------------------------------- */
-
 .testimonials-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding-bottom: 25px;
-
   border-bottom: 1px solid var(--border);
 }
 
@@ -3718,11 +2569,9 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-size: .65rem;
   font-weight: 700;
   letter-spacing: .18em;
-
   color: var(--coffee);
 }
 
@@ -3734,50 +2583,32 @@ body {
   font-size: .58rem;
   font-weight: 700;
   letter-spacing: .16em;
-
   color: var(--muted);
 }
-
-
-/* -----------------------------------------
-   LAYOUT
- ----------------------------------------- */
 
 .testimonials-layout {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
-
   gap: 10vw;
-
   padding: 90px 5vw 100px 3vw;
 }
 
-
-/* -----------------------------------------
-   FEATURE QUOTE
- ----------------------------------------- */
-
 .testimonial-feature {
   position: relative;
-
   max-width: 720px;
 }
 
 .testimonial-quote-mark {
   display: block;
-
   height: 80px;
-
   font-family: Georgia, serif;
   font-size: 9rem;
   line-height: .8;
-
   color: var(--caramel-light);
 }
 
 .testimonial-feature blockquote {
   margin: 15px 0 45px;
-
   font-size: clamp(2.6rem, 4.5vw, 5rem);
   line-height: .98;
   letter-spacing: -.055em;
@@ -3793,12 +2624,9 @@ body {
 .testimonial-avatar {
   width: 42px;
   height: 42px;
-
   display: grid;
   place-items: center;
-
   border-radius: 50%;
-
   background: var(--matcha);
   color: var(--coffee);
 }
@@ -3824,11 +2652,6 @@ body {
   color: var(--muted);
 }
 
-
-/* -----------------------------------------
-   TESTIMONIAL LIST
- ----------------------------------------- */
-
 .testimonial-list {
   border-top: 1px solid var(--border);
 }
@@ -3836,27 +2659,21 @@ body {
 .testimonial-item {
   display: grid;
   grid-template-columns: 45px 1fr;
-
   gap: 15px;
-
   padding: 27px 0;
-
   border-bottom: 1px solid var(--border);
 }
 
 .testimonial-number {
   font-family: "Lobster", cursive;
   font-size: 1.4rem;
-
   color: var(--caramel);
 }
 
 .testimonial-stars {
   display: flex;
   gap: 4px;
-
   margin-bottom: 14px;
-
   color: var(--caramel);
 }
 
@@ -3866,12 +2683,9 @@ body {
 
 .testimonial-item p {
   margin: 0 0 15px;
-
   max-width: 360px;
-
   font-size: .85rem;
   line-height: 1.6;
-
   color: var(--muted);
 }
 
@@ -3879,30 +2693,20 @@ body {
   font-size: .58rem;
   font-weight: 700;
   letter-spacing: .15em;
-
   color: var(--coffee);
 }
-
-
-/* -----------------------------------------
-   BOTTOM
- ----------------------------------------- */
 
 .testimonials-bottom {
   display: grid;
   grid-template-columns: 120px 1fr 40px;
   align-items: center;
-
   gap: 40px;
-
   padding-top: 35px;
-
   border-top: 1px solid var(--border);
 }
 
 .testimonials-bottom p {
   margin: 0;
-
   font-size: clamp(1.8rem, 3.5vw, 3.8rem);
   line-height: .9;
   letter-spacing: -.05em;
@@ -3913,42 +2717,28 @@ body {
   font-family: "Lobster", cursive;
   font-style: normal;
   font-weight: 400;
-
   color: var(--caramel);
 }
-
-
-/* -----------------------------------------
-   STAMP
- ----------------------------------------- */
 
 .testimonial-stamp {
   width: 105px;
   height: 105px;
-
   position: relative;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 3px;
-
   border: 2px solid var(--coffee);
   border-radius: 50%;
-
   background: var(--matcha);
-
   transform: rotate(9deg);
 }
 
 .testimonial-stamp::before {
   content: "";
-
   position: absolute;
   inset: 7px;
-
   border: 1px dashed var(--coffee);
   border-radius: 50%;
 }
@@ -3973,22 +2763,14 @@ body {
   font-size: 1.3rem;
 }
 
-
-/* -----------------------------------------
-   RESPONSIVE
- ----------------------------------------- */
-
 @media (max-width: 900px) {
-
   .testimonials {
     padding: 100px 6vw 80px;
   }
 
   .testimonials-layout {
     grid-template-columns: 1fr;
-
     gap: 70px;
-
     padding: 70px 0 75px;
   }
 
@@ -3998,7 +2780,6 @@ body {
 
   .testimonials-bottom {
     grid-template-columns: 100px 1fr;
-
     gap: 25px;
   }
 
@@ -4007,9 +2788,7 @@ body {
   }
 }
 
-
 @media (max-width: 600px) {
-
   .testimonials {
     padding: 80px 5vw 65px;
   }
@@ -4033,7 +2812,6 @@ body {
 
   .testimonials-bottom {
     grid-template-columns: 1fr;
-
     gap: 25px;
   }
 
@@ -4041,11 +2819,6 @@ body {
     font-size: 2.5rem;
   }
 }
-
-
-/* ================================
-   ABOUT / STORY
-================================ */
 
 .about-story {
   background: var(--cream);
@@ -4059,9 +2832,6 @@ body {
   margin: 0 auto;
 }
 
-
-/* TOP */
-
 .about-story-top {
   display: flex;
   align-items: center;
@@ -4074,7 +2844,6 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
@@ -4093,20 +2862,13 @@ body {
   opacity: 0.55;
 }
 
-
-/* MAIN GRID */
-
 .about-story-grid {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
   gap: 9vw;
   align-items: center;
-
   padding: 90px 3vw 120px;
 }
-
-
-/* VISUAL */
 
 .about-story-visual {
   position: relative;
@@ -4117,7 +2879,6 @@ body {
   width: min(560px, 78%);
   height: 620px;
   overflow: hidden;
-
   border-radius: 280px 280px 10px 10px;
 }
 
@@ -4127,7 +2888,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-
   transition: transform 0.8s ease;
 }
 
@@ -4135,19 +2895,13 @@ body {
   transform: scale(1.04);
 }
 
-
-/* SMALL IMAGE */
-
 .about-story-small-image {
   position: absolute;
   right: 0;
   bottom: 15px;
-
   width: 230px;
   height: 285px;
-
   overflow: hidden;
-
   border: 10px solid var(--cream);
   border-radius: 120px 120px 8px 8px;
 }
@@ -4156,29 +2910,20 @@ body {
   transform: scale(1.06);
 }
 
-
-/* STAMP */
-
 .about-story-stamp {
   position: absolute;
   left: -35px;
   bottom: 75px;
-
   width: 135px;
   height: 135px;
-
   border-radius: 50%;
-
   background: var(--coffee);
   color: var(--foam);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
   transform: rotate(-9deg);
   border: 2px dashed rgba(245, 240, 232, 0.7);
   outline: 1px solid var(--coffee);
@@ -4205,9 +2950,6 @@ body {
   margin: 3px 0;
 }
 
-
-/* COPY */
-
 .about-story-copy {
   position: relative;
   max-width: 600px;
@@ -4215,19 +2957,16 @@ body {
 
 .about-story-number {
   display: block;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-
   color: var(--caramel);
   margin-bottom: 25px;
 }
 
 .about-story-copy h2 {
   margin: 0 0 35px;
-
   font-family: "Roboto", sans-serif;
   font-size: clamp(3.5rem, 6vw, 6.5rem);
   line-height: 0.86;
@@ -4237,7 +2976,6 @@ body {
 
 .about-story-copy h2 em {
   display: block;
-
   font-family: "Lobster", cursive;
   font-weight: 400;
   color: var(--coffee);
@@ -4246,38 +2984,28 @@ body {
   transform-origin: left center;
 }
 
-
 .about-story-lead {
   max-width: 510px;
-
   font-family: "Roboto", sans-serif;
   font-size: 1.15rem;
   line-height: 1.7;
   font-weight: 700;
-
   margin-bottom: 18px;
 }
 
 .about-story-copy > p:not(.about-story-lead) {
   max-width: 490px;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.92rem;
   line-height: 1.8;
-
   color: var(--muted);
 }
-
-
-/* FACTS */
 
 .about-story-facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   margin-top: 50px;
   padding: 25px 0;
-
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -4286,7 +3014,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-
   padding-right: 20px;
 }
 
@@ -4313,19 +3040,13 @@ body {
   line-height: 1.5;
 }
 
-
-/* LINK */
-
 .about-story-link {
   display: inline-flex;
   align-items: center;
   gap: 18px;
-
   margin-top: 35px;
-
   color: var(--ink);
   text-decoration: none;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
@@ -4337,18 +3058,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 42px;
   height: 42px;
-
   border-radius: 50%;
-
   background: var(--coffee);
   color: var(--foam);
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .about-story-link:hover i {
@@ -4356,25 +3071,17 @@ body {
   background: var(--coffee-dark);
 }
 
-
-/* BOTTOM TICKER */
-
 .about-story-bottom {
   min-height: 85px;
-
   margin: 0 -5vw;
-
   background: var(--coffee);
   color: var(--foam);
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 28px;
-
   overflow: hidden;
   white-space: nowrap;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.65rem;
   font-weight: 700;
@@ -4386,13 +3093,7 @@ body {
   color: var(--caramel-light);
 }
 
-
-/* ================================
-   RESPONSIVE
-================================ */
-
 @media (max-width: 1000px) {
-
   .about-story-grid {
     grid-template-columns: 1fr;
     gap: 70px;
@@ -4405,12 +3106,9 @@ body {
   .about-story-copy {
     max-width: 700px;
   }
-
 }
 
-
 @media (max-width: 600px) {
-
   .about-story {
     padding-top: 85px;
   }
@@ -4437,7 +3135,6 @@ body {
   .about-story-stamp {
     left: -10px;
     bottom: 35px;
-
     width: 105px;
     height: 105px;
   }
@@ -4476,12 +3173,6 @@ body {
   }
 }
 
-
-
-/* =================================
-   VISIT / LOCATION
-================================= */
-
 .visit {
   background: var(--coffee-dark);
   color: var(--foam);
@@ -4494,14 +3185,10 @@ body {
   margin: 0 auto;
 }
 
-
-/* TOP */
-
 .visit-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding-bottom: 28px;
   border-bottom: 1px solid rgba(245, 240, 232, 0.18);
 }
@@ -4510,7 +3197,6 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
@@ -4526,24 +3212,16 @@ body {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-
   opacity: 0.5;
 }
-
-
-/* CONTENT */
 
 .visit-content {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 8vw;
   align-items: center;
-
   padding: 90px 3vw 20px;
 }
-
-
-/* COPY */
 
 .visit-copy {
   max-width: 570px;
@@ -4551,11 +3229,8 @@ body {
 
 .visit-number {
   display: block;
-
   margin-bottom: 24px;
-
   color: var(--caramel-light);
-
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
@@ -4564,7 +3239,6 @@ body {
 
 .visit-copy h2 {
   margin: 0 0 32px;
-
   font-family: "Roboto", sans-serif;
   font-size: clamp(3.5rem, 6vw, 6.5rem);
   line-height: 0.86;
@@ -4574,36 +3248,26 @@ body {
 
 .visit-copy h2 em {
   display: block;
-
   color: var(--caramel-light);
-
   font-family: "Lobster", cursive;
   font-weight: 400;
   letter-spacing: 0;
-
   transform: rotate(-2deg);
   transform-origin: left center;
 }
 
 .visit-copy > p {
   max-width: 480px;
-
   margin-bottom: 45px;
-
   color: rgba(245, 240, 232, 0.68);
-
   font-family: "Roboto", sans-serif;
   font-size: 0.95rem;
   line-height: 1.8;
 }
 
-
-/* DETAILS */
-
 .visit-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
   border-top: 1px solid rgba(245, 240, 232, 0.18);
   border-bottom: 1px solid rgba(245, 240, 232, 0.18);
 }
@@ -4611,7 +3275,6 @@ body {
 .visit-detail {
   display: flex;
   gap: 15px;
-
   padding: 25px 15px 25px 0;
 }
 
@@ -4622,7 +3285,6 @@ body {
 
 .visit-detail > i {
   margin-top: 3px;
-
   color: var(--caramel-light);
   font-size: 0.9rem;
 }
@@ -4638,7 +3300,6 @@ body {
   font-size: 0.55rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-
   opacity: 0.45;
 }
 
@@ -4649,19 +3310,13 @@ body {
   letter-spacing: 0.05em;
 }
 
-
-/* BUTTON */
-
 .visit-button {
   display: inline-flex;
   align-items: center;
   gap: 18px;
-
   margin-top: 32px;
-
   color: var(--foam);
   text-decoration: none;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
@@ -4673,18 +3328,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 45px;
   height: 45px;
-
   border-radius: 50%;
-
   background: var(--caramel-light);
   color: var(--coffee-dark);
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .visit-button:hover i {
@@ -4692,72 +3341,36 @@ body {
   background: var(--cream);
 }
 
-
-/* MAP */
-
 .visit-map {
   min-height: 580px;
 }
 
 .visit-map-inner {
   position: relative;
-
   width: 100%;
   min-height: 580px;
-
   overflow: hidden;
-
   border: 1px solid rgba(245, 240, 232, 0.18);
   border-radius: 4px;
-
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(197, 139, 95, 0.12) 0,
-      transparent 30%
-    ),
-    var(--coffee);
+  background: radial-gradient(circle at 50% 50%, rgba(197, 139, 95, 0.12) 0, transparent 30%), var(--coffee);
 }
-
-
-/* MAP GRID */
 
 .visit-map-grid {
   position: absolute;
   inset: 0;
-
-  background-image:
-    linear-gradient(
-      rgba(245, 240, 232, 0.07) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(245, 240, 232, 0.07) 1px,
-      transparent 1px
-    );
-
+  background-image: linear-gradient(rgba(245, 240, 232, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 240, 232, 0.07) 1px, transparent 1px);
   background-size: 55px 55px;
-
   transform: rotate(-8deg) scale(1.25);
 }
-
-
-/* MAP CIRCLE */
 
 .visit-map-inner::before,
 .visit-map-inner::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: 50%;
-
   transform: translate(-50%, -50%);
-
   border: 1px solid rgba(197, 139, 95, 0.28);
-
   border-radius: 50%;
 }
 
@@ -4771,33 +3384,20 @@ body {
   height: 440px;
 }
 
-
-/* PIN */
-
 .visit-map-pin {
   position: absolute;
-
   left: 50%;
   top: 50%;
-
   width: 75px;
   height: 75px;
-
   transform: translate(-50%, -50%);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
   background: var(--caramel-light);
   color: var(--coffee-dark);
-
-  box-shadow:
-    0 0 0 12px rgba(197, 139, 95, 0.13),
-    0 0 0 25px rgba(197, 139, 95, 0.06);
-
+  box-shadow: 0 0 0 12px rgba(197, 139, 95, 0.13), 0 0 0 25px rgba(197, 139, 95, 0.06);
   z-index: 2;
 }
 
@@ -4805,62 +3405,42 @@ body {
   font-size: 1.3rem;
 }
 
-
-/* MAP LABEL */
-
 .visit-map-label {
   position: absolute;
-
   left: 50%;
   top: calc(50% + 65px);
-
   transform: translateX(-50%);
-
   font-family: "Roboto", sans-serif;
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-
   color: var(--foam);
 }
 
 .visit-map-coord {
   position: absolute;
-
   right: 25px;
   bottom: 22px;
-
   font-family: "Roboto", sans-serif;
   font-size: 0.55rem;
   letter-spacing: 0.12em;
-
   opacity: 0.35;
 }
 
-
-/* STAMP */
-
 .visit-map-stamp {
   position: absolute;
-
   left: 35px;
   top: 35px;
-
   width: 110px;
   height: 110px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   border: 1px dashed rgba(245, 240, 232, 0.5);
   border-radius: 50%;
-
   color: var(--cream);
-
   text-align: center;
-
   transform: rotate(-12deg);
 }
 
@@ -4873,19 +3453,12 @@ body {
 
 .visit-map-stamp strong {
   margin-top: 2px;
-
   font-family: "Lobster", cursive;
   font-size: 1.4rem;
   font-weight: 400;
 }
 
-
-/* ================================
-   RESPONSIVE
-================================ */
-
 @media (max-width: 1000px) {
-
   .visit-content {
     grid-template-columns: 1fr;
     gap: 70px;
@@ -4899,12 +3472,9 @@ body {
   .visit-map-inner {
     min-height: 500px;
   }
-
 }
 
-
 @media (max-width: 600px) {
-
   .visit {
     padding: 85px 5vw 90px;
   }
@@ -4957,20 +3527,20 @@ body {
     width: 62px;
     height: 62px;
   }
-
 }
 
 
 
 /* =================================
-   SITE FOOTER
+   SITE FOOTER (SOFT & CLEAN)
 ================================= */
 
 .site-footer {
   background: var(--paper);
   color: var(--coffee-dark);
-  padding: 90px 5vw 35px;
+  padding: 80px 5vw 35px;
   overflow: hidden;
+  border-top: 1px solid var(--border);
 }
 
 .footer-shell {
@@ -4978,238 +3548,304 @@ body {
   margin: 0 auto;
 }
 
-/* TOP */
+/* 1. TOP SECTION: STAMPS & NEWSLETTER */
 
-.footer-top {
-  display: grid;
-  grid-template-columns: 1.5fr 0.8fr 0.8fr;
-  gap: 8vw;
-  padding-bottom: 80px;
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  padding-bottom: 50px;
   border-bottom: 1px solid var(--border);
+  margin-bottom: 60px;
 }
 
-.footer-logo {
-  display: inline-block;
-  margin-bottom: 22px;
+.footer-stamp-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px dashed var(--border);
+  border-radius: 30px;
+  color: var(--coffee-dark);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.footer-stamp i {
+  color: var(--caramel);
+  font-size: 0.75rem;
+}
+
+.footer-newsletter {
+  max-width: 380px;
+  width: 100%;
+}
+
+.footer-newsletter p {
+  margin: 6px 0 16px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.footer-form {
+  display: flex;
+  position: relative;
+}
+
+.footer-form input {
+  width: 100%;
+  padding: 12px 48px 12px 18px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 24px;
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  color: var(--coffee-dark);
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.footer-brand p {
-  margin: 0;
+.footer-form input:focus {
+  border-color: var(--caramel);
+  background: #ffffff;
+}
+
+.footer-form button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: var(--caramel);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.footer-form button:hover {
+  background: var(--coffee-dark);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* 2. MAIN GRID SECTION */
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 0.9fr 1fr;
+  gap: 5vw;
+  padding-bottom: 60px;
+}
+
+.brand-logo .logo {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--coffee-dark);
+  text-transform: uppercase;
+}
+
+.brand-logo .amp {
   font-family: "Lobster", cursive;
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  line-height: 1;
+  font-size: 1.1em;
+  color: var(--caramel);
+  font-weight: 400;
+  margin: 0 2px;
+}
+
+.brand-tagline {
+  margin: 16px 0 24px;
+  max-width: 320px;
+  font-family: "Lobster", cursive;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  line-height: 1.2;
   color: var(--coffee-mid);
 }
 
-/* NAV + CONTACT */
-
-.footer-nav,
-.footer-contact {
+.footer-socials {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 13px;
+  gap: 12px;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border);
+  color: var(--coffee-dark);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: var(--caramel);
+  color: #ffffff;
+  border-color: var(--caramel);
+  transform: translateY(-2px);
 }
 
 .footer-label {
-  margin-bottom: 8px;
-  color: var(--muted);
+  display: block;
+  margin-bottom: 18px;
   font-family: "Roboto", sans-serif;
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
 }
 
-.footer-nav a,
-.footer-contact a {
-  position: relative;
-  color: var(--coffee-dark);
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col ul a {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  color: var(--coffee-dark);
+  transition: color 0.2s ease;
 }
 
-.footer-nav a::after,
-.footer-contact a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 1px;
-  background: var(--caramel);
-  transition: width 0.3s ease;
+.footer-col ul a:hover {
+  color: var(--caramel);
 }
 
-.footer-nav a:hover::after,
-.footer-contact a:hover::after {
-  width: 100%;
+.footer-address {
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--coffee-dark);
+  margin-bottom: 12px;
 }
 
-/* BIG BRAND MARK */
+.footer-text-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--caramel);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
 
-.footer-middle {
+.footer-contact-link {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--coffee-dark);
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.footer-badge i {
+  color: var(--caramel);
+  font-size: 0.7rem;
+}
+
+/* 3. BOTTOM BAR */
+
+.footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
-  padding: 70px 0 55px;
-}
-
-.footer-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--caramel);
-  font-size: 1.2rem;
-}
-
-.footer-wordmark {
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  color: var(--coffee-dark);
-  font-family: "Roboto", sans-serif;
-  font-size: clamp(5rem, 15vw, 14rem);
-  font-weight: 700;
-  line-height: 0.75;
-  letter-spacing: -0.09em;
-}
-
-.footer-wordmark span {
-  color: var(--caramel);
-  font-family: "Lobster", cursive;
-  font-size: 0.45em;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-/* BOTTOM */
-
-.footer-bottom {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 20px;
   padding-top: 25px;
   border-top: 1px solid var(--border);
-
-  color: var(--muted);
   font-family: "Roboto", sans-serif;
   font-size: 0.55rem;
   font-weight: 700;
   letter-spacing: 0.13em;
+  color: var(--muted);
 }
 
-.footer-bottom span:nth-child(2) {
-  text-align: center;
+.footer-divider {
+  opacity: 0.4;
 }
 
-.footer-bottom span:last-child {
-  text-align: right;
+.back-to-top {
+  color: var(--coffee-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
+.back-to-top:hover {
+  color: var(--caramel);
+}
 
 /* =================================
    RESPONSIVE
 ================================= */
 
-@media (max-width: 800px) {
-
-  .site-footer {
-    padding: 75px 5vw 30px;
+@media (max-width: 900px) {
+  .footer-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .footer-top {
+  .footer-main-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 55px 40px;
-    padding-bottom: 60px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-middle {
-    padding: 60px 0 45px;
-  }
-
-  .footer-wordmark {
-    font-size: clamp(4rem, 17vw, 8rem);
-  }
-
-  .footer-mark {
-    width: 55px;
-    height: 55px;
-  }
-
-  .footer-bottom {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-bottom span:nth-child(2) {
-    display: none;
-  }
-
-  .footer-bottom span:last-child {
-    text-align: right;
+    gap: 40px;
   }
 }
 
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 60px 5vw 30px;
+  }
 
-@media (max-width: 500px) {
-
-  .footer-top {
+  .footer-main-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .footer-brand {
-    grid-column: auto;
-  }
-
-  .footer-brand p {
-    font-size: 2.3rem;
-  }
-
-  .footer-middle {
-    display: block;
-    padding: 55px 0 45px;
-  }
-
-  .footer-mark {
-    margin-bottom: 35px;
-  }
-
-  .footer-wordmark {
-    display: block;
-    font-size: clamp(4rem, 21vw, 6rem);
-    line-height: 0.7;
-  }
-
-  .footer-wordmark span {
-    margin: 0 5px;
+    gap: 32px;
   }
 
   .footer-bottom {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
 
-  .footer-bottom span:last-child {
-    text-align: left;
+  .footer-divider {
+    display: none;
   }
-}
+}s
