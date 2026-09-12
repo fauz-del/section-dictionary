@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-logo: "Alex Brush", cursive;
+  --font-heading: "Cinzel", serif;
+  --font-body: "Montserrat", sans-serif;
+
+  --color-cream: #FBF3EE;
+  --color-blush: #F4DCD5;
+  --color-peach: #EAC0AE;
+  --color-charcoal: #33261F;
+  --color-gold: #C9A05C;
+}
