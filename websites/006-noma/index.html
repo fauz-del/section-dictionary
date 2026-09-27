@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NOMA — furniture for the way you live.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="navbar__logo">
+      <a href="#">
+        <span class="logo__name">noma</span>
+        <span class="logo__line"></span>
+      </a>
+    </div>
+
+    <nav class="navbar__links">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="navbar__menu" aria-label="Open menu">
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero__image-wrapper">
+        <img
+          src="assets/images/yellow-armchair.jpg"
+          alt="Yellow NOMA armchair"
+        >
+      </div>
+
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+
+        <span class="hero__subtitle" data-animate data-delay="2">
+          The Architectural Collection
+        </span>
+
+        <h1 class="hero__title" data-animate data-delay="1">
+          Soft lines.<br>
+          Bold statements.
+        </h1>
+
+        <p class="hero__description" data-animate data-delay="3">
+          Thoughtfully crafted furniture designed to bring warmth,
+          balance, and modern comfort into every space.
+        </p>
+
+        <a href="#collection" class="hero__btn" data-animate data-delay="4">
+          Explore Collection
+        </a>
+
+      </div>
+
+    </section>
+    
+
+<section class="collection" id="collection">
+
+  <div class="collection__top">
+
+    <div>
+      <span class="collection__label">Collection</span>
+
+      <h2 class="collection__heading">
+        Made to be lived in.
+      </h2>
+    </div>
+
+    <p class="collection__intro">
+      Sculptural forms, warm materials, and everyday comfort.
+      Discover pieces designed for modern living.
+    </p>
+
+  </div>
+
+
+  <div class="collection__slider">
+
+    <article class="collection-card collection-card--large" data-animate data-delay="1">
+
+      <div class="collection-card__image">
+        <img
+          src="assets/images/brown-armchair.jpg"
+          alt="NOMA brown armchair"
+          data-animate="image"
+        >
+      </div>
+
+      <div class="collection-card__reveal">
+
+        <div>
+          <span class="collection-card__category">
+            Lounge Chair
+          </span>
+
+          <h3>Arc One</h3>
+        </div>
+
+        <a
+          href="#"
+          class="collection-card__link"
+          aria-label="View Arc One"
+        >
+          <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </article>
+
+    <article class="collection-card collection-card--small" data-animate data-delay="2">
+
+      <div class="collection-card__image">
+        <img
+          src="assets/images/cream-armchair.jpg"
+          alt="NOMA cream armchair"
+          data-animate="image"
+        >
+      </div>
+
+      <div class="collection-card__reveal">
+
+        <div>
+          <span class="collection-card__category">
+            Armchair
+          </span>
+
+          <h3>Forma</h3>
+        </div>
+
+        <a
+          href="#"
+          class="collection-card__link"
+          aria-label="View Forma"
+        >
+          <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article class="collection-card collection-card--small" data-animate data-delay="3">
+
+      <div class="collection-card__image">
+        <img
+          src="assets/images/grey-armchair.jpg"
+          alt="NOMA green armchair"
+          data-animate="image"
+          >
+      </div>
+
+      <div class="collection-card__reveal">
+
+        <div>
+          <span class="collection-card__category">
+            Lounge Chair
+          </span>
+
+          <h3>Still</h3>
+        </div>
+
+        <a
+          href="#"
+          class="collection-card__link"
+          aria-label="View Still"
+        >
+          <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </article>
+
+
+    <article class="collection-card collection-card--wide" data-animate data-delay="4">
+
+      <div class="collection-card__image">
+        <img
+          src="assets/images/grey-armchair2.jpg"
+          alt="NOMA black armchair"
+          data-animate="image"
+          >
+      </div>
+
+      <div class="collection-card__reveal">
+
+        <div>
+          <span class="collection-card__category">
+            Occasional Chair
+          </span>
+
+          <h3>Curve</h3>
+        </div>
+
+        <a
+          href="#"
+          class="collection-card__link"
+          aria-label="View Curve"
+        >
+          <i class="fa-solid fa-arrow-up-right" aria-hidden="false"></i>
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <div class="collection__bottom">
+
+    <div class="collection__count">
+      <span>01</span>
+
+      <span class="collection__count-line"></span>
+
+      <span>04</span>
+    </div>
+
+
+    <div class="collection__controls">
+
+      <button
+        class="collection__arrow collection__arrow--prev"
+        aria-label="Previous collection item"
+      >
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      </button>
+
+      <button
+        class="collection__arrow collection__arrow--next"
+        aria-label="Next collection item"
+      >
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="sofa-living" id="sofas">
+
+  <div class="sofa-living__top">
+    <div>
+      <span class="sofa-living__label" data-animate>Sofas</span>
+       <h2 class="sofa-living__heading" data-animate data-delay="1">
+        Made for<br>
+        living.
+      </h2>
+    </div>
+
+    <div class="sofa-living__intro" data-animate data-delay="2">
+      <p>
+        Sofas designed to settle naturally into the spaces
+        you call home. Comfortable, considered, and made
+        for everyday living.
+      </p>
+
+      <a href="#" class="sofa-living__link">
+        Explore sofas 
+        <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="sofa-living__grid">
+
+    <figure class="sofa-living__image sofa-living__image--room">
+      <img
+        src="assets/images/room-decor-with-potted-plants-sofa.jpg"
+        alt="NOMA sofa in a warm living space"
+        data-animate="image"
+        data-delay="1"
+         >
+      <figcaption>
+        <span>01</span>
+        Living / Everyday
+      </figcaption>
+    </figure>
+
+    <figure class="sofa-living__image sofa-living__image--long">
+      <img
+        src="assets/images/long-sofa.jpg"
+        alt="Long NOMA sofa"
+        data-animate="image"
+        data-delay="2"
+         >
+      <figcaption>
+        <span>02</span>
+        Lounge / Long Form
+      </figcaption>
+    </figure>
+
+    <figure class="sofa-living__image sofa-living__image--small">
+      <img
+        src="assets/images/nice-sofa.jpg"
+        alt="NOMA sofa"
+        data-animate="image"
+        data-delay="3"
+         >
+      <figcaption>
+        <span>03</span>
+        Comfort / Soft Form
+      </figcaption>
+    </figure>
+
+    <figure class="sofa-living__image sofa-living__image--purple">
+      <img
+        src="assets/images/purple-sofa.jpg"
+        alt="Purple NOMA sofa"
+        data-animate="image"
+        data-delay="4"
+      >
+      <figcaption>
+        <span>04</span>
+        Colour / Expression
+      </figcaption>
+    </figure>
+
+    <div class="sofa-living__pair">
+
+      <figure class="sofa-living__image sofa-living__image--half">
+        <img
+          src="assets/images/one-half-of-the-sofa1.jpg"
+          alt="Detail of NOMA sofa"
+          data-animate="image"
+          data-delay="5"
+         >
+      </figure>
+
+      <figure class="sofa-living__image sofa-living__image--half sofa-living__image--mirrored">
+        <img
+          src="assets/images/one-half-of-the-sofa2.jpg"
+          alt="Detail of NOMA sofa in another colour"
+          data-animate="image"
+          data-delay="5"
+         >
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<section class="craft" id="craft">
+
+  <div class="craft__inner">
+
+    <div class="craft__header">
+      <span class="craft__label" data-animate>Materials</span>
+      <h2 class="craft__heading" data-animate data-delay="1">
+        Made with<br>
+        intention.
+      </h2>
+    </div>
+
+
+    <div class="craft__content">
+
+      <figure class="craft__image">
+        <img
+          src="assets/images/room-decor-with-potted-plants-sofa.jpg"
+          alt="NOMA furniture in a warm interior"
+          data-animate="image"
+        >
+      </figure>
+
+      <div class="craft__details">
+
+        <p class="craft__statement" data-animate data-delay="1">
+          Good furniture should feel natural in a room.
+          Every NOMA piece is considered around comfort,
+          proportion, and the materials that bring it to life.
+        </p>
+
+
+        <div class="craft__features">
+
+          <div class="craft__feature" data-animate data-delay="1">
+            <span class="craft__number">01</span>
+
+            <div>
+              <h3>Considered form</h3>
+              <p>
+                Soft curves and balanced proportions
+                designed to feel at home in any space.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="craft__feature" data-animate data-delay="2">
+            <span class="craft__number">02</span>
+
+            <div>
+              <h3>Warm materials</h3>
+              <p>
+                Textures and finishes selected to add
+                depth without overwhelming a room.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="craft__feature" data-animate data-delay="3">
+            <span class="craft__number">03</span>
+
+            <div>
+              <h3>Everyday comfort</h3>
+              <p>
+                Designed for the way furniture is
+                actually used — every day.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+
+        <a href="#" class="craft__link">
+          Discover our approach
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="services" id="services">
+  <div class="services__inner">
+    <div class="services__header">
+      <span class="services__label" data-animate>Services</span>
+
+      <div class="services__heading-wrap">
+        <h2 class="services__heading" data-animate data-delay="1">
+          More than<br>
+          furniture.
+        </h2>
+
+        <p class="services__intro" data-animate data-delay="2">
+          From choosing the right piece to creating a room
+          that feels complete, NOMA helps you make
+          considered choices for the spaces you live in.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="services__list">
+
+      <article class="services__item" data-animate data-delay="1">
+        <span class="services__number">01</span>
+
+        <div class="services__main">
+          <h3>Living spaces</h3>
+
+          <p>
+            Furniture designed to work together naturally,
+            from individual pieces to complete living spaces.
+          </p>
+        </div>
+
+        <span class="services__arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </article>
+
+
+      <article class="services__item" data-animate data-delay="2">
+        <span class="services__number">02</span>
+
+        <div class="services__main">
+          <h3>Personal selection</h3>
+
+          <p>
+            Find the right proportions, materials, and
+            finishes for the way you use your space.
+          </p>
+        </div>
+
+        <span class="services__arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </article>
+
+
+      <article class="services__item" data-animate data-delay="3">
+        <span class="services__number">03</span>
+
+        <div class="services__main">
+          <h3>Interior guidance</h3>
+
+          <p>
+            A considered approach to combining furniture,
+            colour, and atmosphere within your home.
+          </p>
+        </div>
+
+        <span class="services__arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </article>
+
+
+      <article class="services__item" data-animate data-delay="4">
+        <span class="services__number">04</span>
+
+        <div class="services__main">
+          <h3>Made for you</h3>
+
+          <p>
+            Thoughtful pieces created around comfort,
+            character, and everyday living.
+          </p>
+        </div>
+
+        <span class="services__arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <div class="contact__inner">
+
+    <div class="contact__intro">
+
+      <div class="contact__eyebrow">
+        <span>Contact</span>
+        <span>Come say hello</span>
+      </div>
+
+      <div class="contact__statement">
+        <h2>
+          Come see<br>
+          it in person.
+        </h2>
+
+        <p>
+          Furniture is better experienced up close.
+          Visit the NOMA showroom, explore our collection,
+          or speak with us about finding the right piece
+          for your home.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="contact__content">
+
+      <!-- Showroom -->
+      <div class="contact__card contact__card--showroom">
+
+        <div class="contact__card-number">01</div>
+
+        <div class="contact__card-body">
+
+          <span class="contact__card-label">Showroom</span>
+
+          <h3>
+            24 Living Street
+          </h3>
+
+          <p>
+            London, UK
+          </p>
+
+          <a href="#" class="contact__button">
+            Get directions
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Contact -->
+      <div class="contact__card">
+
+        <div class="contact__card-number">02</div>
+
+        <div class="contact__card-body">
+
+          <span class="contact__card-label">Get in touch</span>
+
+          <a
+            href="mailto:hello@noma.com"
+            class="contact__email"
+          >
+            hello@noma.com
+            <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="tel:+442012345678"
+            class="contact__phone"
+          >
+            +44 20 1234 5678
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Opening hours -->
+      <div class="contact__card">
+
+        <div class="contact__card-number">03</div>
+
+        <div class="contact__card-body">
+
+          <span class="contact__card-label">Opening hours</span>
+
+          <div class="contact__hours">
+
+            <div>
+              <span>Monday — Friday</span>
+              <strong>10:00 — 18:00</strong>
+            </div>
+
+            <div>
+              <span>Saturday</span>
+              <strong>10:00 — 17:00</strong>
+            </div>
+
+            <div>
+              <span>Sunday</span>
+              <strong>By appointment</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="contact__bottom">
+
+      <span>
+        Showroom visits are available by appointment.
+      </span>
+
+      <a href="#home">
+        Back to top
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer class="footer">
+
+  <div class="footer__inner">
+
+    <div class="footer__brand">
+
+      <a href="#home" class="footer__logo">
+        noma
+      </a>
+
+      <p>
+        Furniture for the way you live.
+      </p>
+
+      <a
+        href="mailto:hello@noma.com"
+        class="footer__email"
+      >
+        hello@noma.com
+      </a>
+
+    </div>
+
+    <div class="footer__links">
+
+      <div class="footer__group">
+
+        <span>Shop</span>
+
+        <a href="#collection">Collection</a>
+        <a href="#sofas">Sofas</a>
+        <a href="#">Chairs</a>
+        <a href="#">Tables</a>
+        <a href="#">Storage</a>
+
+      </div>
+
+
+      <div class="footer__group">
+
+        <span>About</span>
+
+        <a href="#craft">Our craft</a>
+        <a href="#">Materials</a>
+        <a href="#">Our story</a>
+        <a href="#">Journal</a>
+
+      </div>
+
+
+      <div class="footer__group">
+
+        <span>Help</span>
+
+        <a href="#contact">Contact</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer__social">
+
+    <span>Follow NOMA</span>
+
+    <div class="footer__social-links">
+
+      <a href="#" aria-label="Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+
+      <a href="#" aria-label="Pinterest">
+        <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+      </a>
+
+      <a href="#" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="footer__wordmark">
+    noma
+  </div>
+
+  <div class="footer__bottom">
+
+    <span>
+      © 2026 NOMA Furniture
+    </span>
+
+    <div class="footer__legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Shipping & Returns</a>
+      <a href="#">Accessibility</a>
+    </div>
+
+    <span class="footer__location">
+      London, UK
+    </span>
+
+  </div>
+
+</footer>
+
+  </main>
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
