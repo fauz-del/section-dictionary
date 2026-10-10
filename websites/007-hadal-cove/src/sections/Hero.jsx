@@ -10,10 +10,13 @@ function Hero() {
         loop
         playsInline
         preload="metadata"
-        poster="/assets/images/jellyfish.jpg"
+        poster={`${import.meta.env.BASE_URL}assets/images/jellyfish.jpg`}
         aria-label="Underwater footage of the deep ocean"
       >
-        <source src="/assets/videos/hero.mp4" type="video/mp4" />
+        <source
+          src={`${import.meta.env.BASE_URL}assets/videos/hero.mp4`}
+          type="video/mp4"
+        />
       </video>
 
       <div className="video-shade" aria-hidden="true" />

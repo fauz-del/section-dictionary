@@ -13,7 +13,7 @@ function BelowSurface() {
         aria-hidden="true"
       >
         <source
-          src="/assets/videos/schooloffishes.mp4"
+          src={`${import.meta.env.BASE_URL}assets/videos/schooloffishes.mp4`}
           type="video/mp4"
         />
       </video>
