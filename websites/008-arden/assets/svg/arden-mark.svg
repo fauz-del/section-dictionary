@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 48 48" fill="none">
+  <path d="M7 41 L24 5 L41 41"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="square"
+        stroke-linejoin="miter"/>
+  <path d="M14 26 H34"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="square"/>
+  <path d="M19 16 L24 5 L29 16"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="square"/>
+</svg>

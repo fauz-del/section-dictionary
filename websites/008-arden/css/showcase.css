@@ -1,0 +1,166 @@
+.showcase {
+  padding-block: 24px clamp(80px, 10vw, 140px);
+}
+
+.showcase__panel {
+  position: relative;
+  display: flex;
+  min-height: 540px;
+  align-items: center;
+  overflow: hidden;
+  border-radius: var(--radius-large);
+  isolation: isolate;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.showcase__image,
+.showcase__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.showcase__image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 800ms var(--ease-standard);
+}
+
+.showcase__panel:hover .showcase__image {
+  transform: scale(1.025);
+}
+
+.showcase__overlay {
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgb(22 25 22 / 82%) 0%,
+    rgb(22 25 22 / 58%) 45%,
+    rgb(22 25 22 / 12%) 100%
+  );
+}
+
+.showcase__content {
+  width: min(620px, 75%);
+  padding: clamp(32px, 7vw, 88px);
+}
+
+.showcase__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 24px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.showcase__eyebrow span {
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+}
+
+.showcase__title {
+  margin-bottom: 22px;
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.02;
+}
+
+.showcase__description {
+  max-width: 390px;
+  margin-bottom: 30px;
+  color: rgb(255 255 255 / 82%);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.showcase__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 50px;
+  padding: 0 19px;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    color 250ms ease,
+    background 250ms ease,
+    border-color 250ms ease;
+}
+
+.showcase__button:hover {
+  border-color: var(--color-ivory);
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+}
+
+.showcase__button i {
+  font-size: 11px;
+  transition: transform 250ms ease;
+}
+
+.showcase__button:hover i {
+  transform: translate(2px, -2px);
+}
+
+.showcase__number {
+  position: absolute;
+  right: 30px;
+  bottom: 28px;
+  color: rgb(255 255 255 / 80%);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 600px) {
+  .showcase {
+    padding-top: 8px;
+  }
+
+  .showcase__panel {
+    min-height: 570px;
+    border-radius: 20px;
+  }
+
+  .showcase__image {
+    object-position: 58% center;
+  }
+
+  .showcase__overlay {
+    background: linear-gradient(
+      0deg,
+      rgb(22 25 22 / 86%) 0%,
+      rgb(22 25 22 / 60%) 58%,
+      rgb(22 25 22 / 18%) 100%
+    );
+  }
+
+  .showcase__content {
+    width: 100%;
+    align-self: flex-end;
+    padding: 36px 24px 76px;
+  }
+
+  .showcase__title {
+    font-size: clamp(40px, 10vw, 56px);
+  }
+
+  .showcase__description {
+    font-size: 13px;
+  }
+
+  .showcase__number {
+    right: 24px;
+    bottom: 24px;
+  }
+}
