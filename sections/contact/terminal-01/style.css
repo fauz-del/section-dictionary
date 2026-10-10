@@ -1,0 +1,538 @@
+:root {
+  --black: #030503;
+  --black-soft: #070b07;
+
+  --green: #3ef07c;
+  --green-dim: #1e7a44;
+  --green-faint: rgba(62, 240, 124, 0.08);
+  --green-line: rgba(62, 240, 124, 0.18);
+
+  --font: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(62, 240, 124, 0.055),
+      transparent 65%
+    ),
+    var(--black);
+
+  color: var(--green);
+  font-family: var(--font);
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CRT ATMOSPHERE
+   ========================================================= */
+
+/*
+  Scanlines cover the entire viewport.
+
+  This is deliberately attached to the body rather than
+  a terminal card so the entire page feels like the screen.
+*/
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      rgba(0, 0, 0, 0.17) 3px
+    );
+
+  z-index: 20;
+}
+
+
+/*
+  CRT vignette.
+
+  The edges of an old monitor are darker than the centre.
+*/
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 120px 25px rgba(0, 0, 0, 0.9),
+    inset 0 0 35px 5px rgba(0, 0, 0, 0.75);
+
+  z-index: 21;
+}
+
+
+/* =========================================================
+   TERMINAL INTERFACE
+   ========================================================= */
+
+.terminal-interface {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  padding:
+    clamp(18px, 4vw, 48px)
+    clamp(18px, 5vw, 72px);
+
+  isolation: isolate;
+}
+
+
+/*
+  Subtle CRT glow surrounding the interface.
+*/
+
+.terminal-interface::before {
+  content: "";
+
+  position: absolute;
+  inset: clamp(10px, 2vw, 28px);
+
+  border: 1px solid var(--green-line);
+
+  box-shadow:
+    0 0 40px rgba(62, 240, 124, 0.025),
+    inset 0 0 40px rgba(62, 240, 124, 0.025);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   TITLE BAR
+   ========================================================= */
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 42px;
+
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid var(--green-line);
+
+  color: var(--green-dim);
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.system-name {
+  display: flex;
+  align-items: center;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  margin-right: 9px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 5px var(--green),
+    0 0 12px rgba(62, 240, 124, 0.4);
+
+  animation: pulse 2s infinite ease-in-out;
+}
+
+#status-label {
+  color: var(--green);
+}
+
+
+/* =========================================================
+   TERMINAL SCREEN
+   ========================================================= */
+
+.screen {
+  position: relative;
+
+  width: min(100%, 1000px);
+
+  padding:
+    clamp(35px, 7vw, 90px)
+    clamp(4px, 2vw, 24px);
+
+  font-size: clamp(12px, 1.3vw, 15px);
+  line-height: 1.8;
+
+  color: var(--green);
+
+  text-shadow:
+    0 0 2px rgba(62, 240, 124, 0.85),
+    0 0 8px rgba(62, 240, 124, 0.25);
+
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  cursor: text;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--green-dim)
+    transparent;
+}
+
+
+/*
+  Keeps the terminal content from feeling glued
+  to the very top of the viewport.
+*/
+
+.screen::before {
+  content: "CONTACT_PROTOCOL";
+
+  display: block;
+
+  margin-bottom: clamp(28px, 5vw, 55px);
+
+  color: var(--green-dim);
+
+  font-size: 10px;
+  letter-spacing: 0.25em;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   TERMINAL LINES
+   ========================================================= */
+
+.line {
+  display: block;
+  min-height: 1.8em;
+}
+
+.line.dim {
+  color: var(--green-dim);
+  text-shadow: none;
+}
+
+.line.system {
+  color: var(--green-dim);
+  text-shadow: none;
+}
+
+.line.highlight {
+  color: var(--green);
+
+  text-shadow:
+    0 0 3px rgba(62, 240, 124, 0.9),
+    0 0 12px rgba(62, 240, 124, 0.35);
+}
+
+.line.prompt-echo {
+  color: var(--green);
+}
+
+
+/* =========================================================
+   INFORMATION BLOCK
+   ========================================================= */
+
+.info-block {
+  margin-top: 20px;
+  padding-top: 18px;
+
+  border-top: 1px dashed var(--green-line);
+
+  opacity: 0;
+
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.info-block.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-row {
+  display: flex;
+  gap: 20px;
+
+  max-width: 600px;
+}
+
+.info-label {
+  min-width: 110px;
+
+  color: var(--green-dim);
+}
+
+
+/* =========================================================
+   COMMAND PROMPT
+   ========================================================= */
+
+.prompt-row {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 4px;
+
+  margin-top: 22px;
+}
+
+.prompt-symbol {
+  color: var(--green);
+}
+
+#typed-input {
+  color: var(--green);
+
+  text-shadow:
+    0 0 2px rgba(62, 240, 124, 0.8);
+}
+
+
+/* CRT cursor */
+
+.caret {
+  display: inline-block;
+
+  width: 8px;
+  height: 1em;
+
+  background: var(--green);
+
+  vertical-align: text-bottom;
+
+  box-shadow:
+    0 0 5px var(--green),
+    0 0 10px rgba(62, 240, 124, 0.3);
+
+  animation:
+    blink 1s steps(1) infinite;
+}
+
+
+/* Hidden real input */
+
+.hidden-input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.terminal-footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 12px;
+
+  border-top: 1px solid var(--green-line);
+
+  color: var(--green-dim);
+
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+
+@keyframes blink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/*
+  Very subtle CRT instability.
+
+  Notice that this is intentionally almost invisible.
+*/
+
+@keyframes screen-flicker {
+
+  0%,
+  96%,
+  100% {
+    opacity: 1;
+  }
+
+  97% {
+    opacity: 0.985;
+  }
+
+  98% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0.99;
+  }
+}
+
+.terminal-interface {
+  animation: screen-flicker 6s infinite;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .terminal-interface {
+    padding:
+      14px
+      16px;
+  }
+
+  .terminal-interface::before {
+    inset: 8px;
+  }
+
+  .titlebar {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+
+    gap: 20px;
+  }
+
+  .system-status {
+    text-align: right;
+  }
+
+  .screen {
+    width: 100%;
+
+    padding:
+      35px 2px
+      40px;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+  .screen::before {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+  }
+
+  .info-row {
+    gap: 12px;
+  }
+
+  .info-label {
+    min-width: 82px;
+  }
+
+  .terminal-footer {
+    font-size: 7px;
+    letter-spacing: 0.08em;
+
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .terminal-interface,
+  .status-dot,
+  .caret {
+    animation: none !important;
+  }
+
+  .info-block {
+    transition: none !important;
+  }
+}

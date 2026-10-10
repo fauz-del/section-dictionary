@@ -1,0 +1,407 @@
+/* ==========================================================================
+   🚨 SECTION DICTIONARY #002 — BRUTALIST XEROGRAPHY PALETTE
+   ========================================================================== */
+:root {
+  --background: #111111;       /* Near-black photocopy bed */
+  --black: #111111;
+  --white: #F2F1EB;            /* Gritty, unbleached paper */
+  --accent: #E3261B;           /* Heavy toner red registration ink */
+  --grey: #807E78;             /* Mid-tone industrial archival grey */
+  --line: rgba(242, 241, 235, 0.15); /* Subdued paper-edge boundaries */
+  --page-padding: clamp(20px, 4vw, 56px);
+}
+
+/* ==========================================================================
+   RESET & SYSTEM BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.repress {
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--page-padding) var(--page-padding) 40px;
+  position: relative;
+}
+
+/* ==========================================================================
+   HEADER METADATA
+   ========================================================================== */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--white);
+}
+
+.header-meta {
+  display: flex;
+  gap: 32px;
+}
+
+/* ==========================================================================
+   COMPOSITION CONTAINER
+   ========================================================================== */
+.artifact {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  position: relative;
+  padding-top: clamp(60px, 9vw, 120px);
+}
+
+.artifact-index {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  display: flex;
+  gap: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--grey);
+}
+
+/* ==========================================================================
+   PORTRAIT CANVAS & CUTOUT ENGINE
+   ========================================================================== */
+.portrait {
+  width: min(590px, 58vw);
+  aspect-ratio: 0.78;
+  margin-left: auto;
+  margin-right: 7%;
+  position: relative;
+  background: var(--white); /* Acts as the unbleached physical paper collage backdrop */
+  cursor: crosshair;
+  isolation: isolate;
+  transform: rotate(-1.2deg); /* Imperfect physical assembly tilt */
+}
+
+/* Fallback static layout (When JavaScript is missing or disabled) */
+.portrait-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Pure CSS high-contrast toner crunch */
+  filter: grayscale(1) contrast(350%) brightness(85%); 
+  /* Instantly drops out the photo's light grey BG to create a sharp silhouette cutout */
+  mix-blend-mode: multiply; 
+}
+
+/* ==========================================================================
+   SHATTERED IMAGE GRID (DYNAMIC ELEMENTS)
+   ========================================================================== */
+.tile-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  mix-blend-mode: multiply; /* Ensures all dynamic child tiles inherit the cutout effect */
+}
+
+.tile {
+  position: absolute;
+  background-repeat: no-repeat;
+  filter: grayscale(1) contrast(350%) brightness(85%); /* Harsh toner ink density */
+  will-change: transform;
+  transition: transform 0.55s cubic-bezier(.2, .8, .2, 1);
+}
+
+/* The Ghost misregistration layer (Simulates misaligned color print runs) */
+.tile-ghost {
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 4;
+  pointer-events: none;
+  /* Converts single image asset into pure, raw Red Toner ink */
+  filter: grayscale(1) brightness(0.4) sepia(1) saturate(80) hue-rotate(330deg) contrast(300%);
+  opacity: 0;
+  mix-blend-mode: screen; /* Pops with intense vibrancy against the dark viewport */
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s cubic-bezier(.2, .8, .2, 1);
+}
+
+/* ==========================================================================
+   PRINT ARTIFACTS & METADATA
+   ========================================================================== */
+.registration {
+  position: absolute;
+  z-index: 10;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+.registration--top {
+  top: -9px;
+  right: -9px;
+}
+
+.registration--bottom {
+  bottom: -9px;
+  left: -9px;
+}
+
+/* Alignment test strip graphic */
+.yellow-offset {
+  position: absolute;
+  z-index: 1;
+  width: 70px;
+  height: 2px;
+  right: -25px;
+  top: 45%;
+  background: var(--accent);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.portrait-meta {
+  width: min(590px, 58vw);
+  margin-left: auto;
+  margin-right: 7%;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.57rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+/* ==========================================================================
+   BRUTALIST TYPOGRAPHIC MANIFESTO
+   ========================================================================== */
+.manifesto {
+  position: relative;
+  z-index: 6;
+  /* Aggressively pulls text up to collide and overlap with the image canvas block */
+  margin-top: -14vw; 
+  pointer-events: none; /* Allows pointer movements to go right through to the image underneath */
+}
+
+.manifesto-label {
+  margin-bottom: 18px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  color: var(--grey);
+}
+
+.manifesto h1 {
+  max-width: 900px;
+  font-size: clamp(4.2rem, 11.5vw, 9.5rem);
+  line-height: 0.76; /* Drastically compressed line height for heavy poster impact */
+  letter-spacing: -0.065em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  /* The layout philosophy: text flips color automatically where it crashes into the paper cutout */
+  mix-blend-mode: difference; 
+}
+
+/* ==========================================================================
+   SECONDARY INFORMATION ARCHITECTURE
+   ========================================================================== */
+.information {
+  display: grid;
+  grid-template-columns: 120px minmax(250px, 450px);
+  gap: 40px;
+  margin-top: 90px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.info-number {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--grey);
+}
+
+.info-number::before {
+  content: "[02]";
+}
+
+.info-copy {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.64rem;
+  line-height: 1.65;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.info-copy p + p {
+  margin-top: 24px;
+  color: var(--grey);
+}
+
+.annotation {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 70px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.annotation-mark {
+  width: 34px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ==========================================================================
+   FOOTER SYSTEM
+   ========================================================================== */
+.footer {
+  margin-top: 100px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.57rem;
+  letter-spacing: 0.1em;
+  color: var(--grey);
+  text-transform: uppercase;
+}
+
+/* Accessibility Focus Ring */
+.portrait:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 8px;
+}
+
+/* Prefers Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .tile-ghost {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE SCALING BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 800px) {
+  .header-meta span:nth-child(2) {
+    display: none;
+  }
+  .portrait, .portrait-meta {
+    width: min(620px, 75vw);
+    margin-right: 2%;
+  }
+  .manifesto {
+    margin-top: -5vw;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --page-padding: 18px;
+  }
+  .repress {
+    padding-bottom: 30px;
+  }
+  .header {
+    font-size: 0.58rem;
+  }
+  .header-meta {
+    gap: 12px;
+  }
+  .artifact {
+    padding-top: 85px;
+  }
+  .artifact-index {
+    top: 42px;
+    font-size: 0.5rem;
+  }
+  .portrait {
+    width: 88vw;
+    max-width: none;
+    margin-left: auto;
+    margin-right: -4vw;
+  }
+  .portrait-meta {
+    width: 88vw;
+    margin-right: -4vw;
+    font-size: 0.48rem;
+  }
+  .yellow-offset {
+    width: 35px;
+    height: 2px;
+    right: -10px;
+  }
+  .manifesto {
+    margin-top: 40px;
+  }
+  .manifesto h1 {
+    font-size: clamp(3.1rem, 14.5vw, 5rem);
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    mix-blend-mode: normal; /* Disables blend mode overlay conflicts on packed mobile layers */
+  }
+  .information {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 65px;
+  }
+  .info-copy {
+    max-width: 95%;
+  }
+  .annotation {
+    margin-top: 55px;
+    flex-wrap: wrap;
+  }
+  .footer {
+    margin-top: 70px;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+.portrait, .portrait-meta {width: 94vw;margin-right: -7vw;}.manifesto h1 {font-size: 2.9rem;}}

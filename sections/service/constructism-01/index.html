@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Constructivist Hallway</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+  :root{
+    --paper:#d8cbb1;
+    --black:#0b0b0b;
+    --red:#d61c1c;
+    --gray:#4a463d;
+    --font-heavy:'Arial Black','Impact',sans-serif;
+    --font-mono:'Courier New',Courier,monospace;
+  }
+
+  body{
+    min-height:100vh;
+    background:#c9bca0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:4vw 3vw;
+  }
+
+  /* ==================================================
+     CONTAINER
+     A fluid box that keeps a fixed ASPECT RATIO instead
+     of a fixed pixel size. Every child is positioned in
+     %, so the whole drawing scales together — this is
+     the actual fix for "not responsive".
+  ================================================== */
+  .hallway{
+    position:relative;
+    width:min(1200px,94vw);
+    aspect-ratio:16/10;
+    background:var(--paper);
+    border:clamp(4px,0.6vw,10px) solid var(--black);
+    overflow:hidden;
+
+    /* the diagonal that the floor, horizon and every
+       frame base line up against */
+    --y-left:82%;   /* floor top edge, at the left wall  */
+    --y-right:22%;  /* floor top edge, at the vanishing point */
+    --horizon-angle:-20.6deg;
+    --horizon-len:107%;
+  }
+
+  /* ==================================================
+     FLOOR — one black plane, clipped by the diagonal
+  ================================================== */
+  .floor{
+    position:absolute;
+    inset:0;
+    background:var(--black);
+    clip-path:polygon(0% var(--y-left), 100% var(--y-right), 100% 100%, 0% 100%);
+    z-index:1;
+  }
+
+  .floor-text{
+    position:absolute;
+    left:4%;
+    top:90%;
+    transform-origin:left center;
+    transform:rotate(var(--horizon-angle));
+    font-family:var(--font-mono);
+    color:var(--paper);
+    font-size:clamp(9px,1.1vw,14px);
+    letter-spacing:clamp(2px,0.5vw,5px);
+    white-space:nowrap;
+  }
+
+  .floor-mark{
+    position:absolute;
+    right:7%;
+    top:40%;
+    width:clamp(28px,5.5vw,60px);
+    aspect-ratio:1;
+    border:clamp(3px,0.6vw,7px) solid var(--red);
+    border-radius:50%;
+  }
+
+  /* ==================================================
+     HORIZON LINE — one rotated element, scale-invariant
+     because it's derived from the same ratio as the floor
+  ================================================== */
+  .horizon{
+    position:absolute;
+    left:0;
+    top:var(--y-left);
+    width:var(--horizon-len);
+    height:clamp(1px,0.25vw,3px);
+    background:var(--red);
+    transform-origin:left center;
+    transform:rotate(var(--horizon-angle));
+    z-index:5;
+  }
+
+  /* ==================================================
+     DOOR FRAMES
+     Each frame carries its own position/size as custom
+     properties so the media query only has to override
+     four numbers per frame, not re-derive geometry.
+  ================================================== */
+  .frame{
+    position:absolute;
+    left:var(--fx);
+    top:var(--fy);
+    width:var(--fw);
+    height:var(--fh);
+    background:#141210;
+    clip-path:polygon(15% 0, 85% 0, 100% 100%, 0% 100%);
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    gap: 200px;
+    padding-bottom:8%;
+    transition:transform 0.35s ease;
+  }
+
+  .frame--01{ --fx:8%;  --fw:25%; --fh:100%; }
+  .frame--02{ --fx:48%; --fw:20%; --fh:100%; }
+  .frame--03{ --fx:80%; --fw:15%; --fh:100%; }
+
+  .frame-index,
+  .frame-label{
+    color:var(--paper);
+    font-family:var(--font-heavy);
+    text-align:center;
+    transition:transform 0.35s ease;
+  }
+  .frame-index{ font-size:clamp(10px,1.4vw,20px); opacity:.55; }
+  .frame-label{
+    font-size:clamp(9px,1vw,15px);
+    letter-spacing:1px;
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+  }
+
+  /* directional hover — nudges the label along the same
+     diagonal as the horizon, not straight up */
+  .frame:hover{ transform:translate(1%, -0.6%); }
+  .frame:hover .frame-index,
+  .frame:hover .frame-label{ transform:translate(2px,-4px); }
+
+  /* the shadow the far frame casts onto the floor — a
+     separate element, not a child, so it isn't clipped
+     away by the frame's own trapezoid */
+  .spill{
+    position:absolute;
+    left:56%;
+    top:49%;
+    width:16%;
+    height:32%;
+    background:linear-gradient(200deg, rgba(0,0,0,.55), rgba(0,0,0,0) 75%);
+    clip-path:polygon(10% 0, 100% 0, 60% 100%, 0% 100%);
+    z-index:2;
+    pointer-events:none;
+  }
+
+  /* ==================================================
+     FOREGROUND TYPE
+  ================================================== */
+  .headline{
+    position:absolute;
+    right:4%;
+    bottom:6%;
+    z-index:6;
+    font-family:var(--font-heavy);
+    color:var(--paper);
+    font-size:clamp(2rem,7.5vw,5rem);
+    line-height:0.88;
+    letter-spacing:-1px;
+    text-align:right;
+    text-transform:uppercase;
+  }
+  .manifesto{
+    position:absolute;
+    right:4%;
+    bottom:2%;
+    z-index:6;
+    font-family:var(--font-mono);
+    color:var(--red);
+    font-size:clamp(8px,1vw,12px);
+    letter-spacing:1px;
+    font-weight:bold;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .frame,.frame-index,.frame-label{ transition:none; }
+  }
+
+  /* ==================================================
+     MOBILE — the hallway can't recede sideways on a
+     narrow screen, so it becomes a descending vertical
+     sequence instead. Same idea (direction + shrinking
+     scale = depth), different axis.
+  ================================================== */
+  @media (max-width:700px){
+    .hallway{
+      aspect-ratio:3/4;
+      --y-left:88%;
+      --y-right:60%;
+      --horizon-angle:-31deg;
+      --horizon-len:118%;
+    }
+    .frame--01{ --fx:6%;  --fw:56%; --fy:6%;  --fh:24%; }
+    .frame--02{ --fx:30%; --fw:40%; --fy:32%; --fh:19%; }
+    .frame--03{ --fx:50%; --fw:26%; --fy:56%; --fh:13%; }
+    .spill{ left:50%; top:69%; width:32%; height:22%; }
+    .floor-mark{ right:10%; top:20%; }
+    .headline{ font-size:clamp(1.8rem,11vw,3rem); }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hallway" aria-label="Services">
+    <div class="floor">
+      <span class="floor-text">LINEAR PROGRESSION</span>
+      <span class="floor-mark"></span>
+    </div>
+
+    <div class="horizon"></div>
+
+    <div class="frame frame--01">
+      <span class="frame-index">01</span>
+      <span class="frame-label">SPACE</span>
+    </div>
+    <div class="frame frame--02">
+      <span class="frame-index">02</span>
+      <span class="frame-label">OBJECT</span>
+    </div>
+    <div class="frame frame--03">
+      <span class="frame-index">03</span>
+      <span class="frame-label">IMAGE</span>
+    </div>
+    <div class="spill"></div>
+
+    <h1 class="headline">Services</h1>
+    <p class="manifesto">THE SLOPE. THE ANGLE. THE VANISHING LINE.</p>
+  </section>
+
+</body>
+</html>

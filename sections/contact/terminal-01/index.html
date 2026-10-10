@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Form System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="terminal-interface">
+
+    <header class="titlebar">
+      <div class="system-name">
+        <span class="status-dot"></span>
+        <span>FORM_SYSTEM v1.0</span>
+      </div>
+
+      <div class="system-status">
+        STATUS:
+        <span id="status-label">BOOTING</span>
+      </div>
+    </header>
+
+
+    <section
+      class="screen"
+      id="screen"
+      tabindex="0"
+      aria-label="Interactive terminal"
+    >
+    </section>
+
+    <footer class="terminal-footer">
+      <span>MEM: 64K</span>
+      <span>TERM: CRT-01</span>
+      <span>CONNECTION: SECURE</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

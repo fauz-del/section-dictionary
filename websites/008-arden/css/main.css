@@ -135,3 +135,16 @@ h4 {
   }
 }
 
+/* Prevents animated split words from spilling or overlapping nearby lines */
+.hero h1, .about__title, .mission__title, 
+.testimonials__title, .showcase__title, .contact__title {
+  overflow: hidden;
+}
+
+/* Ensure split words behave like standard inline blocks with layouts */
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+

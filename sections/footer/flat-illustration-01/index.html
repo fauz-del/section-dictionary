@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flat Illustration Footer</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- GSAP Core & ScrollTrigger CDN -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+   <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Scroll buffer to let you scroll into the footer -->
+  <div style="height: 120vh; background: #FEFDF9;"></div>
+
+  <footer class="cartoon-footer">
+    
+    <!-- Top Level: Real UI content links & Branding matching the screenshot layout -->
+    <div class="footer-ui-layer">
+      <div class="brand-column">
+        <div class="logo">
+          <span class="logo-icon"></span>
+          Nexiron
+        </div>
+        <p class="brand-desc">Balance metrics effortlessly, transform completely, data into clear engaging stories—everything you need in one place.</p>
+      </div>
+
+      <div class="nav-grid">
+        <div class="nav-column">
+          <h4>Product</h4>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Integrations</a>
+          <a href="#">Updates</a>
+        </div>
+        <div class="nav-column">
+          <h4>Resources</h4>
+          <a href="#">Documentation</a>
+          <a href="#">Case Studies</a>
+          <a href="#">Blog</a>
+          <a href="#">Guides</a>
+          <a href="#">Support</a>
+        </div>
+        <div class="nav-column">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Our Vision</a>
+          <a href="#">Press Kit</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Level Landscape Vector Layer Graphics -->
+    <div class="landscape-container">
+
+      <!-- Layer 1: Background Vector Clouds -->
+      <div class="layer layer--clouds" data-depth="0.1">
+        <svg viewBox="0 0 1440 300" preserveAspectRatio="none">
+          <!-- Stylized Flat Cartoon Clouds -->
+          <path d="M100,150 Q160,90 240,110 Q320,80 400,130 Q460,90 540,120 L540,300 L100,300 Z" fill="#FEFDF9" opacity="0.8"/>
+          <path d="M850,160 Q930,100 1020,120 Q1100,70 1200,130 Q1280,90 1380,140 L1380,300 L850,300 Z" fill="#FEFDF9"/>
+        </svg>
+      </div>
+
+      <!-- Layer 2: Distant Ridges (Soft desaturated green) -->
+      <div class="layer layer--far-hills" data-depth="0.3">
+        <svg viewBox="0 0 1440 250" preserveAspectRatio="none">
+          <path d="M0,140 Q350,90 700,160 T1440,110 L1440,250 L0,250 Z" fill="#B1C5A6"/>
+        </svg>
+      </div>
+
+      <!-- Layer 3: Midground Terracotta/Orange Ridge with Tree Line Profiles -->
+      <div class="layer layer--mid-hills" data-depth="0.5">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+          <!-- Striped field/tree ridge structures -->
+          <path d="M0,110 Q400,150 800,90 T1440,130 L1440,200 L0,200 Z" fill="#D97A53"/>
+          <!-- Distant flat bush blobs -->
+          <circle cx="850" cy="95" r="15" fill="#C5633C"/>
+          <circle cx="875" cy="100" r="12" fill="#C5633C"/>
+          <circle cx="1200" cy="125" r="18" fill="#C5633C"/>
+        </svg>
+      </div>
+
+      <!-- Layer 4: Foreground Main Field (Light Green Lines Profile) -->
+      <div class="layer layer--foreground-field" data-depth="0.7">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+          <path d="M0,80 Q300,50 750,90 T1440,70 L1440,200 L0,200 Z" fill="#A3B899"/>
+          <!-- Perspective Lines modeling the farm ridges in screenshot -->
+          <path d="M100,200 L250,80" stroke="#8E9F85" stroke-width="4"/>
+          <path d="M350,200 L450,82" stroke="#8E9F85" stroke-width="4"/>
+          <path d="M600,200 L650,85" stroke="#8E9F85" stroke-width="4"/>
+          <path d="M900,200 L850,85" stroke="#8E9F85" stroke-width="4"/>
+          <path d="M1200,200 L1050,80" stroke="#8E9F85" stroke-width="4"/>
+        </svg>
+      </div>
+
+      <!-- Layer 5: Interactive 2D Blue Vector Tree Anchor (Sits Left Side) -->
+      <div class="layer layer--tree-hero" data-depth="0.9">
+        <svg viewBox="0 0 1440 400" preserveAspectRatio="xMinYMax meet">
+          <!-- The single blue structural cartoon tree matching image -->
+          <g class="interactive-element" transform="translate(180, 110)">
+            <!-- Trunk -->
+            <path d="M45,180 L55,180 L52,100 L48,100 Z" fill="#4B779A" />
+            <!-- Flat foliage blobs -->
+            <circle cx="30" cy="100" r="30" fill="#608EB4"/>
+            <circle cx="70" cy="95" r="35" fill="#608EB4"/>
+            <circle cx="50" cy="60" r="40" fill="#608EB4"/>
+            <circle cx="20" cy="65" r="25" fill="#4B779A"/>
+            <circle cx="75" cy="65" r="28" fill="#4B779A"/>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- Bottom Compliance Strip -->
+    <div class="footer-bottom-strip">
+      <p class="copyright">©2026 Nexiron. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
+

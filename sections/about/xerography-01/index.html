@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RE/PRESS — Reproduction 09</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="repress">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+      <div class="brand">
+        RE/PRESS
+      </div>
+
+      <div class="header-meta">
+        <span>09 / 26</span>
+        <span>REPRODUCTION STUDY</span>
+      </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ARTIFACT ================= -->
+
+    <section class="artifact">
+
+      <!-- Small technical label -->
+      <div class="artifact-index">
+        <span>IMG / 04</span>
+        <span>OFFSET / 01</span>
+      </div>
+
+
+      <!-- ================= PORTRAIT ================= -->
+
+      <div
+        class="portrait"
+        id="photoFrame"
+        tabindex="0"
+        role="button"
+        aria-label="Interact with reproduction"
+        aria-pressed="false"
+      >
+
+        <!--
+          Fallback image.
+          This remains underneath the tiles so the image
+          still exists if JavaScript fails.
+        -->
+        <img
+          src="portrait.png"
+          alt="Black and white portrait reproduction"
+          class="portrait-fallback"
+          id="portraitImg"
+        >
+
+        <!-- JavaScript will generate the image fragments here -->
+        <div
+          class="tile-grid"
+          id="tileGrid"
+          aria-hidden="true"
+        ></div>
+
+
+        <!-- Registration / print marks -->
+
+        <span class="registration registration--top">
+          +
+        </span>
+
+        <span class="registration registration--bottom">
+          +
+        </span>
+
+        <span class="yellow-offset"></span>
+
+      </div>
+
+
+      <!-- Image metadata -->
+
+      <div class="portrait-meta">
+
+        <span>PORTRAIT / 03</span>
+
+        <span>
+          BLACK / WHITE
+        </span>
+
+        <span>
+          REPRODUCED
+        </span>
+
+      </div>
+
+
+      <!-- ================= MANIFESTO ================= -->
+
+      <div class="manifesto">
+
+        <div class="manifesto-label">
+          MANIFESTO / 01
+        </div>
+
+        <h1>
+          THE COPY
+          <br>
+          CHANGES
+          <br>
+          THE ORIGINAL.
+        </h1>
+
+      </div>
+
+
+      <!-- ================= SECONDARY INFORMATION ================= -->
+
+      <div class="information">
+
+        <div class="info-number">
+          09
+        </div>
+
+        <div class="info-copy">
+          <p>
+            RE/PRESS IS AN EXPERIMENTAL DESIGN STUDY
+            ABOUT REPRODUCTION, DISPLACEMENT AND
+            WHAT REMAINS AFTER THE ORIGINAL IS GONE.
+          </p>
+
+          <p>
+            PRINT / DIGITAL / IMAGE / FORM
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- ================= ACCENT ================= -->
+
+      <div class="annotation">
+
+        <span class="annotation-mark"></span>
+
+        <span>
+          REPRODUCTION
+        </span>
+
+        <span>
+          1987—2026
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+      <span>
+        RE/PRESS
+      </span>
+
+      <span>
+        EXPERIMENTAL DESIGN — PRINT / DIGITAL
+      </span>
+
+      <span>
+        09 / 26
+      </span>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
