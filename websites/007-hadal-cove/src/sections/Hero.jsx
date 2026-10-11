@@ -1,4 +1,6 @@
 import '../App.css'
+import jellyfishPoster from './assets/images/jellyfish.jpg';
+import heroVideo from './assets/videos/hero.mp4';
 
 function Hero() {
   return (
@@ -10,11 +12,11 @@ function Hero() {
         loop
         playsInline
         preload="metadata"
-        poster={`${import.meta.env.BASE_URL}assets/images/jellyfish.jpg`}
+        poster={jellyfishPoster}
         aria-label="Underwater footage of the deep ocean"
       >
         <source
-          src={`${import.meta.env.BASE_URL}assets/videos/hero.mp4`}
+          src={heroVideo}
           type="video/mp4"
         />
       </video>

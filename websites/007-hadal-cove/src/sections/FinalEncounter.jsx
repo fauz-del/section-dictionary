@@ -13,7 +13,7 @@ function FinalEncounter() {
         aria-hidden="true"
       >
         <source
-          src={`${import.meta.env.BASE_URL}assets/videos/2863432-uhd_3840_2160_24fps.mp4`}
+          src={`./assets/videos/2863432-uhd_3840_2160_24fps.mp4`}
           type="video/mp4"
         />
       </video>
