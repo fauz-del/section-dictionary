@@ -141,10 +141,13 @@ h4 {
   overflow: hidden;
 }
 
-/* Ensure split words behave like standard inline blocks with layouts */
+/* Ensure split words behave properly and wrap normally on smaller screens */
 .word {
   display: inline-block;
   white-space: nowrap;
+  margin-right: 0.23em; /* Adds natural word spacing since the original spaces are broken */
 }
 
-
+.word:last-child {
+  margin-right: 0; /* Prevents trailing spacing issues */
+}
