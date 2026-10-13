@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#DCECF8">
+  <meta name="description" content="Good treats, happy tails, and everyday adventures. Welcome to Muddy Paws Club.">
+  <title>Muddy Paws Club — Good Dogs. Great Stuff.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Gochi+Hand&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/collections.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/promotions.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/testimonials.css">
+  <link rel="stylesheet" href="css/newsletter.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="announcement">
+    <div class="announcement__inner">
+     <span class="announcement__paw">✳</span>
+     <p>GOOD DOGS, GOOD STUFF.</p>
+     <span class="announcement__divider"></span>
+     <p>FREE SHIPPING ON ORDERS OVER $50</p>
+     <span class="announcement__paw">✳</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a href="#" class="brand" aria-label="Muddy Paws Club home">
+      <span class="brand-mark" aria-hidden="true">
+      <i data-lucide="paw-print"></i>
+      </span>
+
+      <span class="brand-name">
+        muddy paws<span>club</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a href="#collections">Shop all</a>
+      <a href="#collections">Toys & play</a>
+      <a href="#collections">Treats</a>
+      <a href="#about">Our little club</a>
+    </nav>
+
+    <div class="header-actions">
+     <button class="icon-button search-toggle" aria-label="Search">
+       <i data-lucide="search"></i>
+     </button>
+
+     <a href="#shop" class="cart-link" aria-label="Shopping bag, 0 items">
+       <i data-lucide="shopping-bag"></i>
+       <span class="cart-count">0</span>
+     </a>
+
+     <button
+       class="menu-toggle"
+       aria-label="Open navigation"
+       aria-controls="main-nav"
+       aria-expanded="false"
+     >
+      <span></span>
+      <span></span>
+     </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-kicker">
+        <span class="kicker-star">✳</span>
+        YOUR DOG'S NEW HAPPY PLACE
+      </div>
+
+      <h1>
+        A little <span class="word-wild">wild.</span><br>
+        A whole lot<br>
+        <span class="word-loved">loved!</span>
+      </h1>
+
+      <p class="hero-description">
+        Toys for the zoomies. Treats for the good boys.
+        Little everyday things for your favourite furry weirdo.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#collections" class="button button--dark">
+          Shop the good stuff <span>↗</span>
+        </a>
+        <a href="#about" class="hero-secondary-link">
+          What's our deal? <span>→</span>
+        </a>
+      </div>
+
+      <div class="hero-social-proof">
+        <span class="proof-paws">🐾 🐾 🐾</span>
+        <span>Approved by very good dogs.</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="hero-art-blob"></div>
+      <div class="hero-art-sun"></div>
+
+      <div class="hero-top-note">
+        <span>100%</span>
+        <span>TAIL-WAGGING<br>GOODNESS</span>
+      </div>
+
+      <img
+        class="hero-dog"
+        src="assets/images/dogs/transparent_puppy.webp"
+        alt="Happy puppy ready to play"
+        fetchpriority="high"
+      >
+
+      <div class="hero-sticker">
+        <span class="sticker-top">CERTIFIED</span>
+        <span class="sticker-main">GOOD<br>DOG!</span>
+        <span class="sticker-star">✳</span>
+      </div>
+
+      <div class="hero-caption">
+        <span class="caption-doodle">〰</span>
+        <span>Chief mess maker</span>
+        <span class="caption-heart">♡</span>
+      </div>
+
+      <span class="hero-doodle hero-doodle--star">✳</span>
+      <span class="hero-doodle hero-doodle--heart">♡</span>
+      <span class="hero-doodle hero-doodle--spark">✦</span>
+      <span class="hero-paw hero-paw--one">🐾</span>
+      <span class="hero-paw hero-paw--two">🐾</span>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <span>MADE FOR THE ZOOMIES</span>
+    <span class="hero-bottom-star">✳</span>
+    <span>BUILT FOR THE SNUGGLES</span>
+    <span class="hero-bottom-star">✳</span>
+    <span>HERE FOR THE MESS</span>
+  </div>
+</section>
+
+    <section class="collections" id="collections">
+  <div class="paw-journey" aria-hidden="true">
+    <svg class="paw-journey__trail" viewBox="0 0 320 190" fill="none">
+      <path
+        d="M18 160 C65 150 38 95 105 105 S155 155 190 100 S245 35 300 55"
+        stroke="#8B684E"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-dasharray="3 10"
+      />
+    </svg>
+    <span class="journey-paw journey-paw--one">🐾</span>
+    <span class="journey-paw journey-paw--two">🐾</span>
+    <span class="journey-splat"></span>
+  </div>
+
+  <div class="collections__inner">
+    <div class="collections__heading">
+      <span class="section-kicker">
+        <span>✳</span> THE GOOD STUFF
+      </span>
+
+      <h2>
+        Little things for<br />
+        <span>big personalities.</span>
+      </h2>
+
+      <p>
+        For the chewers, the chasers, the snack thieves
+        and the professional nap-takers.
+      </p>
+    </div>
+
+    <div class="collections__grid">
+      <a class="collection-card collection-card--blue" href="#shop">
+        <div class="collection-card__visual">
+          <img
+            src="assets/images/lifestyle/Dogs_playing.webp"
+            alt="Dogs enjoying playtime"
+            loading="lazy"
+          />
+          <span class="collection-card__sticker">LET'S PLAY!</span>
+        </div>
+        <div class="collection-card__info">
+          <div>
+            <h3>Toys & play</h3>
+            <p>For maximum zoomies.</p>
+          </div>
+          <span class="collection-card__arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card collection-card--peach" href="#shop">
+        <div class="collection-card__visual">
+          <img
+            src="assets/images/products/pet-accessories-still-life-concept-set.webp"
+            alt="A selection of pet essentials"
+            loading="lazy"
+          />
+          <span class="collection-card__sticker">TREAT TIME</span>
+        </div>
+        <div class="collection-card__info">
+          <div>
+            <h3>Treats & snacks</h3>
+            <p>Bribes, but make them tasty.</p>
+          </div>
+          <span class="collection-card__arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card collection-card--yellow" href="#shop">
+        <div class="collection-card__visual">
+          <img
+            src="assets/images/products/close-up-pet-accessories.webp"
+            alt="Pet accessories for everyday adventures"
+            loading="lazy"
+          />
+          <span class="collection-card__sticker">OUT WE GO</span>
+        </div>
+        <div class="collection-card__info">
+          <div>
+            <h3>Walkies & outings</h3>
+            <p>Adventure starts at the door.</p>
+          </div>
+          <span class="collection-card__arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="collection-card collection-card--cream" href="#shop">
+        <div class="collection-card__visual">
+          <img
+            src="assets/images/lifestyle/happy-pet-dogs-playing-grass.webp"
+            alt="Happy dogs enjoying a relaxed day"
+            loading="lazy"
+          />
+          <span class="collection-card__sticker">SLOW DOWN</span>
+        </div>
+        <div class="collection-card__info">
+          <div>
+            <h3>Everyday essentials</h3>
+            <p>The little things they need.</p>
+          </div>
+          <span class="collection-card__arrow">↗</span>
+        </div>
+      </a>
+    </div>
+
+    <a class="collections__all" href="#shop">
+      Nose around the whole shop <span>→</span>
+    </a>
+  </div>
+</section>
+
+
+<section class="bestsellers" id="shop">
+  <div class="bestsellers__inner">
+
+    <div class="bestsellers__heading">
+      <div>
+        <span class="section-kicker">
+          <span>✳</span> THE CROWD FAVOURITES
+        </span>
+        <h2>
+          Very good stuff.<br />
+          <span>Very good dogs.</span>
+        </h2>
+      </div>
+
+      <a class="bestsellers__view-all" href="#collections">
+        Shop all goodies <span>↗</span>
+      </a>
+    </div>
+
+    <p class="bestsellers__intro">
+      The toys they won't put down, the treats they'll do
+      absolutely anything for, and a few things for the humans too.
+    </p>
+
+    <div class="products-grid">
+
+      <article class="product-card">
+        <a class="product-card__image product-card__image--blue"
+           href="#product-rope-toy"
+           aria-label="View The Tug Buddy rope toy">
+          <span class="product-badge">BESTSELLER</span>
+          <img
+            src="assets/images/products/close-up-pet-accessories.webp"
+            alt="Pet accessories"
+            loading="lazy"
+          />
+          <span class="product-card__quick-view">Take a peek ↗</span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">TOYS & PLAY</span>
+            <span class="product-card__rating">★ 4.9</span>
+          </div>
+          <h3>The Tug Buddy</h3>
+          <p class="product-card__description">
+            For the serious tug-of-war champions.
+          </p>
+          <div class="product-card__buy">
+            <span class="product-price">₦8,500</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="tug-buddy"
+              data-product-name="The Tug Buddy"
+              data-product-price="8500"
+              aria-label="Add The Tug Buddy to bag"
+            >+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <a class="product-card__image product-card__image--peach"
+           href="#product-snack-pack"
+           aria-label="View The Good Dog Snack Pack">
+          <span class="product-badge product-badge--peach">
+            GOOD DOG ENERGY
+          </span>
+          <img
+            src="assets/images/products/pet-accessories-still-life-concept-set.webp"
+            alt="A selection of pet essentials"
+            loading="lazy"
+          />
+          <span class="product-card__quick-view">Take a peek ↗</span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">TREATS</span>
+            <span class="product-card__rating">★ 5.0</span>
+          </div>
+          <h3>The Good Dog Snack Pack</h3>
+          <p class="product-card__description">
+            Little rewards for very big achievements.
+          </p>
+          <div class="product-card__buy">
+            <span class="product-price">₦6,000</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="snack-pack"
+              data-product-name="The Good Dog Snack Pack"
+              data-product-price="6000"
+              aria-label="Add The Good Dog Snack Pack to bag"
+            >+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <a class="product-card__image product-card__image--yellow"
+           href="#product-walkies"
+           aria-label="View The Walkies Kit">
+          <span class="product-badge product-badge--yellow">
+            OUT THE DOOR
+          </span>
+          <img
+            src="assets/images/lifestyle/Dogs_playing.webp"
+            alt="Dogs enjoying time outdoors"
+            loading="lazy"
+          />
+          <span class="product-card__quick-view">Take a peek ↗</span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">WALKIES</span>
+            <span class="product-card__rating">★ 4.8</span>
+          </div>
+          <h3>The Walkies Kit</h3>
+          <p class="product-card__description">
+            Little essentials for big adventures.
+          </p>
+          <div class="product-card__buy">
+            <span class="product-price">₦12,500</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="walkies-kit"
+              data-product-name="The Walkies Kit"
+              data-product-price="12500"
+              aria-label="Add The Walkies Kit to bag"
+            >+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <a class="product-card__image product-card__image--cream"
+           href="#product-cozy-corner"
+           aria-label="View The Cozy Corner collection">
+          <span class="product-badge product-badge--cream">
+            NAP APPROVED
+          </span>
+          <img
+            src="assets/images/lifestyle/happy-pet-dogs-playing-grass.webp"
+            alt="Happy dogs relaxing together"
+            loading="lazy"
+          />
+          <span class="product-card__quick-view">Take a peek ↗</span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">COMFORT</span>
+            <span class="product-card__rating">★ 4.9</span>
+          </div>
+          <h3>The Cozy Corner</h3>
+          <p class="product-card__description">
+            For those hard-earned afternoon snoozes.
+          </p>
+          <div class="product-card__buy">
+            <span class="product-price">₦18,000</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="cozy-corner"
+              data-product-name="The Cozy Corner"
+              data-product-price="18000"
+              aria-label="Add The Cozy Corner to bag"
+            >+</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="bestsellers__footer">
+      <span class="bestsellers__paw">🐾</span>
+      <p>Picked with love. Approved by paws.</p>
+      <span class="bestsellers__paw">🐾</span>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="promo-banner" aria-labelledby="promo-title">
+  <div class="promo-banner__inner">
+
+    <div class="promo-banner__copy">
+      <span class="promo-banner__kicker">
+        ✳ A LITTLE SOMETHING FOR YOUR SIDEKICK
+      </span>
+
+      <h2 id="promo-title">
+        More play.<br />
+        More treats.<br />
+        <span>More muddy paws!</span>
+      </h2>
+
+      <p>
+        Make their everyday a little more exciting
+        with goodies picked for life's messiest adventures.
+      </p>
+
+      <a href="#shop" class="promo-banner__button">
+        Find their next favourite <span>↗</span>
+      </a>
+
+      <span class="promo-banner__handwritten">
+        Go on, spoil that face!
+      </span>
+    </div>
+
+    <div class="promo-banner__art" aria-hidden="true">
+      <div class="promo-banner__sun"></div>
+      <div class="promo-banner__blob"></div>
+
+      <img
+        class="promo-banner__dog"
+        src="assets/images/dogs/transparent_dog.webp"
+        alt=""
+        loading="lazy"
+      />
+
+      <span class="promo-banner__star promo-banner__star--one">✳</span>
+      <span class="promo-banner__star promo-banner__star--two">✦</span>
+      <span class="promo-banner__heart">♡</span>
+
+      <span class="promo-banner__stamp">
+        <span>VERY</span>
+        <strong>GOOD</strong>
+        <span>THINGS!</span>
+      </span>
+    </div>
+
+    <span class="promo-banner__paw promo-banner__paw--one" aria-hidden="true">🐾</span>
+    <span class="promo-banner__paw promo-banner__paw--two" aria-hidden="true">🐾</span>
+
+  </div>
+</section>
+
+
+<section class="shop-moods" id="shop-by-mood">
+  <div class="shop-moods__inner">
+
+    <div class="shop-moods__heading">
+      <span class="section-kicker">
+        <span>✳</span> EVERY DOG HAS A THING
+      </span>
+
+      <h2>
+        What's their<br />
+        <span>whole personality?</span>
+      </h2>
+
+      <p>
+        Tell us who we're shopping for. We won't judge.
+        We've met the sock thieves.
+      </p>
+    </div>
+
+    <div class="shop-moods__grid">
+
+      <a href="#shop" class="mood-card mood-card--zoomies">
+        <span class="mood-card__number">01 / THE CHAOS</span>
+        <span class="mood-card__doodle mood-card__doodle--bolt">↯</span>
+        <div class="mood-card__icon" aria-hidden="true">⚡</div>
+        <h3>The chaos<br />gremlin</h3>
+        <p>For the ones who never run out of energy.</p>
+        <span class="mood-card__link">Fuel the zoomies ↗</span>
+      </a>
+
+      <a href="#shop" class="mood-card mood-card--snacks">
+        <span class="mood-card__number">02 / THE SNACKS</span>
+        <span class="mood-card__doodle mood-card__doodle--spark">✳</span>
+        <div class="mood-card__icon" aria-hidden="true">♡</div>
+        <h3>The snack<br />enthusiast</h3>
+        <p>For the eyes that follow every single bite.</p>
+        <span class="mood-card__link">Bring the treats ↗</span>
+      </a>
+
+      <a href="#shop" class="mood-card mood-card--snuggles">
+        <span class="mood-card__number">03 / THE SNUGGLES</span>
+        <span class="mood-card__doodle mood-card__doodle--heart">♡</span>
+        <div class="mood-card__icon" aria-hidden="true">☁</div>
+        <h3>The cuddle<br />professional</h3>
+        <p>For the little shadows who follow you everywhere.</p>
+        <span class="mood-card__link">Get extra cosy ↗</span>
+      </a>
+
+    </div>
+
+    <div class="shop-moods__note">
+      <span>🐾</span>
+      <p>Three moods. One very spoiled best friend.</p>
+      <span>🐾</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="club-story" id="about">
+  <div class="club-story__inner">
+
+    <div class="club-story__art">
+      <div class="club-story__photo">
+        <img
+          src="assets/images/customers/pet_client.webp"
+          alt="A happy pet enjoying time with their human"
+          loading="lazy"
+        />
+      </div>
+
+      <span class="club-story__sticker">
+        <span>GOOD</span>
+        <strong>HUMANS.</strong>
+        <span>VERY GOOD DOGS.</span>
+      </span>
+
+      <span class="club-story__doodle club-story__doodle--star"
+        aria-hidden="true">✳</span>
+      <span class="club-story__doodle club-story__doodle--heart"
+        aria-hidden="true">♡</span>
+
+      <span class="club-story__caption">
+        <span>↖</span> The reason we do it.
+      </span>
+    </div>
+
+    <div class="club-story__copy">
+      <span class="section-kicker">
+        <span>✳</span> A LITTLE ABOUT US
+      </span>
+
+      <h2>
+        Life's better<br />
+        with a little<br />
+        <span>paw-some chaos.</span>
+      </h2>
+
+      <p>
+        We believe the best bits of life are the muddy walks,
+        the favourite toys that get absolutely destroyed,
+        and the little face waiting at the door.
+      </p>
+
+      <p>
+        Muddy Paws Club is all about making those everyday
+        moments extra special, with thoughtful goodies for
+        the four-legged members of your family.
+      </p>
+
+      <a href="#newsletter" class="club-story__button">
+        Come hang with us <span>↗</span>
+      </a>
+
+      <div class="club-story__signature">
+        <span>Made with love & a little bit of mud</span>
+        <span class="club-story__paw" aria-hidden="true">🐾</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="happy-paws" id="reviews">
+  <div class="happy-paws__inner">
+
+    <div class="happy-paws__heading">
+      <span class="section-kicker">
+        <span>✳</span> DON'T JUST TAKE OUR WORD FOR IT
+      </span>
+
+      <h2>
+        The paws<br />
+        <span>have spoken.</span>
+      </h2>
+
+      <p>
+        Unfiltered reviews from the humans behind
+        some very happy tails.
+      </p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <article class="review-card review-card--blue">
+        <div class="review-card__top">
+          <span class="review-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </span>
+          <span class="review-card__paw" aria-hidden="true">🐾</span>
+        </div>
+
+        <blockquote>
+          “The toy lasted longer than five minutes.
+          That alone deserves an award in this house.”
+        </blockquote>
+
+        <div class="review-card__customer">
+          <span class="review-card__avatar">M</span>
+          <div>
+            <strong>Milo's human</strong>
+            <span>Official toy destroyer</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card review-card--yellow">
+        <div class="review-card__top">
+          <span class="review-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </span>
+          <span class="review-card__paw" aria-hidden="true">♡</span>
+        </div>
+
+        <blockquote>
+          “She heard the treat bag open from three rooms away.
+          Best purchase we've made for our little foodie.”
+        </blockquote>
+
+        <div class="review-card__customer">
+          <span class="review-card__avatar">L</span>
+          <div>
+            <strong>Luna's human</strong>
+            <span>Snack-time supervisor</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card review-card--peach">
+        <div class="review-card__top">
+          <span class="review-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </span>
+          <span class="review-card__paw" aria-hidden="true">✳</span>
+        </div>
+
+        <blockquote>
+          “The cutest little finds. Our walkies routine
+          has officially become the highlight of the day.”
+        </blockquote>
+
+        <div class="review-card__customer">
+          <span class="review-card__avatar">B</span>
+          <div>
+            <strong>Bailey's human</strong>
+            <span>Adventure department</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="customer-gallery">
+      <div class="customer-gallery__heading">
+        <h3>Very good faces.</h3>
+        <span>THE CLUB IRL ↗</span>
+      </div>
+
+      <div class="customer-gallery__grid">
+        <div class="customer-gallery__photo customer-gallery__photo--one">
+          <img
+            src="assets/images/customers/pet_client2.webp"
+            alt="A pet from the Muddy Paws community"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="customer-gallery__photo customer-gallery__photo--two">
+          <img
+            src="assets/images/customers/pet_client3.webp"
+            alt="A happy furry friend"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="customer-gallery__photo customer-gallery__photo--three">
+          <img
+            src="assets/images/customers/pet_client4.webp"
+            alt="A much-loved companion"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="customer-gallery__photo customer-gallery__photo--four">
+          <img
+            src="assets/images/customers/pet_client5.webp"
+            alt="A pet enjoying a good day"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="newsletter" id="newsletter">
+  <div class="newsletter__inner">
+
+    <div class="newsletter__art" aria-hidden="true">
+      <div class="newsletter__sun"></div>
+      <div class="newsletter__envelope">
+        <span class="newsletter__envelope-heart">♡</span>
+        <span class="newsletter__envelope-paw">🐾</span>
+      </div>
+      <span class="newsletter__doodle newsletter__doodle--star">✳</span>
+      <span class="newsletter__doodle newsletter__doodle--spark">✦</span>
+      <span class="newsletter__handwritten">You've got mail!</span>
+    </div>
+
+    <div class="newsletter__copy">
+      <span class="section-kicker">
+        <span>✳</span> GOOD THINGS IN YOUR INBOX
+      </span>
+
+      <h2>
+        A little mail.<br />
+        <span>A lot of tail wags.</span>
+      </h2>
+
+      <p>
+        New goodies, happy surprises, and the occasional
+        excuse to spoil your favourite furry weirdo.
+      </p>
+
+      <form class="newsletter__form" id="newsletter-form">
+        <label class="newsletter__label" for="newsletter-email">
+          Your email address
+        </label>
+
+        <div class="newsletter__input-wrap">
+          <input
+            type="email"
+            id="newsletter-email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+          <button type="submit">
+            Count me in <span>↗</span>
+          </button>
+        </div>
+
+        <p class="newsletter__message" id="newsletter-message" role="status">
+          No spam. Just the good stuff. Unsubscribe whenever.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="#" class="brand footer-logo" aria-label="Muddy Paws Club home">
+        <span class="brand-mark" aria-hidden="true">
+          <i data-lucide="paw-print"></i>
+        </span>
+        <span class="brand-name">
+          muddy paws<span>club</span>
+        </span>
+      </a>
+
+      <p class="footer-tagline">
+        Good stuff for good dogs.<br>
+        And the humans who are<br>
+        completely obsessed with them.
+      </p>
+
+      <div class="footer-socials">
+        <a href="https://instagram.com/" target="_blank"
+           rel="noopener noreferrer" aria-label="Instagram">
+          <i data-lucide="instagram"></i>
+        </a>
+        <a href="https://tiktok.com/" target="_blank"
+           rel="noopener noreferrer" aria-label="TikTok">
+          <i data-lucide="music-2"></i>
+        </a>
+        <a href="https://pinterest.com/" target="_blank"
+           rel="noopener noreferrer" aria-label="Pinterest">
+          <i data-lucide="pin"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h3>The good stuff</h3>
+        <a href="#collections">Shop all</a>
+        <a href="#shop">Bestsellers</a>
+        <a href="#shop-by-mood">Shop by mood</a>
+        <a href="#collections">Toys & play</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Our little club</h3>
+        <a href="#about">Our story</a>
+        <a href="#reviews">Happy customers</a>
+        <a href="#newsletter">Join the club</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Need a paw?</h3>
+        <a href="mailto:hello@yourbrand.com">Contact us</a>
+        <a href="#newsletter">Get in touch</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+
+    <div class="footer-doodle" aria-hidden="true">
+      <span class="footer-doodle__star">✳</span>
+      <span class="footer-doodle__paw">🐾</span>
+      <span class="footer-doodle__note">stay pawsome!</span>
+      <span class="footer-doodle__heart">♡</span>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="footer-year"></span> Muddy Paws Club.</p>
+    <p>Made with love & a little bit of mud <span>♥</span></p>
+    <a href="#top">Top of the pack ↑</a>
+  </div>
+</footer>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+   lucide.createIcons();
+  </script>
+</body>
+</html>
