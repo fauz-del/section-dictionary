@@ -1,6 +1,6 @@
 import '../App.css'
-import jellyfishPoster from '../../assets/images/jellyfish.jpg';
-import heroVideo from '../../assets/videos/hero.mp4';
+import jellyfishPoster from 'assets/images/jellyfish.jpg';
+import heroVideo from 'assets/videos/hero.mp4';
 
 function Hero() {
   return (
