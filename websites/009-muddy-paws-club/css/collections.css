@@ -1,0 +1,535 @@
+.collections {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 6% 100px;
+  background: var(--cloud-white, #FFFDF8);
+}
+
+.collections__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.collections__heading {
+  max-width: 650px;
+  margin-bottom: 46px;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--deep-navy, #243B53);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.section-kicker span {
+  color: #D18A64;
+  font-size: 1.1rem;
+}
+
+.collections__heading h2 {
+  margin: 18px 0 14px;
+  color: var(--deep-navy, #243B53);
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 0.99;
+}
+
+.collections__heading h2 span {
+  color: #639BC5;
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.collections__heading > p {
+  max-width: 440px;
+  margin: 18px 0 0;
+  color: #687887;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.collections__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.collection-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  color: var(--deep-navy, #243B53);
+  text-decoration: none;
+  transition: transform 220ms ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-5px) rotate(-0.3deg);
+}
+
+.collection-card--blue {
+  background: #DCECF8;
+}
+
+.collection-card--peach {
+  background: #F6C5AD;
+}
+
+.collection-card--yellow {
+  background: #FFE49A;
+}
+
+.collection-card--cream {
+  background: #F0EBDD;
+}
+
+.collection-card__visual {
+  position: relative;
+  height: clamp(220px, 29vw, 340px);
+  margin: 12px 12px 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background: rgba(255, 253, 248, 0.55);
+}
+
+.collection-card__visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.collection-card:hover .collection-card__visual img {
+  transform: scale(1.045);
+}
+
+.collection-card__sticker {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-block;
+  padding: 10px 13px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  background: #FFFDF8;
+  color: #243B53;
+  font-family: "Gochi Hand", cursive;
+  font-size: 0.95rem;
+  transform: rotate(7deg);
+}
+
+.collection-card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 21px 22px 23px;
+}
+
+.collection-card__info h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.collection-card__info p {
+  margin: 6px 0 0;
+  color: #526475;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.collection-card__arrow {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(36, 59, 83, 0.22);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: color 200ms ease, background 200ms ease;
+}
+
+.collection-card:hover .collection-card__arrow {
+  background: var(--deep-navy, #243B53);
+  color: white;
+}
+
+.collections__all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  margin: 38px auto 0;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid #243B53;
+  color: #243B53;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.collections__all span {
+  font-size: 1.25rem;
+  transition: transform 200ms ease;
+}
+
+.collections__all:hover span {
+  transform: translateX(5px);
+}
+
+/* Paw trail and muddy splat */
+.paw-journey {
+  position: absolute;
+  z-index: 1;
+  top: -28px;
+  right: 3%;
+  width: 300px;
+  height: 180px;
+  pointer-events: none;
+}
+
+.paw-journey__trail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.journey-paw {
+  position: absolute;
+  z-index: 2;
+  font-size: 19px;
+  opacity: 0.8;
+}
+
+.journey-paw--one {
+  left: 25%;
+  top: 65%;
+  transform: rotate(-22deg);
+}
+
+.journey-paw--two {
+  left: 55%;
+  top: 35%;
+  transform: rotate(20deg);
+}
+
+.journey-splat {
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+  width: 32px;
+  height: 17px;
+  border-radius: 45% 55% 35% 65%;
+  background: #8B684E;
+  transform: rotate(-12deg);
+}
+
+.journey-splat::before,
+.journey-splat::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.journey-splat::before {
+  top: -7px;
+  left: 5px;
+  width: 9px;
+  height: 9px;
+}
+
+.journey-splat::after {
+  top: 2px;
+  right: -7px;
+  width: 6px;
+  height: 6px;
+}
+
+@media (max-width: 640px) {
+  .collections {
+    padding: 82px 5% 70px;
+  }
+
+  .collections__heading {
+    margin-bottom: 30px;
+  }
+
+  .collections__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .collection-card__visual {
+    height: 245px;
+  }
+
+  .collection-card__info {
+    padding: 18px;
+  }
+
+  .paw-journey {
+    top: -18px;
+    right: -35px;
+    width: 205px;
+    height: 125px;
+    opacity: 0.8;
+  }
+
+  .journey-paw {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-card,
+  .collection-card__visual img,
+  .collection-card__arrow,
+  .collections__all span {
+    transition: none;
+  }
+}
+
+.shop-moods {
+  padding: 100px 6%;
+  background: #FFFDF8;
+}
+
+.shop-moods__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.shop-moods__heading {
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+.shop-moods__heading h2 {
+  margin: 18px 0 14px;
+  color: #243B53;
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.shop-moods__heading h2 span {
+  color: #639BC5;
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.shop-moods__heading > p {
+  max-width: 440px;
+  margin: 18px 0 0;
+  color: #687887;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.shop-moods__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.mood-card {
+  position: relative;
+  display: flex;
+  min-height: 345px;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 25px;
+  border-radius: 22px;
+  color: #243B53;
+  text-decoration: none;
+  transition: transform 220ms ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-5px);
+}
+
+.mood-card--zoomies {
+  background: #DCECF8;
+}
+
+.mood-card--snacks {
+  background: #FFE49A;
+}
+
+.mood-card--snuggles {
+  background: #F6C5AD;
+}
+
+.mood-card__number {
+  position: relative;
+  z-index: 1;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.mood-card__icon {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  margin-top: 30px;
+  place-items: center;
+  border: 1.5px solid rgba(36, 59, 83, 0.35);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  line-height: 1;
+  transform: rotate(-8deg);
+}
+
+.mood-card--snacks .mood-card__icon {
+  transform: rotate(8deg);
+}
+
+.mood-card--snuggles .mood-card__icon {
+  transform: rotate(-5deg);
+}
+
+.mood-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 22px 0 0;
+  font-size: clamp(1.7rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.mood-card > p {
+  position: relative;
+  z-index: 1;
+  max-width: 260px;
+  margin: 12px 0 24px;
+  color: #526475;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.mood-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-bottom: 5px;
+  border-bottom: 1.5px solid rgba(36, 59, 83, 0.6);
+  font-size: 0.83rem;
+  font-weight: 800;
+}
+
+.mood-card__doodle {
+  position: absolute;
+  right: 20px;
+  color: rgba(36, 59, 83, 0.6);
+  pointer-events: none;
+}
+
+.mood-card__doodle--bolt {
+  top: 48px;
+  font-size: 3rem;
+  transform: rotate(12deg);
+}
+
+.mood-card__doodle--spark {
+  top: 52px;
+  font-size: 2.2rem;
+  transform: rotate(15deg);
+}
+
+.mood-card__doodle--heart {
+  top: 46px;
+  font-size: 3.2rem;
+  transform: rotate(15deg);
+}
+
+.shop-moods__note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+  color: #687887;
+  text-align: center;
+}
+
+.shop-moods__note p {
+  margin: 0;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.3rem;
+}
+
+.shop-moods__note span {
+  font-size: 1rem;
+}
+
+@media (max-width: 850px) {
+  .shop-moods__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mood-card:last-child {
+    grid-column: 1 / -1;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .shop-moods {
+    padding: 75px 5%;
+  }
+
+  .shop-moods__heading {
+    margin-bottom: 28px;
+  }
+
+  .shop-moods__grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .mood-card,
+  .mood-card:last-child {
+    grid-column: auto;
+    min-height: 300px;
+    padding: 23px;
+  }
+
+  .mood-card__icon {
+    margin-top: 24px;
+  }
+
+  .shop-moods__note {
+    gap: 8px;
+  }
+
+  .shop-moods__note p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mood-card {
+    transition: none;
+  }
+}

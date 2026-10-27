@@ -1,0 +1,266 @@
+.promo-banner {
+  padding: 65px 6%;
+  background: #FFFDF8;
+}
+
+.promo-banner__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 35px;
+  max-width: 1240px;
+  min-height: 470px;
+  margin: 0 auto;
+  padding: 55px 7%;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #F6C5AD;
+}
+
+.promo-banner__copy {
+  position: relative;
+  z-index: 2;
+}
+
+.promo-banner__kicker {
+  color: #694B43;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  line-height: 1.7;
+}
+
+.promo-banner__copy h2 {
+  margin: 22px 0 17px;
+  color: #243B53;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.98;
+}
+
+.promo-banner__copy h2 span {
+  color: #A85E47;
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.promo-banner__copy > p {
+  max-width: 400px;
+  margin: 0;
+  color: #634E48;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.promo-banner__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 25px;
+  padding: 15px 20px;
+  border-radius: 40px;
+  background: #243B53;
+  color: #FFFDF8;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.promo-banner__button:hover {
+  background: #426987;
+  transform: translateY(-2px);
+}
+
+.promo-banner__button span {
+  font-size: 1.15rem;
+}
+
+.promo-banner__handwritten {
+  display: block;
+  margin-top: 17px;
+  color: #8B4E3E;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.25rem;
+  transform: rotate(-3deg);
+}
+
+.promo-banner__art {
+  position: relative;
+  align-self: stretch;
+  min-height: 340px;
+}
+
+.promo-banner__sun {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #FFE49A;
+}
+
+.promo-banner__blob {
+  position: absolute;
+  top: 17%;
+  left: 5%;
+  width: 90%;
+  height: 74%;
+  border-radius: 47% 53% 57% 43% / 46% 43% 57% 54%;
+  background: #DCECF8;
+  transform: rotate(-8deg);
+}
+
+.promo-banner__dog {
+  position: absolute;
+  z-index: 1;
+  right: -5%;
+  bottom: -3%;
+  width: 105%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.promo-banner__stamp {
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  left: -1%;
+  display: flex;
+  width: 92px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #243B53;
+  border-radius: 50%;
+  background: #FFE49A;
+  color: #243B53;
+  font-size: 0.65rem;
+  line-height: 1.25;
+  transform: rotate(-12deg);
+}
+
+.promo-banner__stamp strong {
+  font-size: 0.95rem;
+}
+
+.promo-banner__star,
+.promo-banner__heart,
+.promo-banner__paw {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.promo-banner__star--one {
+  top: 38%;
+  right: -2%;
+  color: #A85E47;
+  font-size: 2rem;
+}
+
+.promo-banner__star--two {
+  right: 22%;
+  bottom: 7%;
+  color: #243B53;
+  font-size: 1.7rem;
+}
+
+.promo-banner__heart {
+  top: 5%;
+  left: 35%;
+  color: #A85E47;
+  font-size: 2.6rem;
+  transform: rotate(12deg);
+}
+
+.promo-banner__paw {
+  color: #8B684E;
+  opacity: 0.55;
+}
+
+.promo-banner__paw--one {
+  top: 12px;
+  right: 18%;
+  transform: rotate(25deg);
+}
+
+.promo-banner__paw--two {
+  bottom: 18px;
+  left: 30%;
+  transform: rotate(-20deg);
+}
+
+@media (max-width: 800px) {
+  .promo-banner {
+    padding: 45px 5%;
+  }
+
+  .promo-banner__inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 42px 7% 20px;
+  }
+
+  .promo-banner__art {
+    min-height: 310px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .promo-banner__dog {
+    width: 100%;
+    right: 0;
+  }
+
+  .promo-banner__stamp {
+    left: 2%;
+  }
+
+  .promo-banner__paw--two {
+    left: 12%;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-banner__inner {
+    padding: 35px 7% 12px;
+    border-radius: 22px;
+  }
+
+  .promo-banner__copy h2 {
+    font-size: clamp(2.7rem, 12vw, 3.5rem);
+  }
+
+  .promo-banner__art {
+    min-height: 255px;
+  }
+
+  .promo-banner__sun {
+    width: 75px;
+    height: 75px;
+  }
+
+  .promo-banner__stamp {
+    width: 75px;
+    height: 75px;
+    font-size: 0.55rem;
+  }
+
+  .promo-banner__stamp strong {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-banner__button {
+    transition: none;
+  }
+}

@@ -1,0 +1,257 @@
+.happy-paws {
+  padding: 100px 6%;
+  background: #FFFDF8;
+}
+
+.happy-paws__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.happy-paws__heading {
+  max-width: 610px;
+  margin-bottom: 40px;
+}
+
+.happy-paws__heading h2 {
+  margin: 18px 0 14px;
+  color: #243B53;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.happy-paws__heading h2 span {
+  color: #639BC5;
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.happy-paws__heading > p {
+  max-width: 420px;
+  margin: 18px 0 0;
+  color: #687887;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.review-card {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 20px;
+  color: #243B53;
+}
+
+.review-card--blue {
+  background: #DCECF8;
+}
+
+.review-card--yellow {
+  background: #FFE49A;
+}
+
+.review-card--peach {
+  background: #F6C5AD;
+}
+
+.review-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-card__stars {
+  color: #8A642B;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+}
+
+.review-card__paw {
+  font-size: 1.5rem;
+}
+
+.review-card blockquote {
+  flex: 1;
+  margin: 25px 0;
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.6;
+}
+
+.review-card__customer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(36, 59, 83, 0.17);
+}
+
+.review-card__avatar {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border: 1px solid rgba(36, 59, 83, 0.2);
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.65);
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.35rem;
+}
+
+.review-card__customer strong,
+.review-card__customer div > span {
+  display: block;
+}
+
+.review-card__customer strong {
+  font-size: 0.82rem;
+}
+
+.review-card__customer div > span {
+  margin-top: 4px;
+  color: #526475;
+  font-size: 0.72rem;
+}
+
+.customer-gallery {
+  margin-top: 85px;
+}
+
+.customer-gallery__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.customer-gallery__heading h3 {
+  margin: 0;
+  color: #243B53;
+  font-family: "Gochi Hand", cursive;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+}
+
+.customer-gallery__heading > span {
+  color: #687887;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.customer-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.customer-gallery__photo {
+  aspect-ratio: 0.9;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #DCECF8;
+}
+
+.customer-gallery__photo--two {
+  background: #F6C5AD;
+  transform: translateY(12px);
+}
+
+.customer-gallery__photo--three {
+  background: #FFE49A;
+}
+
+.customer-gallery__photo--four {
+  background: #F0EBDD;
+  transform: translateY(12px);
+}
+
+.customer-gallery__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.customer-gallery__photo:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .review-card:last-child {
+    grid-column: 1 / -1;
+    min-height: 230px;
+  }
+
+  .customer-gallery {
+    margin-top: 65px;
+  }
+
+  .customer-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .customer-gallery__photo--two,
+  .customer-gallery__photo--four {
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .happy-paws {
+    padding: 75px 5%;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .review-card,
+  .review-card:last-child {
+    grid-column: auto;
+    min-height: 240px;
+    padding: 22px;
+  }
+
+  .review-card blockquote {
+    font-size: 1.2rem;
+  }
+
+  .customer-gallery {
+    margin-top: 55px;
+  }
+
+  .customer-gallery__grid {
+    gap: 12px;
+  }
+
+  .customer-gallery__photo {
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-gallery__photo img {
+    transition: none;
+  }
+}

@@ -1,0 +1,227 @@
+.club-story {
+  padding: 105px 6%;
+  background: #F0EBDD;
+}
+
+.club-story__inner {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: clamp(45px, 8vw, 105px);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.club-story__art {
+  position: relative;
+  min-width: 0;
+  padding: 20px 18px 40px 0;
+}
+
+.club-story__photo {
+  position: relative;
+  height: 490px;
+  overflow: hidden;
+  border-radius: 48% 48% 22px 22px;
+  background: #DCECF8;
+  transform: rotate(-2deg);
+}
+
+.club-story__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.club-story__sticker {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: -10px;
+  display: flex;
+  width: 112px;
+  height: 112px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #243B53;
+  border-radius: 50%;
+  background: #FFE49A;
+  color: #243B53;
+  font-size: 0.62rem;
+  line-height: 1.5;
+  text-align: center;
+  transform: rotate(10deg);
+}
+
+.club-story__sticker strong {
+  font-size: 1rem;
+}
+
+.club-story__doodle {
+  position: absolute;
+  z-index: 2;
+  color: #A85E47;
+  pointer-events: none;
+}
+
+.club-story__doodle--star {
+  top: 20%;
+  left: -14px;
+  font-size: 2.5rem;
+}
+
+.club-story__doodle--heart {
+  right: 5px;
+  bottom: 24%;
+  font-size: 3.3rem;
+  transform: rotate(15deg);
+}
+
+.club-story__caption {
+  position: absolute;
+  right: 5%;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #526475;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.2rem;
+  transform: rotate(-3deg);
+}
+
+.club-story__caption span {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+}
+
+.club-story__copy h2 {
+  margin: 20px 0 24px;
+  color: #243B53;
+  font-size: clamp(2.7rem, 4.6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.98;
+}
+
+.club-story__copy h2 span {
+  color: #A85E47;
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.club-story__copy > p {
+  margin: 0 0 16px;
+  color: #5F6E77;
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+
+.club-story__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 13px;
+  padding: 15px 20px;
+  border-radius: 40px;
+  background: #243B53;
+  color: #FFFDF8;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.club-story__button:hover {
+  background: #426987;
+  transform: translateY(-2px);
+}
+
+.club-story__button span {
+  font-size: 1.1rem;
+}
+
+.club-story__signature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(36, 59, 83, 0.17);
+  color: #7A6E65;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.1rem;
+}
+
+.club-story__paw {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+  .club-story {
+    padding: 75px 6%;
+  }
+
+  .club-story__inner {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .club-story__art {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .club-story__photo {
+    height: clamp(320px, 75vw, 470px);
+  }
+
+  .club-story__copy {
+    max-width: 580px;
+  }
+
+  .club-story__copy h2 {
+    font-size: clamp(2.8rem, 8vw, 4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .club-story {
+    padding: 65px 5%;
+  }
+
+  .club-story__art {
+    padding-right: 12px;
+  }
+
+  .club-story__photo {
+    border-radius: 44% 44% 18px 18px;
+  }
+
+  .club-story__sticker {
+    right: -4px;
+    width: 88px;
+    height: 88px;
+    font-size: 0.52rem;
+  }
+
+  .club-story__sticker strong {
+    font-size: 0.85rem;
+  }
+
+  .club-story__caption {
+    right: 0;
+    font-size: 1.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .club-story__button {
+    transition: none;
+  }
+}

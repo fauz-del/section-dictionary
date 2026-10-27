@@ -1,0 +1,359 @@
+.bestsellers {
+  padding: 100px 6%;
+  background: #DCECF8;
+}
+
+.bestsellers__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.bestsellers__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.bestsellers__heading h2 {
+  margin: 18px 0 0;
+  color: #243B53;
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.bestsellers__heading h2 span {
+  color: #639BC5;
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.bestsellers__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-bottom: 7px;
+  border-bottom: 1.5px solid #243B53;
+  color: #243B53;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.bestsellers__view-all span {
+  font-size: 1.2rem;
+}
+
+.bestsellers__intro {
+  max-width: 500px;
+  margin: 22px 0 38px;
+  color: #526475;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  min-width: 0;
+  color: #243B53;
+}
+
+.product-card__image {
+  position: relative;
+  display: block;
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  border-radius: 18px;
+  text-decoration: none;
+}
+
+.product-card__image--blue {
+  background: #C3DFF2;
+}
+
+.product-card__image--peach {
+  background: #F6C5AD;
+}
+
+.product-card__image--yellow {
+  background: #FFE49A;
+}
+
+.product-card__image--cream {
+  background: #F0EBDD;
+}
+
+.product-card__image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.product-card:hover .product-card__image > img {
+  transform: scale(1.055);
+}
+
+.product-badge {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 12px;
+  max-width: calc(100% - 24px);
+  padding: 8px 10px;
+  border-radius: 30px;
+  background: #FFFDF8;
+  color: #243B53;
+  font-size: 0.61rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+}
+
+.product-badge--peach {
+  background: #FBE5D9;
+}
+
+.product-badge--yellow {
+  background: #FFF1BE;
+}
+
+.product-badge--cream {
+  background: #FFFDF8;
+}
+
+.product-card__quick-view {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #FFFDF8;
+  color: #243B53;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.product-card:hover .product-card__quick-view,
+.product-card:focus-within .product-card__quick-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card__details {
+  padding: 15px 2px 0;
+}
+
+.product-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.product-card__category {
+  color: #6B7F90;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.product-card__rating {
+  color: #72532B;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.product-card__details h3 {
+  margin: 10px 0 0;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+
+.product-card__description {
+  min-height: 42px;
+  margin: 7px 0 15px;
+  color: #617383;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.product-card__buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(36, 59, 83, 0.15);
+}
+
+.product-price {
+  color: #243B53;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.add-to-bag {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #243B53;
+  color: #FFFDF8;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.add-to-bag:hover {
+  background: #426987;
+  transform: rotate(90deg);
+}
+
+.add-to-bag:focus-visible,
+.product-card__image:focus-visible {
+  outline: 3px solid #426987;
+  outline-offset: 4px;
+}
+
+.bestsellers__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 48px;
+  color: #526475;
+  text-align: center;
+}
+
+.bestsellers__footer p {
+  margin: 0;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.35rem;
+}
+
+.bestsellers__paw {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 20px;
+  }
+
+  .product-card__image {
+    aspect-ratio: 1 / 0.92;
+  }
+
+  .product-card__details h3 {
+    font-size: 1.15rem;
+  }
+
+  .product-card__quick-view {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .bestsellers {
+    padding: 75px 5%;
+  }
+
+  .bestsellers__heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .bestsellers__intro {
+    margin: 18px 0 28px;
+  }
+
+  .products-grid {
+    gap: 26px 13px;
+  }
+
+  .product-card__image {
+    aspect-ratio: 0.78;
+    border-radius: 14px;
+  }
+
+  .product-badge {
+    top: 8px;
+    left: 8px;
+    padding: 7px 8px;
+    font-size: 0.55rem;
+  }
+
+  .product-card__details {
+    padding-top: 12px;
+  }
+
+  .product-card__meta {
+    align-items: start;
+    flex-wrap: wrap;
+  }
+
+  .product-card__category {
+    font-size: 0.57rem;
+  }
+
+  .product-card__details h3 {
+    font-size: 1rem;
+  }
+
+  .product-card__description {
+    min-height: 60px;
+    font-size: 0.78rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+  }
+
+  .add-to-bag {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .bestsellers__footer {
+    gap: 8px;
+    margin-top: 36px;
+  }
+
+  .bestsellers__footer p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card__image > img,
+  .product-card__quick-view,
+  .add-to-bag {
+    transition: none;
+  }
+}
