@@ -122,7 +122,7 @@
 .review-card__customer div > span {
   margin-top: 4px;
   color: #526475;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
 }
 
 .customer-gallery {
@@ -147,7 +147,7 @@
 
 .customer-gallery__heading > span {
   color: #687887;
-  font-size: 0.68rem;
+  font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.08em;
 }

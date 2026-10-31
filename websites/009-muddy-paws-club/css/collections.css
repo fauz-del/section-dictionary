@@ -189,7 +189,6 @@
   transform: translateX(5px);
 }
 
-/* Paw trail and muddy splat */
 .paw-journey {
   position: absolute;
   z-index: 1;
@@ -342,125 +341,129 @@
   line-height: 1.75;
 }
 
+.section-kicker__icon {
+  flex: 0 0 auto;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #D18A64;
+}
+
 .shop-moods__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
+/* ---------- Card ---------- */
 .mood-card {
   position: relative;
+  isolation: isolate;
   display: flex;
-  min-height: 345px;
+  min-height: 390px;
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
-  padding: 25px;
-  border-radius: 22px;
+  padding: 26px;
+  border-radius: 24px;
   color: #243B53;
   text-decoration: none;
-  transition: transform 220ms ease;
+  transition: transform 240ms ease, box-shadow 240ms ease;
 }
 
 .mood-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -20px rgba(36, 59, 83, 0.5);
 }
 
-.mood-card--zoomies {
-  background: #DCECF8;
+.mood-card:focus-visible {
+  outline: 3px solid #426987;
+  outline-offset: 4px;
 }
 
-.mood-card--snacks {
-  background: #FFE49A;
+/* soft circle behind the illustration */
+.mood-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -46px;
+  right: -46px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.45);
+  transition: transform 400ms ease;
 }
 
-.mood-card--snuggles {
-  background: #F6C5AD;
+.mood-card:hover::before {
+  transform: scale(1.12);
 }
 
+.mood-card--zoomies { --tilt: -5deg; background: #DCECF8; }
+.mood-card--snacks  { --tilt: 4deg;  background: #FFE49A; }
+.mood-card--snuggles { --tilt: -3deg; background: #F6C5AD; }
+
+/* number tag */
 .mood-card__number {
-  position: relative;
-  z-index: 1;
-  font-size: 0.65rem;
+  padding: 7px 12px;
+  border: 1.5px solid rgba(36, 59, 83, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.55);
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
 }
 
-.mood-card__icon {
-  display: grid;
-  width: 72px;
-  height: 72px;
-  margin-top: 30px;
-  place-items: center;
-  border: 1.5px solid rgba(36, 59, 83, 0.35);
-  border-radius: 50%;
-  font-size: 2.5rem;
-  line-height: 1;
-  transform: rotate(-8deg);
+.mood-card__art {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 16px;
+  width: clamp(116px, 38%, 150px);
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.mood-card--snacks .mood-card__icon {
-  transform: rotate(8deg);
-}
-
-.mood-card--snuggles .mood-card__icon {
-  transform: rotate(-5deg);
+.mood-card:hover .mood-card__art {
+  transform: rotate(0deg) scale(1.06) translateY(-4px);
 }
 
 .mood-card h3 {
-  position: relative;
-  z-index: 1;
-  margin: 22px 0 0;
-  font-size: clamp(1.7rem, 2.5vw, 2.25rem);
+  margin: auto 0 0;
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
   font-weight: 800;
   letter-spacing: -0.055em;
   line-height: 1.02;
 }
 
 .mood-card > p {
-  position: relative;
-  z-index: 1;
   max-width: 260px;
   margin: 12px 0 24px;
-  color: #526475;
-  font-size: 0.87rem;
-  line-height: 1.7;
+  color: #44566A;
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 .mood-card__link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: auto;
   padding-bottom: 5px;
   border-bottom: 1.5px solid rgba(36, 59, 83, 0.6);
-  font-size: 0.83rem;
+  font-size: 0.85rem;
   font-weight: 800;
 }
 
-.mood-card__doodle {
-  position: absolute;
-  right: 20px;
-  color: rgba(36, 59, 83, 0.6);
-  pointer-events: none;
+.mood-card__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 200ms ease;
 }
 
-.mood-card__doodle--bolt {
-  top: 48px;
-  font-size: 3rem;
-  transform: rotate(12deg);
-}
-
-.mood-card__doodle--spark {
-  top: 52px;
-  font-size: 2.2rem;
-  transform: rotate(15deg);
-}
-
-.mood-card__doodle--heart {
-  top: 46px;
-  font-size: 3.2rem;
-  transform: rotate(15deg);
+.mood-card:hover .mood-card__link svg {
+  transform: translate(3px, -3px);
 }
 
 .shop-moods__note {
@@ -468,7 +471,7 @@
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-top: 36px;
+  margin-top: 38px;
   color: #687887;
   text-align: center;
 }
@@ -479,10 +482,56 @@
   font-size: 1.3rem;
 }
 
-.shop-moods__note span {
-  font-size: 1rem;
+.note-paw {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: #8B684E;
+  opacity: 0.8;
 }
 
+.note-paw--left  { transform: rotate(-18deg); }
+.note-paw--right { transform: rotate(18deg); }
+
+.art-ball,
+.art-bone,
+.art-shadow,
+.art-zzz path {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mood-card:hover .art-ball   { animation: art-bounce 900ms ease-in-out infinite; }
+  .mood-card:hover .art-shadow { animation: art-shadow 900ms ease-in-out infinite; }
+  .mood-card:hover .art-bone   { animation: art-wiggle 700ms ease-in-out infinite; }
+
+  .mood-card:hover .art-zzz path { animation: art-float 1600ms ease-in-out infinite; }
+  .mood-card:hover .art-zzz path:nth-child(2) { animation-delay: 200ms; }
+  .mood-card:hover .art-zzz path:nth-child(3) { animation-delay: 400ms; }
+}
+
+@keyframes art-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes art-shadow {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50%      { transform: scale(0.75); opacity: 0.08; }
+}
+
+@keyframes art-wiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50%      { transform: rotate(5deg); }
+}
+
+@keyframes art-float {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(-6px); opacity: 0.45; }
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 850px) {
   .shop-moods__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -490,7 +539,7 @@
 
   .mood-card:last-child {
     grid-column: 1 / -1;
-    min-height: 300px;
+    min-height: 320px;
   }
 }
 
@@ -511,12 +560,12 @@
   .mood-card,
   .mood-card:last-child {
     grid-column: auto;
-    min-height: 300px;
+    min-height: 360px;
     padding: 23px;
   }
 
-  .mood-card__icon {
-    margin-top: 24px;
+  .mood-card__art {
+    width: 116px;
   }
 
   .shop-moods__note {
@@ -529,7 +578,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mood-card {
+  .mood-card,
+  .mood-card::before,
+  .mood-card__art,
+  .mood-card__link svg {
     transition: none;
   }
 }

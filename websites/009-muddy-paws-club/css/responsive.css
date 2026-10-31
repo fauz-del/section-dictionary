@@ -242,3 +242,24 @@
     font-size: 13px;
   }
 }
+
+@media (max-width: 640px) {
+  .button {
+    min-height: 46px;
+    padding-inline: 17px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .announcement__inner p:first-of-type,
+  .announcement__divider {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-name {
+    font-size: 21px;
+  }
+}

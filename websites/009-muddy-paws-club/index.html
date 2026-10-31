@@ -11,7 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Gochi+Hand&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+  <!-- Font Awesome Brands -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css"
+>
+
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/hero.css">
@@ -24,7 +33,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
+<body id="top">
   <div class="announcement">
     <div class="announcement__inner">
      <span class="announcement__paw">✳</span>
@@ -47,9 +56,9 @@
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-      <a href="#collections">Shop all</a>
-      <a href="#collections">Toys & play</a>
-      <a href="#collections">Treats</a>
+      <a href="#shop">Shop all</a>
+      <a href="#collections">Collections</a>
+      <a href="#shop-by-mood">Shop by mood</a>
       <a href="#about">Our little club</a>
     </nav>
 
@@ -269,22 +278,40 @@
 </section>
 
 
-<section class="bestsellers" id="shop">
+<section class="bestsellers" id="shop" aria-labelledby="bestsellers-title">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.8l2.7 5.7 6.2.8-4.6 4.3 1.2 6.2L12 16.7l-5.5 3.1 1.2-6.2L3.1 9.3l6.2-.8z"/>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M12 5v14M5 12h14"/>
+    </symbol>
+    <symbol id="paw-trail" viewBox="0 0 150 44">
+      <use href="#icon-paw" x="0"   y="20" width="24" height="24" color="#8B684E" opacity=".35" transform="rotate(84 12 32)"/>
+      <use href="#icon-paw" x="30"  y="0"  width="24" height="24" color="#8B684E" opacity=".5"  transform="rotate(96 42 12)"/>
+      <use href="#icon-paw" x="60"  y="20" width="24" height="24" color="#8B684E" opacity=".65" transform="rotate(84 72 32)"/>
+      <use href="#icon-paw" x="90"  y="0"  width="24" height="24" color="#8B684E" opacity=".8"  transform="rotate(96 102 12)"/>
+      <use href="#icon-paw" x="120" y="20" width="24" height="24" color="#8B684E" opacity="1"   transform="rotate(84 132 32)"/>
+    </symbol>
+  </svg>
+
   <div class="bestsellers__inner">
 
     <div class="bestsellers__heading">
       <div>
         <span class="section-kicker">
-          <span>✳</span> THE CROWD FAVOURITES
+          <svg class="section-kicker__icon" aria-hidden="true"><use href="#icon-asterisk"/></svg>
+          THE CROWD FAVOURITES
         </span>
-        <h2>
+        <h2 id="bestsellers-title">
           Very good stuff.<br />
           <span>Very good dogs.</span>
         </h2>
       </div>
 
       <a class="bestsellers__view-all" href="#collections">
-        Shop all goodies <span>↗</span>
+        Shop all goodies
+        <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
       </a>
     </div>
 
@@ -295,28 +322,41 @@
 
     <div class="products-grid">
 
-      <article class="product-card">
+      <!-- 1. Tug Buddy -->
+      <article class="product-card" data-category="toys-play">
         <a class="product-card__image product-card__image--blue"
            href="#product-rope-toy"
            aria-label="View The Tug Buddy rope toy">
           <span class="product-badge">BESTSELLER</span>
-          <img
-            src="assets/images/products/close-up-pet-accessories.webp"
-            alt="Pet accessories"
-            loading="lazy"
-          />
-          <span class="product-card__quick-view">Take a peek ↗</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="142" rx="44" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <path d="M32 116C58 134 66 68 92 80S116 52 128 36" fill="none" stroke="#243B53" stroke-width="30" stroke-linecap="round"/>
+              <path d="M32 116C58 134 66 68 92 80S116 52 128 36" fill="none" stroke="#F6C5AD" stroke-width="24.5" stroke-linecap="round"/>
+              <path d="M32 116C58 134 66 68 92 80S116 52 128 36" fill="none" stroke="#FFFDF8" stroke-width="24.5" stroke-dasharray="7 12"/>
+              <path d="M24 124l-13 11M32 130l-5 16M20 112l-16 6M136 30l13-12M128 26l4-16M140 42l16-6" fill="none" stroke="#243B53" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="32" cy="116" r="15" fill="#FFE49A" stroke="#243B53" stroke-width="2.5"/>
+              <circle cx="128" cy="36" r="15" fill="#FFE49A" stroke="#243B53" stroke-width="2.5"/>
+              <path d="M24 111c5-5 12-6 17-3M120 31c5-5 12-6 17-3" fill="none" stroke="#243B53" stroke-width="2" stroke-linecap="round"/>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </span>
         </a>
 
         <div class="product-card__details">
           <div class="product-card__meta">
             <span class="product-card__category">TOYS & PLAY</span>
-            <span class="product-card__rating">★ 4.9</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>4.9
+            </span>
           </div>
           <h3>The Tug Buddy</h3>
-          <p class="product-card__description">
-            For the serious tug-of-war champions.
-          </p>
+          <p class="product-card__description">For the serious tug-of-war champions.</p>
           <div class="product-card__buy">
             <span class="product-price">₦8,500</span>
             <button
@@ -327,35 +367,63 @@
               data-product-name="The Tug Buddy"
               data-product-price="8500"
               aria-label="Add The Tug Buddy to bag"
-            >+</button>
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
           </div>
         </div>
       </article>
 
-      <article class="product-card">
+      <!-- 2. Snack Pack -->
+      <article class="product-card" data-category="treats">
         <a class="product-card__image product-card__image--peach"
            href="#product-snack-pack"
            aria-label="View The Good Dog Snack Pack">
-          <span class="product-badge product-badge--peach">
-            GOOD DOG ENERGY
+          <span class="product-badge product-badge--peach">GOOD DOG ENERGY</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="146" rx="46" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <path d="M44 48h72l6 90a6 6 0 0 1-6 6H44a6 6 0 0 1-6-6z" fill="#FFFDF8" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M44 48h72l.8 13H43.2z" fill="#A9D2F0" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M54 51v7M64 51v7M74 51v7M84 51v7M94 51v7M104 51v7" stroke="#243B53" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="80" cy="102" r="26" fill="#FFE49A" stroke="#243B53" stroke-width="2.5"/>
+              <g transform="rotate(-20 80 102)">
+                <g fill="none" stroke="#243B53" stroke-width="4" stroke-linejoin="round">
+                  <rect x="66" y="99" width="28" height="6" rx="3"/>
+                  <circle cx="66" cy="98" r="4.5"/><circle cx="66" cy="106" r="4.5"/>
+                  <circle cx="94" cy="98" r="4.5"/><circle cx="94" cy="106" r="4.5"/>
+                </g>
+                <g fill="#FFFDF8">
+                  <rect x="66" y="99" width="28" height="6" rx="3"/>
+                  <circle cx="66" cy="98" r="4.5"/><circle cx="66" cy="106" r="4.5"/>
+                  <circle cx="94" cy="98" r="4.5"/><circle cx="94" cy="106" r="4.5"/>
+                </g>
+              </g>
+              <path d="M52 136h56" stroke="#243B53" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/>
+              <g stroke="#243B53" stroke-width="2.5">
+                <circle cx="24" cy="138" r="9" fill="#E3B176"/>
+                <circle cx="136" cy="141" r="7" fill="#E3B176"/>
+              </g>
+              <g fill="#243B53"><circle cx="22" cy="136" r="1.3"/><circle cx="27" cy="140" r="1.3"/><circle cx="135" cy="139" r="1.1"/></g>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
           </span>
-          <img
-            src="assets/images/products/pet-accessories-still-life-concept-set.webp"
-            alt="A selection of pet essentials"
-            loading="lazy"
-          />
-          <span class="product-card__quick-view">Take a peek ↗</span>
         </a>
 
         <div class="product-card__details">
           <div class="product-card__meta">
             <span class="product-card__category">TREATS</span>
-            <span class="product-card__rating">★ 5.0</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>5.0
+            </span>
           </div>
           <h3>The Good Dog Snack Pack</h3>
-          <p class="product-card__description">
-            Little rewards for very big achievements.
-          </p>
+          <p class="product-card__description">Little rewards for very big achievements.</p>
           <div class="product-card__buy">
             <span class="product-price">₦6,000</span>
             <button
@@ -366,35 +434,53 @@
               data-product-name="The Good Dog Snack Pack"
               data-product-price="6000"
               aria-label="Add The Good Dog Snack Pack to bag"
-            >+</button>
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
           </div>
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" data-category="walkies">
         <a class="product-card__image product-card__image--yellow"
            href="#product-walkies"
            aria-label="View The Walkies Kit">
-          <span class="product-badge product-badge--yellow">
-            OUT THE DOOR
+          <span class="product-badge product-badge--yellow">OUT THE DOOR</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="152" rx="44" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <ellipse cx="44" cy="56" rx="17" ry="22" fill="none" stroke="#243B53" stroke-width="11"/>
+              <ellipse cx="44" cy="56" rx="17" ry="22" fill="none" stroke="#639BC5" stroke-width="6"/>
+              <path d="M44 78C44 108 92 86 100 108" fill="none" stroke="#243B53" stroke-width="11" stroke-linecap="round"/>
+              <path d="M44 78C44 108 92 86 100 108" fill="none" stroke="#639BC5" stroke-width="6" stroke-linecap="round"/>
+              <path d="M44 78C44 108 92 86 100 108" fill="none" stroke="#FFFDF8" stroke-width="1.5" stroke-dasharray="2 4"/>
+              <rect x="93" y="105" width="14" height="18" rx="5" fill="#FFFDF8" stroke="#243B53" stroke-width="2.5"/>
+              <path d="M100 123v5" stroke="#243B53" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="100" cy="139" r="12" fill="#F6C5AD" stroke="#243B53" stroke-width="2.5"/>
+              <use href="#icon-paw" x="93" y="132" width="14" height="14" color="#A85E47"/>
+              <path d="M131 58v-7a7 7 0 0 0-14 0v7" fill="none" stroke="#243B53" stroke-width="2.5"/>
+              <rect x="112" y="58" width="30" height="44" rx="12" fill="#A85E47" stroke="#243B53" stroke-width="2.5"/>
+              <use href="#icon-paw" x="119" y="70" width="16" height="16" color="#FFFDF8"/>
+              <path d="M118 94h12" stroke="#FFFDF8" stroke-width="2" stroke-linecap="round"/>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
           </span>
-          <img
-            src="assets/images/lifestyle/Dogs_playing.webp"
-            alt="Dogs enjoying time outdoors"
-            loading="lazy"
-          />
-          <span class="product-card__quick-view">Take a peek ↗</span>
         </a>
 
         <div class="product-card__details">
           <div class="product-card__meta">
             <span class="product-card__category">WALKIES</span>
-            <span class="product-card__rating">★ 4.8</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>4.8
+            </span>
           </div>
           <h3>The Walkies Kit</h3>
-          <p class="product-card__description">
-            Little essentials for big adventures.
-          </p>
+          <p class="product-card__description">Little essentials for big adventures.</p>
           <div class="product-card__buy">
             <span class="product-price">₦12,500</span>
             <button
@@ -405,35 +491,50 @@
               data-product-name="The Walkies Kit"
               data-product-price="12500"
               aria-label="Add The Walkies Kit to bag"
-            >+</button>
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
           </div>
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" data-category="comfort">
         <a class="product-card__image product-card__image--cream"
            href="#product-cozy-corner"
-           aria-label="View The Cozy Corner collection">
-          <span class="product-badge product-badge--cream">
-            NAP APPROVED
+           aria-label="View The Cozy Corner bed">
+          <span class="product-badge product-badge--cream">NAP APPROVED</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="138" rx="54" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <rect x="26" y="54" width="108" height="50" rx="22" fill="#A9D2F0" stroke="#243B53" stroke-width="2.5"/>
+              <rect x="20" y="82" width="120" height="54" rx="20" fill="#FFFDF8" stroke="#243B53" stroke-width="2.5"/>
+              <rect x="32" y="92" width="96" height="34" rx="14" fill="none" stroke="#243B53" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+              <use href="#icon-paw" x="50" y="100" width="16" height="16" color="#A85E47" opacity=".75"/>
+              <use href="#icon-paw" x="72" y="104" width="16" height="16" color="#A85E47" opacity=".75"/>
+              <use href="#icon-paw" x="94" y="100" width="16" height="16" color="#A85E47" opacity=".75"/>
+              <g transform="rotate(-9 50 70)">
+                <rect x="34" y="52" width="32" height="30" rx="10" fill="#FFE49A" stroke="#243B53" stroke-width="2.5"/>
+                <path d="M42 62h16M42 70h10" stroke="#243B53" stroke-width="2" stroke-linecap="round"/>
+              </g>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
           </span>
-          <img
-            src="assets/images/lifestyle/happy-pet-dogs-playing-grass.webp"
-            alt="Happy dogs relaxing together"
-            loading="lazy"
-          />
-          <span class="product-card__quick-view">Take a peek ↗</span>
         </a>
 
         <div class="product-card__details">
           <div class="product-card__meta">
             <span class="product-card__category">COMFORT</span>
-            <span class="product-card__rating">★ 4.9</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>4.9
+            </span>
           </div>
           <h3>The Cozy Corner</h3>
-          <p class="product-card__description">
-            For those hard-earned afternoon snoozes.
-          </p>
+          <p class="product-card__description">For those hard-earned afternoon snoozes.</p>
           <div class="product-card__buy">
             <span class="product-price">₦18,000</span>
             <button
@@ -444,7 +545,239 @@
               data-product-name="The Cozy Corner"
               data-product-price="18000"
               aria-label="Add The Cozy Corner to bag"
-            >+</button>
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="feeding">
+        <a class="product-card__image product-card__image--yellow"
+           href="#product-splash-bowl"
+           aria-label="View The Splash Bowl">
+          <span class="product-badge product-badge--yellow">SPLASH ZONE</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="134" rx="54" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <ellipse cx="80" cy="122" rx="54" ry="12" fill="#FFFDF8" stroke="#243B53" stroke-width="2.5"/>
+              <path d="M34 82h92l-10 34a10 10 0 0 1-9.6 7H53.6a10 10 0 0 1-9.6-7z" fill="#A9D2F0" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <ellipse cx="80" cy="82" rx="46" ry="10" fill="#DCECF8" stroke="#243B53" stroke-width="2.5"/>
+              <ellipse cx="80" cy="84" rx="37" ry="6.5" fill="#639BC5" stroke="#243B53" stroke-width="2"/>
+              <path d="M62 85c6-2 10-2 16 0" fill="none" stroke="#FFFDF8" stroke-width="2" stroke-linecap="round"/>
+              <g transform="rotate(-12 80 104)">
+                <g fill="none" stroke="#243B53" stroke-width="4" stroke-linejoin="round">
+                  <rect x="68" y="101" width="24" height="6" rx="3"/>
+                  <circle cx="68" cy="100" r="4"/><circle cx="68" cy="108" r="4"/>
+                  <circle cx="92" cy="100" r="4"/><circle cx="92" cy="108" r="4"/>
+                </g>
+                <g fill="#FFFDF8">
+                  <rect x="68" y="101" width="24" height="6" rx="3"/>
+                  <circle cx="68" cy="100" r="4"/><circle cx="68" cy="108" r="4"/>
+                  <circle cx="92" cy="100" r="4"/><circle cx="92" cy="108" r="4"/>
+                </g>
+              </g>
+              <g class="p-bob" fill="#639BC5" stroke="#243B53" stroke-width="2" stroke-linejoin="round">
+                <path d="M58 52c-6 9-6 15 0 15s6-6 0-15z"/>
+                <path d="M84 30c-8 12-8 20 0 20s8-8 0-20z" style="--d:.15s"/>
+                <path d="M108 54c-5 8-5 13 0 13s5-5 0-13z" style="--d:.3s"/>
+              </g>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">FEEDING</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>4.7
+            </span>
+          </div>
+          <h3>The Splash Bowl</h3>
+          <p class="product-card__description">Non-slip, spill-proof and slobber-tested.</p>
+          <div class="product-card__buy">
+            <span class="product-price">₦5,500</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="splash-bowl"
+              data-product-name="The Splash Bowl"
+              data-product-price="5500"
+              aria-label="Add The Splash Bowl to bag"
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="toys-play">
+        <a class="product-card__image product-card__image--cream"
+           href="#product-squeaky-duck"
+           aria-label="View The Squeaky Duck toy">
+          <span class="product-badge product-badge--cream">LOUD & PROUD</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="140" rx="44" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <path d="M40 104c-14-4-18-14-16-24 9 3 18 8 24 16z" fill="#FFE49A" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <ellipse cx="78" cy="110" rx="40" ry="27" fill="#FFE49A" stroke="#243B53" stroke-width="2.5"/>
+              <circle cx="104" cy="66" r="25" fill="#FFE49A" stroke="#243B53" stroke-width="2.5"/>
+              <path d="M122 62c14-1 20 4 21 9-5 7-16 8-24 4z" fill="#F4A261" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="108" cy="58" r="3.6" fill="#243B53"/>
+              <circle cx="114" cy="74" r="4.5" fill="#F6C5AD"/>
+              <path d="M62 104c16-14 34-10 38 6-14 14-30 12-38-6z" fill="#F7D071" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <g class="p-ping" fill="none" stroke="#243B53" stroke-width="2.5" stroke-linecap="round">
+                <path d="M136 38l7-7"/><path d="M144 52l11-3" style="--d:.15s"/><path d="M130 28l2-9" style="--d:.3s"/>
+              </g>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">TOYS & PLAY</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>4.9
+            </span>
+          </div>
+          <h3>The Squeaky Duck</h3>
+          <p class="product-card__description">Squeaks louder than the doorbell.</p>
+          <div class="product-card__buy">
+            <span class="product-price">₦3,500</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="squeaky-duck"
+              data-product-name="The Squeaky Duck"
+              data-product-price="3500"
+              aria-label="Add The Squeaky Duck to bag"
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="grooming">
+        <a class="product-card__image product-card__image--peach"
+           href="#product-spa-brush"
+           aria-label="View The Spa Day Brush">
+          <span class="product-badge product-badge--peach">SPA DAY</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="144" rx="40" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <g transform="rotate(-24 80 90)">
+                <rect x="68" y="88" width="24" height="52" rx="12" fill="#A9D2F0" stroke="#243B53" stroke-width="2.5"/>
+                <path d="M74 106h12M74 114h12M74 122h12" stroke="#243B53" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+                <rect x="44" y="36" width="72" height="58" rx="18" fill="#FFFDF8" stroke="#243B53" stroke-width="2.5"/>
+                <rect x="53" y="45" width="54" height="40" rx="12" fill="#DCECF8" stroke="#243B53" stroke-width="2"/>
+                <g fill="#243B53">
+                  <circle cx="65" cy="56" r="2.6"/><circle cx="80" cy="56" r="2.6"/><circle cx="95" cy="56" r="2.6"/>
+                  <circle cx="65" cy="66" r="2.6"/><circle cx="80" cy="66" r="2.6"/><circle cx="95" cy="66" r="2.6"/>
+                  <circle cx="65" cy="76" r="2.6"/><circle cx="80" cy="76" r="2.6"/><circle cx="95" cy="76" r="2.6"/>
+                </g>
+              </g>
+              <g class="p-bob" fill="#FFFDF8" fill-opacity=".7" stroke="#243B53" stroke-width="2">
+                <circle cx="28" cy="56" r="8"/>
+                <circle cx="132" cy="38" r="5" style="--d:.2s"/>
+                <circle cx="128" cy="112" r="9" style="--d:.1s"/>
+                <circle cx="36" cy="120" r="4" style="--d:.3s"/>
+              </g>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">GROOMING</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>4.8
+            </span>
+          </div>
+          <h3>The Spa Day Brush</h3>
+          <p class="product-card__description">Because muddy paws deserve a little pampering.</p>
+          <div class="product-card__buy">
+            <span class="product-price">₦7,000</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="spa-brush"
+              data-product-name="The Spa Day Brush"
+              data-product-price="7000"
+              aria-label="Add The Spa Day Brush to bag"
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessories">
+        <a class="product-card__image product-card__image--blue"
+           href="#product-bandana"
+           aria-label="View The Bandana Club bandana">
+          <span class="product-badge">JUST LANDED</span>
+
+          <svg class="product-card__art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+            <ellipse class="p-shadow" cx="80" cy="146" rx="36" ry="6" fill="#243B53" opacity=".14"/>
+            <g class="p-art">
+              <path d="M22 44Q80 58 138 44L86 134Q80 142 74 134z" fill="#F6C5AD" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M34 54Q80 64 126 54L82 122Q80 126 78 122z" fill="none" stroke="#243B53" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+              <path d="M22 44Q80 58 138 44L136 30Q80 44 24 30z" fill="#A85E47" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+              <use href="#icon-paw" x="63" y="68" width="34" height="34" color="#FFFDF8"/>
+              <g fill="#FFFDF8"><circle cx="46" cy="72" r="2.6"/><circle cx="114" cy="72" r="2.6"/><circle cx="58" cy="98" r="2.6"/><circle cx="102" cy="98" r="2.6"/><circle cx="80" cy="112" r="2.6"/></g>
+            </g>
+          </svg>
+
+          <span class="product-card__quick-view">
+            Take a peek
+            <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </span>
+        </a>
+
+        <div class="product-card__details">
+          <div class="product-card__meta">
+            <span class="product-card__category">ACCESSORIES</span>
+            <span class="product-card__rating">
+              <svg aria-hidden="true"><use href="#icon-star"/></svg>5.0
+            </span>
+          </div>
+          <h3>The Bandana Club</h3>
+          <p class="product-card__description">Instant cool points. No sunglasses needed.</p>
+          <div class="product-card__buy">
+            <span class="product-price">₦4,000</span>
+            <button
+              class="add-to-bag"
+              type="button"
+              data-add-to-cart
+              data-product-id="bandana-club"
+              data-product-name="The Bandana Club"
+              data-product-price="4000"
+              aria-label="Add The Bandana Club to bag"
+            >
+              <svg aria-hidden="true"><use href="#icon-plus"/></svg>
+            </button>
           </div>
         </div>
       </article>
@@ -452,81 +785,47 @@
     </div>
 
     <div class="bestsellers__footer">
-      <span class="bestsellers__paw">🐾</span>
+      <svg class="paw-trail paw-trail--left" viewBox="0 0 150 44" aria-hidden="true"><use href="#paw-trail" width="150" height="44"/></svg>
       <p>Picked with love. Approved by paws.</p>
-      <span class="bestsellers__paw">🐾</span>
+      <svg class="paw-trail paw-trail--right" viewBox="0 0 150 44" aria-hidden="true"><use href="#paw-trail" width="150" height="44"/></svg>
     </div>
 
   </div>
 </section>
 
 
-<section class="promo-banner" aria-labelledby="promo-title">
-  <div class="promo-banner__inner">
+<section class="shop-moods" id="shop-by-mood" aria-labelledby="moods-title">
+   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="icon-asterisk" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
+      </g>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 17 17 7M8.5 7H17v8.5"/>
+      </g>
+    </symbol>
+    <symbol id="icon-paw" viewBox="0 0 24 24">
+      <g fill="currentColor">
+        <path d="M12 12.4c-3.1 0-5.8 2.6-5.8 5 0 1.6 1.3 2.4 2.8 2.4 1.1 0 1.9-.5 3-.5s1.9.5 3 .5c1.5 0 2.8-.8 2.8-2.4 0-2.4-2.7-5-5.8-5z"/>
+        <ellipse cx="4.6" cy="10.4" rx="1.9" ry="2.5" transform="rotate(-20 4.6 10.4)"/>
+        <ellipse cx="8.9" cy="5.6" rx="2" ry="2.7" transform="rotate(-8 8.9 5.6)"/>
+        <ellipse cx="15.1" cy="5.6" rx="2" ry="2.7" transform="rotate(8 15.1 5.6)"/>
+        <ellipse cx="19.4" cy="10.4" rx="1.9" ry="2.5" transform="rotate(20 19.4 10.4)"/>
+      </g>
+    </symbol>
+  </svg>
 
-    <div class="promo-banner__copy">
-      <span class="promo-banner__kicker">
-        ✳ A LITTLE SOMETHING FOR YOUR SIDEKICK
-      </span>
-
-      <h2 id="promo-title">
-        More play.<br />
-        More treats.<br />
-        <span>More muddy paws!</span>
-      </h2>
-
-      <p>
-        Make their everyday a little more exciting
-        with goodies picked for life's messiest adventures.
-      </p>
-
-      <a href="#shop" class="promo-banner__button">
-        Find their next favourite <span>↗</span>
-      </a>
-
-      <span class="promo-banner__handwritten">
-        Go on, spoil that face!
-      </span>
-    </div>
-
-    <div class="promo-banner__art" aria-hidden="true">
-      <div class="promo-banner__sun"></div>
-      <div class="promo-banner__blob"></div>
-
-      <img
-        class="promo-banner__dog"
-        src="assets/images/dogs/transparent_dog.webp"
-        alt=""
-        loading="lazy"
-      />
-
-      <span class="promo-banner__star promo-banner__star--one">✳</span>
-      <span class="promo-banner__star promo-banner__star--two">✦</span>
-      <span class="promo-banner__heart">♡</span>
-
-      <span class="promo-banner__stamp">
-        <span>VERY</span>
-        <strong>GOOD</strong>
-        <span>THINGS!</span>
-      </span>
-    </div>
-
-    <span class="promo-banner__paw promo-banner__paw--one" aria-hidden="true">🐾</span>
-    <span class="promo-banner__paw promo-banner__paw--two" aria-hidden="true">🐾</span>
-
-  </div>
-</section>
-
-
-<section class="shop-moods" id="shop-by-mood">
   <div class="shop-moods__inner">
 
     <div class="shop-moods__heading">
       <span class="section-kicker">
-        <span>✳</span> EVERY DOG HAS A THING
+        <svg class="section-kicker__icon" aria-hidden="true"><use href="#icon-asterisk"/></svg>
+        EVERY DOG HAS A THING
       </span>
 
-      <h2>
+      <h2 id="moods-title">
         What's their<br />
         <span>whole personality?</span>
       </h2>
@@ -539,81 +838,165 @@
 
     <div class="shop-moods__grid">
 
-      <a href="#shop" class="mood-card mood-card--zoomies">
+      <a href="#shop" class="mood-card mood-card--zoomies" data-mood="zoomies">
         <span class="mood-card__number">01 / THE CHAOS</span>
-        <span class="mood-card__doodle mood-card__doodle--bolt">↯</span>
-        <div class="mood-card__icon" aria-hidden="true">⚡</div>
+
+        <svg class="mood-card__art" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
+          <ellipse class="art-shadow" cx="80" cy="124" rx="28" ry="5" fill="#243B53" opacity=".15"/>
+          <g fill="none" stroke="#243B53" stroke-width="2.5" stroke-linecap="round">
+            <path d="M12 52h22M4 68h30M14 84h20"/>
+            <path d="M80 22v-9M60 27l-6-7M100 27l6-7"/>
+          </g>
+          <g class="art-ball">
+            <circle cx="80" cy="66" r="31" fill="#FFE49A" stroke="#243B53" stroke-width="2.5"/>
+            <path d="M57 46c11 9 11 31 0 40M103 46c-11 9-11 31 0 40" fill="none" stroke="#243B53" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M62 49c5-5 11-7 17-7" fill="none" stroke="#FFFDF8" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+          </g>
+        </svg>
+
         <h3>The chaos<br />gremlin</h3>
         <p>For the ones who never run out of energy.</p>
-        <span class="mood-card__link">Fuel the zoomies ↗</span>
+        <span class="mood-card__link">
+          Fuel the zoomies
+          <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+        </span>
       </a>
 
-      <a href="#shop" class="mood-card mood-card--snacks">
+      <a href="#shop" class="mood-card mood-card--snacks" data-mood="snacks">
         <span class="mood-card__number">02 / THE SNACKS</span>
-        <span class="mood-card__doodle mood-card__doodle--spark">✳</span>
-        <div class="mood-card__icon" aria-hidden="true">♡</div>
+
+        <svg class="mood-card__art" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
+          <ellipse class="art-shadow" cx="70" cy="126" rx="34" ry="5" fill="#243B53" opacity=".15"/>
+          <g transform="rotate(-24 70 68)">
+            <g class="art-bone">
+              <g fill="none" stroke="#243B53" stroke-width="5" stroke-linejoin="round">
+                <rect x="40" y="60" width="60" height="16" rx="6"/>
+                <circle cx="42" cy="58" r="10"/><circle cx="42" cy="78" r="10"/>
+                <circle cx="98" cy="58" r="10"/><circle cx="98" cy="78" r="10"/>
+              </g>
+              <g fill="#FFFDF8">
+                <rect x="40" y="60" width="60" height="16" rx="6"/>
+                <circle cx="42" cy="58" r="10"/><circle cx="42" cy="78" r="10"/>
+                <circle cx="98" cy="58" r="10"/><circle cx="98" cy="78" r="10"/>
+              </g>
+            </g>
+          </g>
+          <g fill="#A85E47">
+            <circle cx="26" cy="104" r="3.5"/><circle cx="40" cy="115" r="2.5"/>
+            <circle cx="112" cy="102" r="3"/><circle cx="100" cy="116" r="2.2"/>
+          </g>
+          <path d="M112 30l7-5M118 44l9-2" fill="none" stroke="#243B53" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+
         <h3>The snack<br />enthusiast</h3>
         <p>For the eyes that follow every single bite.</p>
-        <span class="mood-card__link">Bring the treats ↗</span>
+        <span class="mood-card__link">
+          Bring the treats
+          <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+        </span>
       </a>
 
-      <a href="#shop" class="mood-card mood-card--snuggles">
+      <a href="#shop" class="mood-card mood-card--snuggles" data-mood="snuggles">
         <span class="mood-card__number">03 / THE SNUGGLES</span>
-        <span class="mood-card__doodle mood-card__doodle--heart">♡</span>
-        <div class="mood-card__icon" aria-hidden="true">☁</div>
+
+        <svg class="mood-card__art" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
+          <ellipse class="art-shadow" cx="70" cy="118" rx="44" ry="6" fill="#243B53" opacity=".15"/>
+          <path d="M22 82C22 108 44 114 70 114S118 108 118 82Z" fill="#FFFDF8" stroke="#243B53" stroke-width="2.5" stroke-linejoin="round"/>
+          <ellipse cx="70" cy="82" rx="48" ry="18" fill="#FFFDF8" stroke="#243B53" stroke-width="2.5"/>
+          <ellipse cx="70" cy="84" rx="36" ry="11" fill="#DCECF8" stroke="#243B53" stroke-width="2.5"/>
+          <use href="#icon-paw" x="60" y="92" width="20" height="20" color="#A85E47"/>
+          <g class="art-zzz" fill="none" stroke="#243B53" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M84 50h9l-9 10h9"/>
+            <path d="M98 34h12l-12 14h12"/>
+            <path d="M112 14h15l-15 18h15"/>
+          </g>
+        </svg>
+
         <h3>The cuddle<br />professional</h3>
         <p>For the little shadows who follow you everywhere.</p>
-        <span class="mood-card__link">Get extra cosy ↗</span>
+        <span class="mood-card__link">
+          Get extra cosy
+          <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
+        </span>
       </a>
 
     </div>
 
     <div class="shop-moods__note">
-      <span>🐾</span>
+      <svg class="note-paw note-paw--left" aria-hidden="true"><use href="#icon-paw"/></svg>
       <p>Three moods. One very spoiled best friend.</p>
-      <span>🐾</span>
+      <svg class="note-paw note-paw--right" aria-hidden="true"><use href="#icon-paw"/></svg>
     </div>
 
   </div>
 </section>
 
-<section class="club-story" id="about">
+<section class="club-story" id="about" aria-labelledby="story-title">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7"/>
+    </symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.8c-4.6 6-6.8 9.2-6.8 12.2a6.8 6.8 0 0 0 13.6 0c0-3-2.2-6.2-6.8-12.2z"/>
+    </symbol>
+  </svg>
+
   <div class="club-story__inner">
 
     <div class="club-story__art">
-      <div class="club-story__photo">
-        <img
-          src="assets/images/customers/pet_client.webp"
-          alt="A happy pet enjoying time with their human"
-          loading="lazy"
-        />
+      <div class="club-story__frame">
+        <div class="club-story__photo">
+          <img
+            src="assets/images/customers/pet_client6.webp"
+            alt="Two fluffy poodles riding in a pet stroller with their human"
+            width="900"
+            height="1200"
+            loading="lazy"
+          />
+        </div>
       </div>
 
-      <span class="club-story__sticker">
-        <span>GOOD</span>
-        <strong>HUMANS.</strong>
-        <span>VERY GOOD DOGS.</span>
-      </span>
+      <!-- Spinning badge -->
+      <div class="club-story__badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120" focusable="false">
+          <defs>
+            <path id="badge-ring" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0"/>
+          </defs>
+          <circle cx="60" cy="60" r="58" fill="#FFE49A" stroke="#243B53" stroke-width="2"/>
+          <circle cx="60" cy="60" r="29" fill="#FFFDF8" stroke="#243B53" stroke-width="2"/>
+          <g class="club-story__badge-text">
+            <text fill="#243B53" font-size="10.5" font-weight="800" letter-spacing="1">
+              <textPath href="#badge-ring" textLength="268" lengthAdjust="spacing">GOOD HUMANS • VERY GOOD DOGS • </textPath>
+            </text>
+          </g>
+          <use href="#icon-paw" x="46" y="46" width="28" height="28" color="#A85E47"/>
+        </svg>
+      </div>
 
-      <span class="club-story__doodle club-story__doodle--star"
-        aria-hidden="true">✳</span>
-      <span class="club-story__doodle club-story__doodle--heart"
-        aria-hidden="true">♡</span>
-
-      <span class="club-story__caption">
-        <span>↖</span> The reason we do it.
-      </span>
+      <!-- Hand-drawn arrow + caption -->
+      <p class="club-story__caption">
+        <svg viewBox="0 0 56 44" aria-hidden="true" focusable="false">
+          <path d="M52 38C30 40 10 30 8 9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M1 19 8 8l9 9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        The reason we do it.
+      </p>
     </div>
 
     <div class="club-story__copy">
       <span class="section-kicker">
-        <span>✳</span> A LITTLE ABOUT US
+        <svg class="section-kicker__icon" aria-hidden="true"><use href="#icon-asterisk"/></svg>
+        A LITTLE ABOUT US
       </span>
 
-      <h2>
+      <h2 id="story-title">
         Life's better<br />
         with a little<br />
-        <span>paw-some chaos.</span>
+        <span class="club-story__scribble">paw-some chaos.
+          <svg viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path d="M2 8q13-9 26 0t26 0 26 0 26 0 26 0 26 0 26 0 26 0" fill="none" stroke="#A85E47" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
       </h2>
 
       <p>
@@ -628,13 +1011,32 @@
         the four-legged members of your family.
       </p>
 
+      <ul class="club-story__points">
+        <li>
+          <span class="club-story__point-icon" aria-hidden="true"><svg><use href="#icon-paw"/></svg></span>
+          <strong>Dog-tested</strong>
+          <span>Every goodie gets a proper paw inspection.</span>
+        </li>
+        <li>
+          <span class="club-story__point-icon" aria-hidden="true"><svg><use href="#icon-check"/></svg></span>
+          <strong>Thoughtfully picked</strong>
+          <span>Only the good stuff makes it to the shelf.</span>
+        </li>
+        <li>
+          <span class="club-story__point-icon" aria-hidden="true"><svg><use href="#icon-drop"/></svg></span>
+          <strong>Mud-friendly</strong>
+          <span>Made for real, messy, joyful days.</span>
+        </li>
+      </ul>
+
       <a href="#newsletter" class="club-story__button">
-        Come hang with us <span>↗</span>
+        Come hang with us
+        <svg aria-hidden="true"><use href="#icon-arrow"/></svg>
       </a>
 
       <div class="club-story__signature">
-        <span>Made with love & a little bit of mud</span>
-        <span class="club-story__paw" aria-hidden="true">🐾</span>
+        <span>Made with love &amp; a little bit of mud</span>
+        <svg class="club-story__paw" aria-hidden="true"><use href="#icon-paw"/></svg>
       </div>
     </div>
 
@@ -854,7 +1256,7 @@
       <div class="footer-socials">
         <a href="https://instagram.com/" target="_blank"
            rel="noopener noreferrer" aria-label="Instagram">
-          <i data-lucide="instagram"></i>
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
         </a>
         <a href="https://tiktok.com/" target="_blank"
            rel="noopener noreferrer" aria-label="TikTok">
@@ -905,7 +1307,7 @@
     <a href="#top">Top of the pack ↑</a>
   </div>
 </footer>
-
+  
   <script src="js/navigation.js"></script>
   <script src="js/main.js"></script>
   <script>

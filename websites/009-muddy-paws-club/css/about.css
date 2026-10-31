@@ -1,30 +1,58 @@
 .club-story {
-  padding: 105px 6%;
+  position: relative;
+  overflow: hidden;
+  padding: 110px 6%;
   background: #F0EBDD;
 }
 
 .club-story__inner {
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
+  grid-template-columns: 1fr 0.95fr;
   align-items: center;
-  gap: clamp(45px, 8vw, 105px);
+  gap: clamp(45px, 8vw, 100px);
   max-width: 1180px;
   margin: 0 auto;
+}
+
+.club-story .section-kicker__icon {
+  flex: 0 0 auto;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #D18A64;
 }
 
 .club-story__art {
   position: relative;
   min-width: 0;
-  padding: 20px 18px 40px 0;
+  padding: 26px 30px 58px 8px;
+}
+
+.club-story__frame {
+  position: relative;
+}
+
+.club-story__frame::before {
+  content: "";
+  position: absolute;
+  inset: 18px -16px -18px 16px;
+  border-radius: 48% 48% 26px 26px;
+  background: #F6C5AD;
+  transform: rotate(3deg);
 }
 
 .club-story__photo {
   position: relative;
-  height: 490px;
+  height: 510px;
   overflow: hidden;
+  border: 2px solid #243B53;
   border-radius: 48% 48% 22px 22px;
   background: #DCECF8;
   transform: rotate(-2deg);
+  transition: transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.club-story__art:hover .club-story__photo {
+  transform: rotate(0deg);
 }
 
 .club-story__photo img {
@@ -32,69 +60,60 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 32%;
 }
 
-.club-story__sticker {
+.club-story__badge {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 0;
-  right: -10px;
-  display: flex;
-  width: 112px;
-  height: 112px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border: 2px solid #243B53;
-  border-radius: 50%;
-  background: #FFE49A;
-  color: #243B53;
-  font-size: 0.62rem;
-  line-height: 1.5;
-  text-align: center;
+  right: 0;
+  width: 118px;
+  height: 118px;
   transform: rotate(10deg);
 }
 
-.club-story__sticker strong {
-  font-size: 1rem;
+.club-story__badge svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-.club-story__doodle {
-  position: absolute;
-  z-index: 2;
-  color: #A85E47;
-  pointer-events: none;
+.club-story__badge-text {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
 }
 
-.club-story__doodle--star {
-  top: 20%;
-  left: -14px;
-  font-size: 2.5rem;
+@media (prefers-reduced-motion: no-preference) {
+  .club-story__badge-text {
+    animation: badge-spin 22s linear infinite;
+  }
 }
 
-.club-story__doodle--heart {
-  right: 5px;
-  bottom: 24%;
-  font-size: 3.3rem;
-  transform: rotate(15deg);
+@keyframes badge-spin {
+  to { transform: rotate(360deg); }
 }
 
 .club-story__caption {
   position: absolute;
-  right: 5%;
-  bottom: 8px;
+  z-index: 3;
+  right: 4%;
+  bottom: 2px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 8px;
+  margin: 0;
   color: #526475;
   font-family: "Gochi Hand", cursive;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   transform: rotate(-3deg);
 }
 
-.club-story__caption span {
-  font-family: sans-serif;
-  font-size: 1.5rem;
+.club-story__caption svg {
+  width: 46px;
+  height: 36px;
+  color: #A85E47;
 }
 
 .club-story__copy h2 {
@@ -106,33 +125,101 @@
   line-height: 0.98;
 }
 
-.club-story__copy h2 span {
+.club-story__scribble {
+  position: relative;
+  display: inline-block;
   color: #A85E47;
   font-family: "Gochi Hand", cursive;
   font-weight: 400;
   letter-spacing: -0.03em;
 }
 
+.club-story__scribble svg {
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+  width: 100%;
+  height: 12px;
+}
+
 .club-story__copy > p {
   margin: 0 0 16px;
-  color: #5F6E77;
-  font-size: 0.96rem;
-  line-height: 1.9;
+  color: #4F5F69;
+  font-size: 1rem;
+  line-height: 1.85;
 }
+
+.club-story__points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.club-story__points li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px 14px 18px;
+  border: 1.5px solid rgba(36, 59, 83, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 253, 248, 0.6);
+}
+
+.club-story__points strong {
+  margin-top: 10px;
+  color: #243B53;
+  font-size: 0.92rem;
+  letter-spacing: -0.02em;
+}
+
+.club-story__points li > span:last-child {
+  color: #5F6E77;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.club-story__point-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1.5px solid #243B53;
+  border-radius: 50%;
+  color: #243B53;
+}
+
+.club-story__point-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.club-story__points li:nth-child(1) .club-story__point-icon { background: #F6C5AD; transform: rotate(-8deg); }
+.club-story__points li:nth-child(2) .club-story__point-icon { background: #FFE49A; transform: rotate(6deg); }
+.club-story__points li:nth-child(3) .club-story__point-icon { background: #DCECF8; transform: rotate(-4deg); }
 
 .club-story__button {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  margin-top: 13px;
-  padding: 15px 20px;
+  margin-top: 30px;
+  padding: 15px 22px;
   border-radius: 40px;
   background: #243B53;
   color: #FFFDF8;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
   transition: background 180ms ease, transform 180ms ease;
+}
+
+.club-story__button svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 180ms ease;
 }
 
 .club-story__button:hover {
@@ -140,10 +227,16 @@
   transform: translateY(-2px);
 }
 
-.club-story__button span {
-  font-size: 1.1rem;
+.club-story__button:hover svg {
+  transform: translate(3px, -3px);
 }
 
+.club-story__button:focus-visible {
+  outline: 3px solid #426987;
+  outline-offset: 4px;
+}
+
+/* signature */
 .club-story__signature {
   display: flex;
   align-items: center;
@@ -151,14 +244,39 @@
   margin-top: 28px;
   padding-top: 20px;
   border-top: 1px solid rgba(36, 59, 83, 0.17);
-  color: #7A6E65;
+  color: #6E625A;
   font-family: "Gochi Hand", cursive;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .club-story__paw {
-  font-family: sans-serif;
-  font-size: 1.2rem;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: #8B684E;
+  transform: rotate(18deg);
+}
+
+@media (max-width: 900px) {
+  .club-story__points {
+    grid-template-columns: 1fr;
+  }
+
+  .club-story__points li {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    column-gap: 14px;
+    align-items: center;
+    padding: 14px;
+  }
+
+  .club-story__point-icon {
+    grid-row: 1 / span 2;
+  }
+
+  .club-story__points strong {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 800px) {
@@ -178,7 +296,7 @@
   }
 
   .club-story__photo {
-    height: clamp(320px, 75vw, 470px);
+    height: clamp(340px, 80vw, 490px);
   }
 
   .club-story__copy {
@@ -196,32 +314,33 @@
   }
 
   .club-story__art {
-    padding-right: 12px;
+    padding: 22px 18px 54px 4px;
   }
 
-  .club-story__photo {
-    border-radius: 44% 44% 18px 18px;
+  .club-story__frame::before {
+    inset: 14px -10px -14px 10px;
   }
 
-  .club-story__sticker {
-    right: -4px;
-    width: 88px;
-    height: 88px;
-    font-size: 0.52rem;
-  }
-
-  .club-story__sticker strong {
-    font-size: 0.85rem;
+  .club-story__badge {
+    width: 92px;
+    height: 92px;
   }
 
   .club-story__caption {
     right: 0;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+  }
+
+  .club-story__caption svg {
+    width: 38px;
+    height: 30px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .club-story__button {
+  .club-story__photo,
+  .club-story__button,
+  .club-story__button svg {
     transition: none;
   }
 }

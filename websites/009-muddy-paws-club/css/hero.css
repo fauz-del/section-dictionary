@@ -26,7 +26,7 @@
   align-items: center;
   gap: 9px;
   margin-bottom: 24px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.4px;
 }
@@ -78,7 +78,7 @@
   max-width: 380px;
   margin: 24px 0;
   color: #43596C;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.9;
 }
 
@@ -93,7 +93,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
 }
 
@@ -112,7 +112,7 @@
   gap: 10px;
   margin-top: 28px;
   color: #526C7D;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .hero-top-note span:last-child {
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.4;
   font-weight: 800;
   letter-spacing: 0.7px;
@@ -206,7 +206,7 @@
 }
 
 .sticker-top {
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -312,7 +312,7 @@
 }
 
 .hero-bottom span:not(.hero-bottom-star) {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.2px;
 }
@@ -362,7 +362,7 @@
 
   .hero-kicker {
     margin-bottom: 20px;
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .hero h1 {
@@ -373,7 +373,7 @@
   .hero-description {
     max-width: 350px;
     margin: 21px 0;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .hero-actions {
@@ -418,7 +418,7 @@
   }
 
   .sticker-top {
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .sticker-main {
@@ -469,7 +469,7 @@
   }
 
   .hero-bottom span:not(.hero-bottom-star) {
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.6px;
   }
 }

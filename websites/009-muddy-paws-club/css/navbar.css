@@ -62,7 +62,7 @@
 .main-nav a {
   position: relative;
   padding-block: 10px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -117,7 +117,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -161,7 +161,7 @@
   }
 
   .main-nav a {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .header-actions {

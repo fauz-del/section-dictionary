@@ -18,7 +18,7 @@
 
 .footer-logo {
   display: inline-flex;
-  color: var(--cloud-white, #FFFDF8);
+  color: var(--ink, #263747);
   text-decoration: none;
 }
 
@@ -72,8 +72,6 @@
   height: 18px;
 }
 
-/* Link columns */
-
 .footer-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -106,8 +104,6 @@
   color: var(--sky-blue, #A9D2F0);
 }
 
-/* Little doodle */
-
 .footer-doodle {
   position: absolute;
   right: 0;
@@ -119,6 +115,7 @@
   transform: rotate(-7deg);
   pointer-events: none;
 }
+
 
 .footer-doodle__star {
   font-size: 1.6rem;
@@ -136,8 +133,6 @@
 .footer-doodle__heart {
   font-size: 1.6rem;
 }
-
-/* Bottom strip */
 
 .footer-bottom {
   display: flex;
@@ -164,8 +159,6 @@
   color: var(--cloud-white, #FFFDF8);
   text-decoration: none;
 }
-
-/* Responsive */
 
 @media (max-width: 900px) {
   .footer-main {
