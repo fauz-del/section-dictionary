@@ -1,44 +1,161 @@
 # The Section Dictionary
 
-A daily-ish challenge: one design-style, one website section (hero, footer, nav, card, etc.), pushed as I go. Over time this becomes a searchable catalog of section designs across styles.
+A growing collection of website sections, complete web experiences, and frontend experiments.
 
-**Live gallery:** `https://YOURUSERNAME.github.io/YOURREPO/`
+**The Section Dictionary** is a personal frontend playground where I explore web design, experiment with interactions, and build different approaches to the web — one project at a time.
 
-## How it's organized
+From individual UI sections to complete websites and interactive effects, this repository is a space for learning, experimenting, and documenting ideas through code.
 
+---
+
+## Explore the Collection
+
+The repository is organised into three main collections.
+
+### 01 — Sections
+
+A collection of individual website sections, organised by category. Each section explores a particular layout, visual style, or design direction.
+
+Current categories include:
+
+- About
+- Blog
+- Cards
+- Contact
+- Footer
+- Hero
+- Services
+- Team
+- Testimonials
+
+### 02 — Websites
+
+A collection of complete website projects, each with its own concept, visual identity, and implementation.
+
+| Project | Description |
+|---|---|
+| Field Notes | A retreat and travel-inspired experience |
+| FRAME / 24 | An independent film festival website |
+| PULSE | A movement studio concept |
+| Roast & Rye | A café website concept |
+| Treasure | A fragrance brand experience |
+| NOMA | A furniture and design concept |
+| Hadal Cove | An immersive underwater experience |
+| ARDEN | A real estate website |
+| Muddy Paws Club | A playful pet store concept |
+
+### 03 — Effects
+
+A collection of smaller frontend experiments focused on motion, interaction, and visual techniques.
+
+Experiments include:
+
+- Bee hover animation
+- Confetti effects
+- Custom button interactions
+- Image curl effects
+- Scroll-driven hero effects
+- Hover interactions
+- Scroll-driven image galleries
+- Slider effects
+- Image tunnel effects
+
+---
+
+## Tech Stack
+
+The technologies vary depending on the experiment or project.
+
+Some of the tools used throughout the repository include:
+
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Vite
+- Tailwind CSS
+- GSAP
+- Three.js
+- Lenis
+
+---
+
+## Repository Structure
+
+```text
+section-dictionary/
+│
+├── sections/       # Individual website sections
+│   ├── about/
+│   ├── blog/
+│   ├── cards/
+│   ├── contact/
+│   ├── footer/
+│   ├── hero/
+│   ├── service/
+│   ├── team/
+│   └── testimonial/
+│
+├── websites/       # Complete website projects
+│   ├── 001-field-notes/
+│   ├── 002-frame/
+│   ├── 003-pulse/
+│   ├── 004-roast-rye/
+│   ├── 005-treasure/
+│   ├── 006-noma/
+│   ├── 007-hadal-cove/
+│   ├── 008-arden/
+│   └── 009-muddy-paws-club/
+│
+├── effects/        # Frontend effects and experiments
+│   ├── bee-hover/
+│   ├── confetti/
+│   ├── cool-button-effect/
+│   ├── curl-img/
+│   ├── hero-scroll-effect/
+│   ├── hover-effect/
+│   ├── scroll-driven-image-gallery/
+│   ├── slider-effect/
+│   └── tunnel-img/
+│
+├── index.html
+├── README.md
+└── STYLES.md
 ```
-/sections
-  /hero
-    /bauhaus-01
-      index.html
-      style.css (or inline)
-      thumb.png
-      README.md   <- style name, date, source of inspiration (private note)
-    /grunge-01
-    ...
-  /footer
-    /halftone-01
-    ...
-/assets
-  /img            <- thumbnails used on the gallery homepage
-index.html         <- the gallery homepage (GitHub Pages entry point)
-STYLES.md           <- master list of the 50 styles for this run
+
+---
+
+## Running Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/fauz-del/section-dictionary.git
 ```
 
-## Rules for this round
+Navigate into the project:
 
-- 50 styles, 50-100 days.
-- New style whenever inspired. Otherwise: reuse a style already done, but on a *new section type* (e.g. did "Grunge Hero" on day 2 → do "Grunge Footer" later instead of a brand new style).
-- Every pushed section gets: a folder under `/sections/<type>/<style>-<number>`, a thumbnail, and one line added to the `sections` array in the homepage `index.html`.
-- Sketches/WIP don't need to be pushed — only push when the section is done enough to preview.
+```bash
+cd section-dictionary
+```
 
-## Adding a new section (workflow)
+Open `index.html` in your browser, or use a local development server such as VS Code Live Server.
 
-1. Build the section in its own folder under `/sections/<type>/<style-slug>-<version>/`.
-2. Drop a thumbnail (screenshot, ~800x600) into that folder or `/assets/img/`.
-3. Add one entry to the `sections` array at the bottom of `index.html`.
-4. Commit + push. GitHub Pages picks it up automatically.
+**Note:** Individual projects may have their own dependencies and setup instructions. Check their respective folders before running them.
 
-## Credits
+---
 
-Style names (Bauhaus, Risograph, Grunge, etc.) refer to established design movements/techniques — not proprietary to any single creator. Personal inspiration references are kept privately in each section's `README.md`, not required as public credit.
+## Why This Exists
+
+The goal isn't to build everything in one particular style.
+
+It's to explore different possibilities, understand how different interfaces are put together, and gradually improve my frontend development skills through practical work.
+
+Some experiments are small. Some become complete websites. Others are simply ideas worth exploring.
+
+The collection is continuously evolving, and new sections, projects, and effects will be added along the way.
+
+---
+
+**Built and maintained by [fauz-del](https://github.com/fauz-del).**
+
