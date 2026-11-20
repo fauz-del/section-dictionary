@@ -1,0 +1,120 @@
+.philosophy-section {
+  background-color: var(--cream);
+  color: var(--navy);
+  padding: 8rem 2rem;
+  border-top: 1px solid rgba(24, 36, 61, 0.08);
+  border-bottom: 1px solid rgba(24, 36, 61, 0.08);
+}
+
+.philosophy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.philosophy-header {
+  margin-bottom: 5rem;
+  max-width: 700px;
+}
+
+.section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--apricot);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.philosophy-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+.philosophy-header h2 em {
+  font-style: italic;
+  color: var(--navy-soft);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(24, 36, 61, 0.08);
+}
+
+.philosophy-lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--navy);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.philosophy-col p {
+  color: var(--navy-soft);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.philosophy-stat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.philosophy-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.philosophy-stat span {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.philosophy-footer {
+  margin-top: 5rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.philosophy-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-author {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b9d9ec" />
+  <title>Halo Air — The world is closer than you think</title>
+  <meta name="description" content="Explore Halo Air's worldwide destinations and thoughtful journeys designed for a better way to fly.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/destination.css">
+  <link rel="stylesheet" href="css/philosophy.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+</head>
+
+<body>
+  <main>
+    <section class="hero">
+      <header class="nav">
+        <a href="#" class="logo airform" aria-label="Halo Air Home">
+          <span class="logo-text">HALO AIR</span>
+          <span class="logo-slice"></span>
+        </a>
+
+        <nav class="nav__links" id="navigation">
+          <a href="#" class="active">Home</a>
+          <a href="#booking">Book a flight</a>
+          <a href="#destinations">Destinations</a>
+          <a href="#experience">Our experience</a>
+        </nav>
+
+        <div class="nav__actions">
+          <a href="#" class="login-link">Log in</a>
+          <a href="#booking" class="nav__cta">Get started</a>
+        </div>
+
+        <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+
+      <div class="hero__main">
+        <div class="hero__copy">
+          <div class="eyebrow">
+            <span>THE ART OF TRAVEL</span>
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+          </div>
+
+          <h1 class="hero__headline">
+            The world is 
+            <span>closer</span>
+             than you think.
+          </h1>
+
+          <p class="hero__description">
+            Discover extraordinary destinations, enjoy thoughtful journeys,
+            and experience a better way to fly.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#booking" class="primary-button">Explore flights</a>
+            <a href="#destinations" class="secondary-link">Discover destinations <span>→</span></a>
+          </div>
+
+          <div class="hero__social-proof">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces" alt="Traveller">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces" alt="Traveller">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces" alt="Traveller">
+              <span>+</span>
+            </div>
+
+            <div>
+              <div class="social-proof__rating">
+                <span>★★★★★</span>
+                <strong>4.9/5</strong>
+              </div>
+              <p>Loved by 75,000+ travellers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" id="heroVisual">
+          <div class="visual__label">
+            <span class="label-dot"></span>
+            YOUR NEXT ADVENTURE
+          </div>
+
+          <img
+            class="hero__plane"
+            src="./assets/plane-hero.png"
+            alt="Halo Air aircraft flying through the sky"
+          />
+
+          <div class="flight-route">
+            <div class="route__icon">✈</div>
+            <div>
+              <span>NOW BOARDING</span>
+              <strong>Somewhere beautiful</strong>
+            </div>
+          </div>
+
+          <div class="visual__coordinates">06° 31' N &nbsp; 03° 22' E</div>
+        </div>
+
+       <div class="hero-footer-cards">
+  <div class="hero-footer-stack">
+    <article class="hero-card">
+      <span class="card-icon"><i class="fa-solid fa-plane"></i></span>
+      <div class="card-content">
+        <span class="card-label">Flight HL-997</span>
+        <span class="card-value">On Time · Gate D4</span>
+      </div>
+    </article>
+
+    <article class="hero-card">
+      <span class="card-icon"><i class="fa-solid fa-location-dot"></i></span>
+      <div class="card-content">
+        <span class="card-label">Curated route</span>
+        <span class="card-value">Zurich → Milan (Direct)</span>
+      </div>
+    </article>
+
+    <article class="hero-card">
+      <span class="card-icon"><i class="fa-solid fa-award"></i></span>
+      <div class="card-content">
+        <span class="card-label">Skypass Elite</span>
+        <span class="card-value">Priority Boarding Unlocked</span>
+      </div>
+    </article>
+  </div>
+
+  <article class="hero-card journey-card">
+    <span class="card-label">Journey overview</span>
+    <div class="journey-tabs">
+      <span class="active-tab">Flights</span>
+      <span>Routes</span>
+      <span>Boarding</span>
+    </div>
+    <div class="flight-list">
+      <div class="flight-row active-flight">
+        <strong>HL-997 <small>(On Time)</small></strong><span>02:40</span>
+      </div>
+      <div class="flight-row">
+        <strong>HL-998 <small>(On Time)</small></strong><span>03:00</span>
+      </div>
+      <div class="flight-row">
+        <strong>HL-999 <small>(On Time)</small></strong><span>02:15</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="hero-card destination-highlights">
+    <div class="highlights-header">
+      <span class="card-label">Destination highlights</span>
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-thumb"><i class="fa-solid fa-arrow-right"></i><span>Tokyo</span></div>
+      <div class="highlight-thumb"><i class="fa-solid fa-arrow-right"></i><span>Rome</span></div>
+      <div class="highlight-thumb"><i class="fa-solid fa-arrow-right"></i><span>Cape Town</span></div>
+      <div class="highlight-thumb"><i class="fa-solid fa-arrow-right"></i><span>Lagos</span></div>
+    </div>
+    <button class="highlights-next" aria-label="Next destinations">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </article>
+
+  <article class="hero-card network-stats-card">
+    <span class="card-label">Global network</span>
+    <strong class="network-big-num">150+</strong>
+    <p>Direct Routes</p>
+    <div class="network-footer"><span class="dot"></span> Connecting the world…</div>
+  </article>
+
+  <article class="hero-card quick-booking-card" id="booking">
+    <span class="card-label">Booking form</span>
+    <div class="booking-inputs">
+      <input aria-label="Origin" placeholder="Origin">
+      <input aria-label="Destination" placeholder="Destination">
+      <div class="date-field">
+        <input aria-label="Date" placeholder="Date">
+        <i class="fa-regular fa-calendar"></i>
+      </div>
+      <a class="primary-button booking-btn" href="#booking">Search</a>
+    </div>
+  </article>
+
+      </div>
+    </section>
+
+
+   <section class="destinations-section" id="destinations">
+  <div class="destinations-container">
+
+    <div class="destinations-header" id="experience">
+      <div>
+        <span class="section-eyebrow"><i class="fa-solid fa-globe"></i> GLOBAL NETWORK</span>
+        <h2>Where to next?<br><em>Explore the extraordinary.</em></h2>
+      </div>
+      <p>
+        From historic capitals to tropical horizons, discover our world-class routes engineered for absolute comfort and style.
+      </p>
+    </div>
+
+    <div class="destinations-stack">
+      <article class="destination-card" style="background-image: url('./assets/berlin.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>01 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> Germany</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Berlin <em>Gateway</em></h3>
+            <p>Where creative edge meets historical depth. Experience direct connections to Europe's cultural epicenter with prioritized lounge access.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>BER</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Daily Express</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/china.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>02 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> East Asia</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Ancient <em>China</em></h3>
+            <p>Journey into timeless landscapes, futuristic megacities, and seamless long-haul luxury across eastern horizons.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>PEK</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Multi-Daily</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/dubia.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>03 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> Middle East</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Dubai <em>Horizon</em></h3>
+            <p>Golden architecture, premier sky lounges, and the crown jewel of transcontinental aviation transit.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>DXB</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Hourly Shuttle</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/france.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>04 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> Western Europe</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>France <em>Elegance</em></h3>
+            <p>From sparkling lights to sunlit coastal vineyards, experience refined travel tailored for connoisseurs.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>CDG</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Daily</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/german.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>05 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> Central Europe</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Bavarian <em>Highlands</em></h3>
+            <p>Alpine panoramas, precision engineering, and effortless executive connections into the heart of Germany.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>MUC</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Daily Direct</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/hawaii.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>06 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> Pacific</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Hawaii <em>Retreat</em></h3>
+            <p>Pristine volcanic shores, emerald jungles, and tranquil island pacing designed to reset your journey.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>HNL</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Weekly Direct</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/india.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>07 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> South Asia</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Vibrant <em>India</em></h3>
+            <p>Royal heritage, bustling financial capitals, and warm hospitality elevated through first-class cabin service.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>DEL</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Daily</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/new-york.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>08 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> North America</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>New York <em>Skyline</em></h3>
+            <p>Non-stop transatlantic velocity connecting global commerce, iconic architecture, and nonstop energy.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>JFK</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Multiple Daily</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/nigeria.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>09 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> West Africa</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Lagos <em>Pulse</em></h3>
+            <p>Dynamic coastal energy, booming innovation hubs, and direct flagship routes linking West Africa to the world.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>LOS</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Daily Direct</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+      <article class="destination-card" style="background-image: url('./assets/tokyo.jpg');">
+        <div class="destination-card__overlay"></div>
+        <div class="destination-card__content">
+          <div class="destination-card__top">
+            <span>10 — ROUTE</span>
+            <span class="destination-card__tag"><i class="fa-solid fa-location-dot"></i> Japan</span>
+          </div>
+          <div class="destination-card__text-block">
+            <h3>Tokyo <em>Precision</em></h3>
+            <p>Neon-lit modernity harmonized with centuries-old tradition, served with ultra-quiet long-range comfort.</p>
+          </div>
+          <div class="destination-card__meta">
+            <div><span><i class="fa-solid fa-plane-departure"></i> HUB CODE</span><strong>HND</strong></div>
+            <div><span><i class="fa-regular fa-clock"></i> FREQUENCY</span><strong>Daily Express</strong></div>
+            <div><span><i class="fa-solid fa-signal"></i> STATUS</span><strong><i class="fa-solid fa-circle status-dot"></i>Active</strong></div>
+          </div>
+          <a href="#booking" class="destination-card__btn">Book flight <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="destination-card__shade"></div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="philosophy-section" id="philosophy">
+  <div class="philosophy-container">
+    
+    <div class="philosophy-header">
+      <span class="section-eyebrow"><i class="fa-solid fa-compass-drafting"></i> ENGINEERING PRECISION</span>
+      <h2>Designed for silence.<br><em>Engineered for the elite.</em></h2>
+    </div>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-col">
+        <p class="philosophy-lead">
+          True luxury in aviation is not merely found in the finish of a cabin; it is measured by the absolute absence of friction from takeoff to touchdown.
+        </p>
+        <p>
+          We reimagined the modern flight path by stripping away legacy inefficiencies. Every route in our global network is optimized not just for speed, but for biological ease—minimizing jetlag through cabin pressure regulation, circadian ambient lighting, and acoustic dampening that turns the stratosphere into a quiet sanctuary.
+        </p>
+      </div>
+
+      <div class="philosophy-col">
+        <div class="philosophy-stat-group">
+          <div class="philosophy-stat">
+            <strong>0.02%</strong>
+            <span>Cabin acoustic variance across long-haul transits</span>
+          </div>
+          <div class="philosophy-stat">
+            <strong>100%</strong>
+            <span>Carbon-offset routing utilizing next-generation bio-fuels</span>
+          </div>
+          <div class="philosophy-stat">
+            <strong>1:4</strong>
+            <span>Dedicated crew-to-guest ratio on every international itinerary</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="philosophy-footer">
+      <blockquote class="philosophy-quote">
+        “An aircraft should not merely transport you across borders; it should alter your perception of time entirely.”
+      </blockquote>
+      <span class="philosophy-author">— Halo Air Flight Operations Manifesto</span>
+    </div>
+
+  </div>
+</section>
+
+
+<footer class="site-footer" id="contact">
+  <div class="footer-container">
+    
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo airform footer-logo" aria-label="Halo Air Home">
+          <span class="logo-text">HALO AIR</span>
+          <span class="logo-slice"></span>
+        </a>
+        <p>Transcontinental aviation engineered for absolute comfort, privacy, and precision timing.</p>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4><i class="fa-solid fa-paper-plane"></i> Private Itinerary Updates</h4>
+        <p>Receive exclusive charter availability and global route expansions directly to your inbox.</p>
+        <form class="footer-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Enter your executive email" required />
+          <button type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Global Fleet</h5>
+        <ul>
+          <li><a href="#destinations">Long-Range Jets</a></li>
+          <li><a href="#destinations">VIP Cabins</a></li>
+          <li><a href="#destinations">Acoustic Engineering</a></li>
+          <li><a href="#destinations">Private Charters</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Destinations</h5>
+        <ul>
+          <li><a href="#destinations">Berlin Gateway</a></li>
+          <li><a href="#destinations">Ancient China</a></li>
+          <li><a href="#destinations">Dubai Horizon</a></li>
+          <li><a href="#destinations">Tokyo Precision</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Concierge</h5>
+        <ul>
+          <li><a href="#booking">Book Flight</a></li>
+          <li><a href="#experience">Lounge Access</a></li>
+          <li><a href="#experience">Executive Support</a></li>
+          <li><a href="#experience">Safety Protocols</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Global Headquarters</h5>
+        <p class="footer-address">
+          <i class="fa-solid fa-location-dot"></i> Halo Tower, 7th Stratosphere Ave<br>
+          Geneva, Switzerland
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Row: Copyright & Legal -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 Halo Air Aviation Group. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Regulatory Compliance</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="./js/hero-animations.js"></script>
+<script src="./js/destinations.js"></script>
+<script src="./js/philosophy-footer-animations.js"></script>
+<script type="module" src="./js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
